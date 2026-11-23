@@ -128,7 +128,8 @@ problems/<problem>/
   references/NN-slug.yml  bibliography entries, one file per chapter
   viz/<name>.js        one file per interactive figure
   notes/               proof digests, Lean map, framing record
-docs/                  built site (committed): index.html and <problem>/index.html
+docs/                  built site (committed): index.html and <problem>/index.html; GitHub Pages publishes
+                       it from main at https://lhallee.github.io/millennium-explainers/
 sources/               downloaded material (ignored)
 ```
 

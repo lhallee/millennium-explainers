@@ -6,13 +6,14 @@ with the intuition and the reason behind every step, rendered math, and interact
 
 | Problem | Page | Status |
 | --- | --- | --- |
-| Riemann Hypothesis | `docs/riemann/index.html` | complete (2026-11-23) |
+| Riemann Hypothesis | [lhallee.github.io/millennium-explainers/riemann](https://lhallee.github.io/millennium-explainers/riemann/) (`docs/riemann/index.html`) | complete (2026-11-23) |
 
 ## Reading
 
-Open the page for a problem in any browser. Each page is one self-contained file: it needs no network, no
-server, and no install. The section index stays open beside the text, and every figure can be played or
-moved.
+Read online at https://lhallee.github.io/millennium-explainers/, which GitHub Pages serves from `docs/` on
+`main`. Or download the page for a problem and open it in any browser: each page is one self-contained file
+that needs no network, no server, and no install. The section index stays open beside the text, and every
+figure can be played or moved.
 
 ## What every explainer must be
 
