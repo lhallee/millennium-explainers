@@ -240,6 +240,39 @@ Tate's thesis is the one published theory that both routes stand on. Route M is 
 
 Most of each proof has no counterpart in the other, as far as this page shows. Route M uses no automorphic form beyond functions on the idele class group, no Galois representation, no Galois cohomology, no auxiliary function, and no count of multiplicity in Stepanov's sense. Route A uses no topology on a function space, no strip, no trace of an operator, no orbital basis, and no $S$-local computation. Even the word multiplicity means different things: in the note it is the order of vanishing of an auxiliary object, which Route A replaces by divisibility ([[ra-multiplicity]]), while in the monograph it is the multiplicity $m_\rho$ of a zero and the order of the poles of Euler factors ([[t-pc-polar]]). The two endgames share the reflection and the pole of [[tp-share-poles]], and nothing else. We know of no step of either proof that can be moved into the other.
 
+:::: figure {#f-tp-shapes viz="tp-shapes" height="720"}
+Each proof narrows to one statement through which all of its construction reaches the theorem, an identity in the first and an inequality in the second, and the two touch only at classical results that both use and at the theorem itself.
+
+```vizspec
+Purpose: show the two proofs as one graph of uses, so that the shape of each route, its waist, and the places where
+  the two meet can be seen and checked.
+Scene: one sheet with rows from the top. The theorem both prove (violet) at the top center; Route M (blue) on the
+  left, Route A (gold) on the right; the classical results both use (red: Poisson summation, Tate's thesis, the
+  functional equation, zeros as poles of -L'/L) in a middle column; results that one route takes from the
+  literature in gray with dashed outlines (Connes's local trace and the nonvanishing of zeta on the line Re s = 1
+  for Route M; Siegel and Weil,
+  local Langlands, and Ferrero and Washington for Route A). A link is a curve from a result up to a result whose
+  proof uses it; a link implied through another drawn path is left out. Long links climb in vertical lanes beside
+  the middle column. Each route's links among its own results are also drawn as one translucent band in the route's
+  color, so that the route reads as a shape. Route M has 10 results: divisor sequence, eigenvalues, strip quotient,
+  spectral trace, proto-trace, primes as circles, sieve, S-local remnant, Trace Formula, endgame; and a node "and
+  every Hecke L" above its endgame. Route A has 10: Galois input (Row0b), cohomological window, hosts on windows,
+  published inputs, chain of theta lifts, from count to bound, inequality on windows, windowed Landau, contract,
+  five theorems. Node and link data, each with its source, are in notes/proof-shapes.md.
+Waists: a ring around the Trace Formula and around the inequality on windows. The module checks at start that every
+  own result of the route below the ring reaches the theorem only through it (8 for Route M, 6 for Route A).
+Controls: toggles "Route M" and "Route A"; toggle "Separate the proofs", which fades the shared results and the
+  theorem, moves the two routes apart, and reports the number of pieces that remain (2); hover or tap a result to
+  light what it rests on and what rests on it and to read its statement, source, and chapter; a click pins it, and
+  a button jumps to it.
+Layout: below 700 px the results are dots and only the shared results, the waists, and the theorem are named; a
+  tapped result opens in a box away from it.
+Motion: only the separation (520 ms; at once under reduced motion).
+Reader takeaway: two funnels side by side, each pinched at one statement, joined only at the classical base, the
+  pole of the logarithmic derivative, the reflection, and the theorem.
+```
+::::
+
 ## What this page compressed, and what it could not {#tp-ledger}
 
 This section says exactly how far the reader's understanding now reaches. The tables list each route's main steps and whether the page proves the step in full for the rational numbers, states it with a pointer, or could not unfold it. A statement its source proves is proved either way; the tables measure only this page's explanation.

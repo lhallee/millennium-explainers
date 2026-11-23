@@ -130,3 +130,26 @@ Part IV marks each of these in place as "our reading". The code and the note do 
   declaration names; the reading of the exceptional twists as zeros of a power series.
 - Chapter 24: how Stepanov's ingredients map onto the published theorems; the two routes touching at Tate's
   thesis.
+
+## Chapter 25, the shapes figure
+
+Figure `f-tp-shapes` (`viz/tp-shapes.js`); its nodes and links, each with a source, are in `proof-shapes.md`.
+Neither source draws its proof as a graph. Everything below is ours.
+
+- Reading each proof as a graph of uses, a link from a result up to a result whose proof uses it, and the grain:
+  which steps are merged into one node, which tools are not drawn, and which implied links are left out.
+- The word "waist" for a result through which every own result of its route below it reaches the theorem, and
+  the reading "an identity in the first and an inequality in the second" for the two waists, the Trace Formula
+  and `ChebyshevInequalityOnWindows`.
+- The translucent band along each route's own links as the route's shape, and the "two funnels" reading of the
+  vizspec's takeaway.
+- "Zeros are poles" as one shared node for the step both endgames use: the bridge of the explicit formula, in the
+  form that a zero of order $m$ is a simple pole of $-L'/L$. The sources use the fact; the shared node is ours.
+- Reading `TW.Poisson` in the tree's proof of the Siegel and Weil formula as an instance of the shared node
+  "Poisson summation".
+- The statement that, without the shared results and the theorem, the graph falls into two pieces. It is a fact
+  about this drawing at this grain, not a theorem about the proofs.
+- The node names that merge steps or rename them: "Primes as circles", "Strip quotient", "Hosts on windows",
+  "Chain of theta lifts", "Published inputs", "From count to bound", "Galois input (Row0b)", "Five theorems",
+  "Contract", "Endgame", and the phone labels "The theorem", "Reflection", "Poles", and "Inequality".
+- Left and right, the rows, and the colors are drawing choices. A row is not a depth in any formal sense.
