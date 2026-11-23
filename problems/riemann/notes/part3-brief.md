@@ -17,7 +17,7 @@ just finished Parts I and II of this page.
 4. The source pages your chapter's brief lists: `sources/riemann/masullo-pages/pNNNN.txt` (one text file per
    PDF page; formulas lose their layout) and, whenever a formula or a statement matters, the PDF page itself:
    Read `sources/riemann/masullo.pdf` with the `pages` parameter (at most 20 pages per call).
-5. `C:\Users\Logan Hallee\.claude\skills\writing-standards\SKILL.md`.
+5. `~/.claude/skills/writing-standards/SKILL.md`.
 6. Whatever exists of Parts I and II under `problems/riemann/chapters/` (other agents are still writing
    them), to match voice and to know what the reader has: at least skim `04-zeta-continued.md`,
    `06-explicit-formula.md`, and `08-weil-positivity.md` if present, and `notes/part2-conventions.md` if
@@ -45,7 +45,7 @@ just finished Parts I and II of this page.
   this work get full `card` treatment with the most complete proof the source allows for the $\mathbb Q$ case,
   written out step by step.
 - Check every formula you print. Where a formula can be tested numerically, test it with
-  `"/c/Users/Logan Hallee/Desktop/millennium-explainers/.cache/venv/Scripts/python.exe"` (mpmath, sympy):
+  `.cache/venv/Scripts/python.exe` (from the repository root) (mpmath, sympy):
   Poisson identities, the trace on the circle $\log\lambda\sum_k\varphi(\lambda^k)$, Mellin transforms of your
   example functions, the explicit formula with a concrete $\varphi$ against the first few hundred zeros. The
   digest warns that its archimedean constants over $\mathbb Q$ are its own specialization: verify them against

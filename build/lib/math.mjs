@@ -111,8 +111,32 @@ export class MathRenderer {
       fonts.push(file);
       kept.push(`@font-face{font-display:block;font-family:${family};font-style:${style};font-weight:${weight};src:url(data:font/woff2;base64,${data.toString('base64')}) format("woff2")}`);
     }
-    return { css: kept.join('') + body, fonts, fontBytes };
+    return { css: kept.join('') + unlayer(body), fonts, fontBytes };
   }
+}
+
+// Paint layers. Chrome gives every relatively positioned box and every box that clips its overflow a paint layer of
+// its own, and pre-paint, paint, and hit testing walk them all: the Riemann page holds about 120,000 in its math.
+// These four rules make about 87,000 of them and place nothing: the formula root, each base, and each vlist cell
+// are positioned without an offset, and no absolutely positioned descendant takes one of them as its containing
+// block (each has a positioned parent of its own); the pstrut that clips is empty, and an empty inline-block's
+// baseline is its bottom margin edge either way. With them removed, every element of the filled Riemann page keeps
+// its box to 1/64 px (2026-11-23). The vlist children, which are moved by top, keep position: relative.
+const UNLAYER = [
+  ['.katex', 'position:relative;'],
+  ['.katex .katex-base', 'position:relative;'],
+  ['.katex .vlist', 'position:relative;'],
+  ['.katex .vlist>span>.pstrut', 'overflow:hidden;'],
+];
+function unlayer(css) {
+  let out = css;
+  for (const [selector, decl] of UNLAYER) {
+    const rules = [...out.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter((m) => m[1] === selector && m[2].includes(decl));
+    if (rules.length !== 1) throw new Error(`KaTeX's stylesheet has ${rules.length} rules ${selector} with ${decl}, expected 1; check the KaTeX version`);
+    const m = rules[0];
+    out = out.slice(0, m.index) + `${selector}{${m[2].replace(decl, '')}}` + out.slice(m.index + m[0].length);
+  }
+  return out;
 }
 
 // Removes empty style attributes, which cannot change what KaTeX draws, and aria-hidden: with no MathML copy,

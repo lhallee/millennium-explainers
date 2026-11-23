@@ -24,7 +24,7 @@ The tree is `sources/riemann/lean/lean/src/`. An index of every file and declara
 `.cache/lean-index/index.sqlite`, and four scripts in `tools/lean/` query it (`index.py` is already run):
 `closure.py`, `spine.py` (print a declaration's statement and body and the project declarations it uses,
 recursively), and `grep.py` (search names, statements, and paths). Run them with
-`"/c/Users/Logan Hallee/Desktop/millennium-explainers/.cache/venv/Scripts/python.exe"`; the exact command
+`.cache/venv/Scripts/python.exe` (from the repository root); the exact command
 lines are in the inventory's section 6. You may query the SQLite index directly, and read any file with the
 Read tool. Directory names and namespaces do not match, so find a declaration through the index, not by
 guessing its path. Mathlib is not on disk: a Mathlib name means what Mathlib defines it to mean, and if you are

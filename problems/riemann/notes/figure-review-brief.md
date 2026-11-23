@@ -22,7 +22,7 @@ modules.
 A full check on a quiet machine captured every figure in its default state at 400 px and 1,920 px window width
 in the light and the dark theme:
 
-`C:\Users\LOGANH~1\AppData\Local\Temp\claude\2171e01994828ad9\d19dc8fd-5de5-4942-aa9a-02a63d36904c\scratchpad\main\fullcheck\fig-<figure id>-<400|1920>-<light|dark>.png`
+`<main session scratch folder>/main/fullcheck/fig-<figure id>-<400|1920>-<light|dark>.png`
 
 where `<figure id>` is the container's anchor (for example `fig-f-cp-staircase-400-dark.png`). Open them with
 the Read tool. For every figure look at least at 400 px dark and 1,920 px light; open the other two when
@@ -54,7 +54,7 @@ or a chapter needs a sentence, write the exact proposed text in your report.
 ## Testing your edits
 
 Build and capture into a scratch folder of your own (the name is in your assignment) under
-`C:\Users\LOGANH~1\AppData\Local\Temp\claude\2171e01994828ad9\d19dc8fd-5de5-4942-aa9a-02a63d36904c\scratchpad`:
+`<main session scratch folder>`:
 
 ```
 node build/build.mjs riemann --out <scratch>/out

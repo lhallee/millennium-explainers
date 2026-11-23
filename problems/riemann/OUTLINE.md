@@ -30,8 +30,11 @@ Both pass through Weil's explicit formula, so that chapter is the hinge of the p
 
 ## Curriculum
 
-All five parts are fixed. Status as of 2026-11-21; "refereed" means a second agent checked the chapter's
-mathematics against its sources and recomputed its numbers.
+All five parts are written. Status as of 2026-11-23; "refereed" means a second agent checked the chapter's
+mathematics against its sources and recomputed its numbers. All 95 figures are built and were reviewed at
+phone and desktop width in both themes. The reviewing session's first pass (19 items, 2026-11-21) is applied;
+the second pass (2026-11-23) rechecked those items on the final text and read chapters 20 and 24 in full. The
+one limit not met with margin is the worst scroll frame at 4x CPU slowdown, recorded in `AGENTS.md`.
 
 | # | File | Chapter | Part | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -43,24 +46,23 @@ mathematics against its sources and recomputed its numbers.
 | 6 | `06-explicit-formula.md` | The explicit formula: each zero is a wave | I | writer W3 | written, refereed, figures built |
 | 7 | `07-what-rh-says.md` | What the hypothesis says about primes, and its generalizations | I | writer W3 | written, refereed, figures built |
 | 8 | `08-weil-positivity.md` | Weil's explicit formula and the positivity criterion | II | writer W4 | written, refereed, figures built |
-| 9 | `09-function-fields.md` | The world where it was already true: curves over finite fields | II | writer W4 | written, refereed, figures in progress |
+| 9 | `09-function-fields.md` | The world where it was already true: curves over finite fields | II | writer W4 | written, refereed, figures built |
 | 10 | `10-stepanov.md` | Stepanov's proof | II | writer W4 | written, refereed, figures built |
 | 11 | `11-adeles.md` | The adeles: all completions at once | III | writer M1 | written, refereed, figures built |
 | 12 | `12-tate-theta.md` | Tate's thesis as theta and zeta: functions modulo theta functions | III | writer M1 | written, refereed, figures built |
 | 13 | `13-primes-as-circles.md` | Primes as circles: orbital bases and their traces | III | writer M2 | written, refereed, figures built |
 | 14 | `14-strip-topology.md` | Choosing the topology: what a strip can see | III | writer M2 | written, refereed, figures built |
 | 15 | `15-cutting-the-kernel.md` | Cutting the kernel along the primes | III | writer M3 | written, refereed, figures built |
-| 16 | `16-trace-formula.md` | The local trace and the Trace Formula | III | writer M4 | written, refereed, figures built (one figure waits on a longer table of zeros) |
+| 16 | `16-trace-formula.md` | The local trace and the Trace Formula | III | writer M4 | written, refereed, figures built |
 | 17 | `17-trace-to-grh.md` | From the Trace Formula to the hypothesis | III | writer M4 | written, refereed, figures built |
-| 18 | `18-route-a-plan.md` | Stepanov over the integers: the plan and the map of the formal proof | IV | writer A1 | written, refereed, cross-chapter pass in progress, figures not started |
-| 19 | `19-landau-endgame.md` | The last mile: a one-sided bound on windows forbids zeros | IV | writer A2 | written, refereed, cross-chapter pass in progress, figures not started |
-| 20 | `20-definite-forms.md` | Forms you can hold: definite unitary groups and theta lifts as matrices | IV | writer A3 | written, refereed, cross-chapter pass in progress, figures not started |
-| 21 | `21-multiplicity-from-lifts.md` | Multiplicity without derivatives: a chain of length about the square root | IV | writer A4 | written, refereed, cross-chapter pass in progress, figures not started |
-| 22 | `22-integrality-and-galois.md` | Paying for the chain: integrality, Galois representations, and the count that is bounded | IV | writer A5 | written, refereed, cross-chapter pass in progress, figures not started |
-| 23 | `23-cohomology-window.md` | The arithmetic residue: a window in Galois cohomology | IV | writer A6 | written, refereed, cross-chapter pass in progress, figures not started |
-| 24 | `24-inputs-and-assembly.md` | What the proof stands on | IV | writer A7 | written, refereed, cross-chapter pass in progress, figures not started |
-| 25 | `25-two-proofs.md` | Two proofs, one theorem | V | writer A8 | written, referee in progress, figures not started |
-
+| 18 | `18-route-a-plan.md` | Stepanov over the integers: the plan and the map of the formal proof | IV | writer A1 | written, refereed, figures built |
+| 19 | `19-landau-endgame.md` | The last mile: a one-sided bound on windows forbids zeros | IV | writer A2 | written, refereed, figures built |
+| 20 | `20-definite-forms.md` | Forms you can hold: definite unitary groups and theta lifts as matrices | IV | writer A3 | written, refereed, figures built |
+| 21 | `21-multiplicity-from-lifts.md` | Multiplicity without derivatives: a chain of length about the square root | IV | writer A4 | written, refereed, figures built |
+| 22 | `22-integrality-and-galois.md` | Paying for the chain: integrality, Galois representations, and the count that is bounded | IV | writer A5 | written, refereed, figures built |
+| 23 | `23-cohomology-window.md` | The arithmetic residue: a window in Galois cohomology | IV | writer A6 | written, refereed, figures built |
+| 24 | `24-inputs-and-assembly.md` | What the proof stands on | IV | writer A7 | written, refereed, figures built |
+| 25 | `25-two-proofs.md` | Two proofs, one theorem | V | writer A8 | written, refereed, figures built |
 ### What each fixed chapter must contain
 
 1. **Counting primes.** The primes, $\pi(x)$ as a staircase, Gauss's density guess $1/\log x$, $\mathrm{Li}(x)$,
@@ -143,7 +145,7 @@ What the readers established, 2026-11-21:
   $\tfrac12 + 9\varepsilon$. The smoothed sum is the note's step 5 exactly.
 - The chain of theta lifts between totally definite unitary groups has length $m$ with
   $\sqrt{x^{1-\varepsilon/8}} \le m \le 2\sqrt{x^{1-\varepsilon/8}}$ (`RankVal`): the note's square root.
-- `VWin` bounds the sizes of groups $\text{Sha}^1(E, \mathbb Q_\ell/\mathbb Z_\ell(-k))$ for an abelian CM field
+- `VWin` bounds the sum of the logarithms of the orders of the groups $\text{Sha}^1(E, \mathbb Q_\ell/\mathbb Z_\ell(-k))$ for an abelian CM field
   $E$ built from the character, on a window of scales found by a pigeonhole. This is the note's step 17.
 - The code never states positivity of Weil's functional, and the names Stepanov, Guinand, Bost, and Vandiver
   do not occur in it. Part IV presents what the code proves and marks the link to the note's wording as our

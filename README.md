@@ -6,7 +6,7 @@ with the intuition and the reason behind every step, rendered math, and interact
 
 | Problem | Page | Status |
 | --- | --- | --- |
-| Riemann Hypothesis | `docs/riemann/index.html` | in progress |
+| Riemann Hypothesis | `docs/riemann/index.html` | complete (2026-11-23) |
 
 ## Reading
 

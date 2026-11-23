@@ -199,7 +199,7 @@ The footnote says that $R$ has "square-root-quality" by "iterating Parseval $k$ 
 $$
 \sum_{y\in\FF_q}\Big\lvert\sum_{x\in\FF_q}v(x)\,e_q(hxy)\Big\rvert^2=q\sum_{x\in\FF_q}\lvert v(x)\rvert^2 ,
 $$ {#eq-ra-parseval}
-which follows by expanding the square and applying orthogonality in $y$. The path structure of $Q_k$ is what lets it be iterated: $e_q(hQ_k(x))$ is a product of factors $e_q(hx_jx_{j+1})$, one per edge, so $S_h$ is a chain in which each coordinate meets only its two neighbours.
+which follows by expanding the square and applying orthogonality in $y$. The path structure of $Q_k$ is what lets it be iterated: $e_q(hQ_k(x))$ is a product of factors $e_q(hx_jx_{j+1})$, one per edge, so $S_h$ is a chain in which each coordinate meets only its two neighbors.
 
 ::::: card {#t-ra-toy kind="proposition" title="For every real weight bounded by $1$, the weighted count of the path quadric satisfies $qN=M^k+R$ with $\lvert R\rvert\le(q-1)\,q^{(k-1)/2}$ times the sum of the squared weights"}
 :::: statement
@@ -316,7 +316,7 @@ Scene: four vertical bars on a signed logarithmic axis (height = sign(v) * log10
   the right plots |S_h| for h = 1 .. q-1 as dots (red) against the horizontal line q^((k-1)/2) sum t^2
   (muted dashed).
 Controls: a segmented choice of prime q in {5, 7, 11, 13, 37, 101}; a slider k from 2 to 12 (integers);
-  for q = 101 cap k at 8 and grey out larger values; a toggle for the weight "t = 1" / "Legendre"
+  for q = 101 cap k at 8 and gray out larger values; a toggle for the weight "t = 1" / "Legendre"
   (default Legendre, q = 101, k = 4).
 Motion: bars ease to new heights over 300 ms when a control changes; while a slider is dragged, defer the
   recomputation until release if it would exceed 4 ms per frame.
@@ -385,7 +385,7 @@ Scene: nine nodes as rounded rectangles, top to bottom, with arrows pointing upw
   row 3: [3] Primitive half-plane
   row 4: [4] Endgame (left), [5] Inequality on windows (right)
   row 5: [6] Automorphic construction (left), [8] Cohomological window (right)
-  row 6: [7] Galois input (centre), [9] Published inputs (left)
+  row 6: [7] Galois input (center), [9] Published inputs (left)
   Edges (arrow from source to target): 2->1, 3->2, 4->3, 5->3, 6->5, 8->5, 7->6, 9->6, 7->8, and a dashed
   edge 9->7 labeled "local Langlands". Two small leaf boxes under [7]: "TLiftK: theta lifts exist" and
   "GeoOne: Galois representations from geometry", each with an arrow into [7].

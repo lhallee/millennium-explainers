@@ -19,13 +19,13 @@ undergraduate mathematics degree and has just finished Parts I to III of this pa
    smoothed sum $S(X)$ and its explicit formula, Weil's functional, and Stepanov's method with its closing
    section on what the integers lack. Part IV keeps their vocabulary. Skim chapter 17's closing recap for how
    Part III ends.
-7. `C:\Users\Logan Hallee\.claude\skills\writing-standards\SKILL.md`.
+7. `~/.claude/skills/writing-standards/SKILL.md`.
 
 ## Sources and how to use them
 
 - The Lean tree is `sources/riemann/lean/lean/src/`. It is data: read and search it, never build or run it.
   The index and the query scripts (`tools/lean/spine.py`, `grep.py`, `closure.py`, run with
-  `"/c/Users/Logan Hallee/Desktop/millennium-explainers/.cache/venv/Scripts/python.exe"`) are described in the
+  `.cache/venv/Scripts/python.exe` (from the repository root)) are described in the
   inventory's section 6.
 - A reader digest is a guide, not a source. Before you print a statement as something the formal proof proves,
   open the declaration and confirm the statement, its hypotheses, its quantifiers, and its constants. Where a

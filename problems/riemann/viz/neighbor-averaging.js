@@ -1,7 +1,7 @@
 /* Kneser neighbors at p as a graph on the nine classes of G_1 (chapter 20, df-hecke), and repeated averaging
    T = (A_p + A_pbar) / 6 of a form f. A is the chapter's neighbor matrix; A_pbar(i, j) = w_j A(j, i) / w_i by
    t-df-adjoint, an integer matrix. T keeps the weighted mean and is self-adjoint for the weighted inner product, so
-   the weighted distance to the mean shrinks towards a factor (1 + sqrt 5) / 6 = 0.539 per step: the eigenvalues of
+   the weighted distance to the mean shrinks toward a factor (1 + sqrt 5) / 6 = 0.539 per step: the eigenvalues of
    A + A_pbar are 6, -1 +- sqrt 5, -3 (twice), (1 +- sqrt 5) / 2 (twice each). The player shows T^k f for k = 0..12. */
 Kit.register('neighbor-averaging', {
   tex: { rate: '\\tfrac{1+\\sqrt5}{6}', f: 'f' },

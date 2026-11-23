@@ -528,40 +528,59 @@
   /* Text in a font the page has not used yet costs 1 to 4 ms at full speed per font (the browser creates the font
      and the metrics of its glyphs): about 11 of the 17 ms of a text-heavy figure's first frame, four times that at
      4x CPU slowdown. In idle time after the page loads, the kit measures and draws the printable ASCII characters
-     and the common symbols in the 25 sizes, weights, and faces figures use most, most used first, about 200 ms at
-     full speed, each font only in an idle period with room for it; the page's canvases then find these fonts ready. Kit.warmMs is the
+     and the common symbols in the 21 fonts listed in WARM_FONTS, most used first, about 240 ms at full speed, each
+     step only in an idle period with room for it; the page's canvases then find these fonts ready. Kit.warmMs is the
      time spent, and Kit.warmed is true when it is done. */
   Kit.warmMs = 0;
   Kit.warmed = false;
   var WARM_TEXT = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~' +
     '−×·…≤≥→πσγρζθλμΛΣ∞′°±½–—';
+  /* [weight, size in px, monospace]: every font that five or more figures set, in the order of how many do (a survey
+     of the 95 figures at 1,240 px, 2026-11-23; 8.28 px is 11.5 px at SCRIPT_SCALE), then the two 600 sizes that three
+     set, then 600 12.5 px monospace. No other font in the list creates the semibold monospace face, and padic-tree's
+     readout needs it: its first frame at 4x took 45 to 62 ms with the earlier list and 17 to 32 ms with this one. */
+  var WARM_FONTS = [
+    [500, 11.5], [500, 11.5, 1], [500, 11], [500, 10.5], [500, 12], [500, 10.5, 1], [500, 12.5], [500, 12.5, 1],
+    [600, 12.5], [500, 12, 1], [600, 12], [500, 8.28, 1], [600, 11.5], [500, 10], [500, 13], [700, 12.5],
+    [500, 13, 1], [600, 11], [600, 13], [600, 10.5], [600, 12.5, 1],
+  ];
   function warmSpecs() {
-    var list = [];
-    [12, 11.5, 12.5, 11, 13, 10.5].forEach(function (sz) { list.push('500 ' + sz + 'px ' + fontFamily, '600 ' + sz + 'px ' + fontFamily); });
-    [12, 11.5, 12.5, 11].forEach(function (sz) { list.push('500 ' + sz + 'px ' + monoFamily); });
-    [12, 12.5, 11.5].forEach(function (sz) { list.push('700 ' + sz + 'px ' + fontFamily); });
-    return list;
+    return WARM_FONTS.map(function (f) { return f[0] + ' ' + f[1] + 'px ' + (f[2] ? monoFamily : fontFamily); });
   }
   /* The warm-up measures and draws on the kit's measuring context (see textWidths), which then holds these fonts
-     too; the page's attached canvases share the fonts the browser created. */
+     too; the page's attached canvases share the fonts the browser created.
+     The browser records what is drawn on the context and rasterizes it after the task that drew it ends, outside
+     the slice's timing. In a tab whose fonts already exist (a reload, a second page), measuring costs almost
+     nothing, so one idle period takes many fonts, and in the check's 4x steady scroll the deferred raster that
+     followed one such period took 710 ms (a trace, 2026-11-23). transferToImageBitmap rasterizes at once, so each
+     step's cost, raster included, is timed, and each step draws a quarter of a font's 118 characters, which bounds
+     what one step can rasterize. On a first load most of the cost is creating the font, which cannot be split: in a
+     fresh browser at 4x, setting a font and measuring the text took up to 79 ms, and drawing and rasterizing a
+     quarter 0 to 3 ms. No idle period is longer than 50 ms, so once one font had cost more, no later step fit, and
+     before 2026-11-23 the warm-up stopped for good at 4x after about 100 ms of work. The estimate is therefore
+     capped at 15 ms, under the 20 ms the fallback without requestIdleCallback offers: a slow font is created in an
+     idle period that starts with 15 ms to spare, and the warm-up finishes (about 3 s after a first load at 4x). */
+  var WARM_PARTS = 4;
   function warmFonts() {
     var ctx = measureContext(), specs = null, k = 0, cost = 8;
     if (!ctx) return;
     var idle = window.requestIdleCallback || function (fn) { return setTimeout(function () { fn({ timeRemaining: function () { return 20; } }); }, 200); };
+    var part = Math.ceil(WARM_TEXT.length / WARM_PARTS);
     function slice(deadline) {
       if (!palette) { idle(slice); return; }
       if (!specs) specs = warmSpecs();
-      while (k < specs.length && deadline.timeRemaining() > cost) {
-        var t = performance.now();
-        ctx.font = specs[k];
-        measureFont = specs[k];
-        ctx.measureText(WARM_TEXT);
-        ctx.fillText(WARM_TEXT, 0, 18);
+      while (k < specs.length * WARM_PARTS && deadline.timeRemaining() > cost) {
+        var t = performance.now(), spec = specs[Math.floor(k / WARM_PARTS)], j = k % WARM_PARTS;
+        if (measureFont !== spec) { ctx.font = spec; measureFont = spec; }
+        if (j === 0) ctx.measureText(WARM_TEXT);
+        ctx.fillText(WARM_TEXT.slice(j * part, (j + 1) * part), 0, 18);
+        ctx.canvas.transferToImageBitmap().close();
         k++;
-        cost = Math.max(2, performance.now() - t);
-        Kit.warmMs += cost;
+        var dt = performance.now() - t;
+        cost = Math.min(15, Math.max(2, dt));
+        Kit.warmMs += dt;
       }
-      if (k < specs.length) idle(slice); else Kit.warmed = true;
+      if (k < specs.length * WARM_PARTS) idle(slice); else Kit.warmed = true;
     }
     idle(slice);
   }
@@ -965,12 +984,13 @@
     if (!lab) {
       var html = this.tex[key];
       if (html == null) throw new Error('figure "' + this.name + '" has no tex.' + key);
+      // Built detached and attached by writeLabels: a label attached during draw would make the next canvas font
+      // change lay out its KaTeX markup in the middle of the figure's first frame.
       var el = document.createElement('div');
       el.className = 'viz-label';
       el.innerHTML = html;
       el.hidden = true;
-      this.labelsEl.appendChild(el);
-      lab = { el: el, used: false, shown: false, tf: '', color: '', size: '', alpha: '' };
+      lab = { el: el, attached: false, used: false, shown: false, tf: '', color: '', size: '', alpha: '' };
       this.labelMap[id] = lab;
       this.labelList.push(lab);
     }
@@ -985,6 +1005,7 @@
   FP.writeLabels = function () {
     for (var k = 0; k < this.labelList.length; k++) {
       var lab = this.labelList[k], st = lab.el.style;
+      if (!lab.attached) { this.labelsEl.appendChild(lab.el); lab.attached = true; }
       if (lab.used) {
         if (lab.nTf !== lab.tf) { st.transform = lab.nTf; lab.tf = lab.nTf; }
         if (lab.nColor !== lab.color) { st.color = lab.nColor; lab.color = lab.nColor; }
@@ -1562,7 +1583,7 @@
     var budget = opts.budget || 2.5;
     var deadline = performance.now() + budget;
     var out = [0, 0];
-    // mode: 'modulus' draws the lightness of |w| alone, in grey (sat < 0 tells domainColor).
+    // mode: 'modulus' draws the lightness of |w| alone, in gray (sat < 0 tells domainColor).
     var sat = opts.mode === 'modulus' ? -1 : opts.saturation == null ? 0.82 : opts.saturation;
     while (cache.li < cache.levels.length) {
       var lv = cache.levels[cache.li];

@@ -29,7 +29,7 @@ mathematically off), build the closest faithful version, and say what you change
   frame are drawn as canvas text. No title inside the drawing: the caption carries it.
 - Correct numbers. Use the kit's math helpers. Where you compute something yourself (a sum over zeros, a
   transform, a count of points on a curve), check several values against
-  `"/c/Users/Logan Hallee/Desktop/millennium-explainers/.cache/venv/Scripts/python.exe"` (mpmath, sympy) and
+  `.cache/venv/Scripts/python.exe` (from the repository root) (mpmath, sympy) and
   against the numbers printed in the chapter. A figure that contradicts its chapter is a bug.
 - Performance: nothing runs until the kit calls you; precompute heavy data once in `init` (or lazily on first
   use) and never per frame; keep a frame under about 4 ms; cap work per frame when a slider is dragged; reuse
@@ -51,7 +51,7 @@ node build/check.mjs --file <scratch>/out/riemann/index.html --figures --out <sc
 ```
 
 `<scratch>` is a folder you create under
-`C:\Users\LOGANH~1\AppData\Local\Temp\claude\2171e01994828ad9\d19dc8fd-5de5-4942-aa9a-02a63d36904c\scratchpad`
+`<main session scratch folder>`
 with a name of your own. `--draft` turns figures that other authors have not written yet into placeholders. The
 check captures every figure at 400 and 1,920 px in both themes: open the captures of your figures with the Read
 tool and look at them. Fix clipped or overlapping labels, low contrast, cramped controls, empty space, and

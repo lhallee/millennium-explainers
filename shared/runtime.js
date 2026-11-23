@@ -467,6 +467,14 @@
     var hashTarget = location.hash.length > 1 ? doc.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
     var first = parts.slice(0, flowStart);
     var jobs = first.map(fillPartSoon);
+    /* Every math face is loaded before the column is shown. A face is otherwise fetched when the first formula
+       that needs it is drawn, its text stays invisible until then (font-display: block), and once it arrives every
+       formula that uses it is laid out again: four such relayouts fell inside the first 12,000 px of a scroll. */
+    if (doc.fonts && doc.fonts.forEach) {
+      var faces = [];
+      doc.fonts.forEach(function (f) { if (/^"?KaTeX_/.test(f.family)) faces.push(f.load()); });
+      jobs.push(Promise.all(faces));
+    }
     if (hashTarget) jobs.push(fillAround(hashTarget));
     else flowInBand(-1.5 * innerHeight, 2.5 * innerHeight).forEach(function (p) { jobs.push(fillPartSoon(p)); });
     var guard = setTimeout(function () { if (!revealed) { console.error('math hydration of the first screens took over 4 s'); reveal(); } }, 4000);

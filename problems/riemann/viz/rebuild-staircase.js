@@ -1,7 +1,7 @@
 /* The explicit formula rebuilding psi_0(x) from zeros. Rows[k] holds the partial sum f_k on a grid of 1800 points,
    uniform in log x so that even the 200th zero (period 0.016 in log x) gets seven or more points per cycle. A row is
    the previous row plus one wave, so filling the table costs 1800 cos and sin per zero, a few rows per frame in the
-   background. Any N after that is a lookup, and the morph between N values is a blend of two neighbouring rows, so
+   background. Any N after that is a lookup, and the morph between N values is a blend of two neighboring rows, so
    dragging is instant even at N = 200. Three panels share the x axis: the sum against psi_0, the newest wave, and the
    spectrum of zero ordinates. */
 Kit.register('rebuild-staircase', {

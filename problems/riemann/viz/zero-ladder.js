@@ -2,7 +2,7 @@
    and on a fourth line the zeros of the Dedekind zeta function of the chosen field, which are the union of its
    factors' zeros: zeta_Q = zeta, zeta_Q(i) = zeta L(s, chi_4), zeta_Q(sqrt 5) = zeta L(s, chi_{5,2}). Changing the
    field slides copies of the factors' ticks down onto the fourth line. "Show spacing" draws each gap between
-   neighbouring zeros as a step at height proportional to the gap, against the mean gap 2 pi / log(q gamma / 2 pi)
+   neighboring zeros as a step at height proportional to the gap, against the mean gap 2 pi / log(q gamma / 2 pi)
    (for a product, the densities add). The L-function ordinates were found as sign changes of the real function
    xi(1/2 + it, chi) with mpmath and agree with the chapter to six decimals. */
 Kit.register('zero-ladder', {

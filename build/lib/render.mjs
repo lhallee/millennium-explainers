@@ -459,8 +459,21 @@ export function wrapSections(html, ch, secStats, formulaElements) {
 // 300 ms. So a section estimated above UNIT_SPLIT px or UNIT_EL * 1.5 elements is cut between its top-level blocks
 // into runs of about UNIT_PX or UNIT_EL elements (div.cvu, skipped by content-visibility like the section), and a
 // result card heavier than UNIT_EL is cut the same way between its parts; the browser then lays out a long section a
-// unit at a time. Each unit carries the same kind of height estimate as a section. Smaller units do not help: each
-// skipped box adds work to every frame, and a unit of 250 to 400 px made the slow frames more frequent.
+// unit at a time. Each unit carries the same kind of height estimate as a section.
+//
+// How Chrome draws them, and what was measured against it (steady scroll at 1,500 px/s, 4x CPU slowdown, 2026-11-23).
+// Chrome draws a skipped box once it is within 150% of a window of the viewport, but it clips that margin to an
+// enclosing content-visibility box. So the units of a section that lie within the margin are drawn together in the
+// frame in which the section reaches the window, and the later ones one at a time as they come within the margin.
+// First-time drawing of math costs about 0.1 to 0.2 ms per element at 4x, and the first 12,000 px of the page draw
+// about 16,000 elements, so the work can only be split into fewer long frames or more short ones. With these units:
+// 1.9% to 2.6% of frames over 50 ms and a worst frame of 117 to 183 ms over six runs. The alternatives were worse:
+// - Sections that hold units left unskipped, so each unit gets the full margin: every frame then checks about 700 more
+//   boxes (3 to 5 ms in a trace), and the share of frames over 50 ms roughly doubled.
+// - The runtime marking one unit per frame visible ahead of the reader: 4% to 6% of frames over 50 ms, worst about
+//   120 ms.
+// - Units of 200 to 300 elements, with either of the above: 5% to 14% of frames over 50 ms, since a frame that draws
+//   any unit also spent 10 to 25 ms in pre-paint in traces.
 const UNIT_SPLIT = 1200;
 const UNIT_PX = 700;
 const UNIT_EL = 600;

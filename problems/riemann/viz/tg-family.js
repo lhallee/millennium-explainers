@@ -127,7 +127,7 @@ Kit.register('tg-family', {
       }
       P.path(ts, gRe, { color: 'gold', width: 2.6 });
       P.path(ts, gIm, { color: 'gold', width: 1.8, dash: [5, 4] });
-      if (R * 2 < x1) { P.vline(R, { color: 'muted', width: 1, dash: [2, 4] }); fig.text('R', P.X(R), b.t + 12, { color: 'muted', size: 11.5, align: 'center' }); }
+      if (R * 2 < x1) P.vline(R, { color: 'muted', width: 1, dash: [2, 4] });
 
       // the prime powers: ticks on the axis, dots at the values the prime side uses
       var ctx = fig.ctx, i;
@@ -144,6 +144,12 @@ Kit.register('tg-family', {
       if (k2 !== key && PP.length) { key = k2; vals = { p: primeSide(src), l: logDeriv(), a: arch(src) }; }
       fig.legend([{ color: 'blue', tex: 'phi' }, { color: 'gold', tex: src ? 'phiH' : 'phiR', width: 2.6 },
         !narrow && { color: 'muted', dash: [5, 4], width: 1.6, text: 'imaginary part' }], { plane: P, at: 'ne', size: narrow ? 12 : 13, dir: narrow ? 'row' : 'col' });
+      // the cutoff's name, over the legend's box and the line's dashes; on a phone, below the legend's row
+      if (R * 2 < x1) {
+        var ry = b.t + (narrow ? 40 : 12);
+        fig.rect(P.X(R) - 5, ry - 10, 10, 13, { fill: 'stage' });
+        fig.text('R', P.X(R), ry, { color: 'muted', size: 11.5, align: 'center' });
+      }
       if (vals) fig.panel([[narrow ? 'primes' : 'prime side at R', fmt.complex(vals.p[0], vals.p[1], 3), 'gold'], [narrow ? 'limit' : 'limit −ζ′/ζ(z + ½)', fmt.complex(vals.l[0], vals.l[1], 3), 'fg'],
         ['archimedean', fmt.complex(vals.a[0], vals.a[1], 3), src ? 'red' : 'fg'], src ? ['log(1/δ)', fmt(Math.log(1 / Ds.value), 2), 'muted'] : null],
         { plane: P, at: 'se' });

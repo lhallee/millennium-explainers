@@ -59,12 +59,20 @@ The check script enforces these and fails loudly.
 - Scrolling stays smooth on ordinary hardware, which the check imitates with a 4x CPU slowdown. In a steady
   scroll of 1,500 px per second at 4x, the 95th-percentile frame is at most 33 ms, at most 3% of frames exceed
   50 ms, and no frame exceeds 200 ms. A figure fails if its 95th-percentile frame at 4x exceeds 16 ms or one
-  setup task at 4x exceeds 50 ms. Figures do not start while the reader scrolls past them. These scroll limits
-  are provisional and not yet met reliably (main session, 2026-11-22; the first worst-frame limit was 100 ms).
-  Over four quiet runs the 95th percentile was 16.8 to 16.9 ms, the share over 50 ms was 1.7% to 3.2%, and the
-  worst frame was 100 to 200 ms, so the page passes or fails by luck. Each slow frame is the browser rendering
-  one dense unit of formulas. Whether that cost is a floor or a fixable per-unit overhead is an open
-  investigation; do not treat 200 ms as settled.
+  setup task at 4x exceeds 50 ms on two measurements: a figure over a limit is measured again, alone on a fresh
+  load, because one full run on this 4-core desktop puts one to three figures over a limit by chance (ten different
+  figures over four runs on 2026-11-23, each within every limit in the other three). Figures do not start while the
+  reader scrolls past them. The first worst-frame limit was 100 ms; it was relaxed to 200 ms on 2026-11-21 because
+  the page could not meet it. The investigation of 2026-11-23 settled why: drawing dense math for the first time
+  costs about 0.1 to 0.2 ms per element at 4x, so the only choice is between fewer long frames and more short ones,
+  and every other split measured gave more frames over 50 ms (`build/lib/render.mjs`, "Units"). Two changes made
+  that day help at no cost: KaTeX's rules that create paint layers without placing anything are dropped (every box
+  of the filled page unchanged to 1/64 px), and every math font loads before the page is shown. Over six quiet runs
+  at 4x after them: 95th percentile 16.8 ms each time, 1.9% to 2.6% of frames over 50 ms, worst frame 117 to 183 ms
+  (before: 16.8 to 33.3 ms, 2.2% to 3.3%, 150 to 183 ms over three runs). A worst frame under 100 ms needs the
+  per-element cost of drawing math about halved. In the full check, which loads the page many times in one tab, the
+  figure kit's font warm-up added one frame of 700 to 783 ms until it was fixed the same day (`shared/viz/kit.js`,
+  `warmFonts`); two full runs after the fix gave worst frames of 117 and 133 ms and 1.8% of frames over 50 ms.
 
 ## Sources and honesty
 

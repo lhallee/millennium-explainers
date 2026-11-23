@@ -54,7 +54,7 @@ Kit.register('ra-ledger', {
       return (parsed[str] = words);
     }
     function partW(p, size) { return p.tex ? fig.labelSize(p.tex, size).w : fig.measure(p.s, p.mono ? size - 0.5 : size, p.bold ? 700 : 500, p.mono); }
-    /* Lines of runs: neighbouring words of one style become one string, so a line costs a few fillText calls. */
+    /* Lines of runs: neighboring words of one style become one string, so a line costs a few fillText calls. */
     function wrap(str, width, size) {
       var key = str + '|' + Math.round(width) + '|' + size;
       if (wrapped[key]) return wrapped[key];

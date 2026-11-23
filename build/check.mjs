@@ -7,9 +7,10 @@
 //   --figures [names]    capture each figure module (or only those named, by module or figure id) once it has drawn
 //                        at its final size, at 400 and 1920 px, in both themes; then measure each one's frame cost
 //                        while it animates (and while a point is dragged, if it has one) at 1x and 4x CPU slowdown:
-//                        its setup at 4x apart, then the median and 95th percentile of steady frames. A figure fails
-//                        with a median steady frame over 4 ms at 1x, a 95th-percentile frame over 16 ms at 4x, or a
-//                        setup task (its canvas and math labels, its init, or its first frame) over 50 ms at 4x
+//                        its setup at 4x apart, then the median and 95th percentile of steady frames. A figure is over
+//                        a limit with a median steady frame over 4 ms at 1x, a 95th-percentile frame over 16 ms at 4x,
+//                        or a setup task (its canvas and math labels, its init, or its first frame) over 50 ms at 4x;
+//                        it is then measured again on a fresh load and fails if it is over a limit again
 //   --skip-scroll        skip the scroll, stability, and anchor tests (for quick captures)
 //   --capture-width N    window width of --ids captures (default 1240)
 //   --cpu 1,4            CPU slowdowns for the scroll tests (default 1 and 4; 4x imitates ordinary hardware)
@@ -332,10 +333,10 @@ async function main() {
         requestAnimationFrame((t) => { last = t; requestAnimationFrame(step); });
       }));
       console.log(`steady scroll${tag}: ${steady.px} px in 8 s; frames ${steady.frames}, over 50 ms ${steady.slow} (${(100 * steady.slow / Math.max(1, steady.frames)).toFixed(1)}%), 95th percentile ${steady.p95.toFixed(1)} ms, worst ${steady.worst.toFixed(0)} ms; long tasks ${steady.longTasks} (longest ${steady.longest.toFixed(0)} ms); peak DOM nodes ${steady.peak.toLocaleString('en-US')}; samples with unfilled math on screen ${steady.unfilled}`);
-      // Limits at 4x. The worst frame may reach 200 ms: the browser lays out one dense unit of formulas (a
-      // content-visibility box of 500 to 900 elements) in a single frame, measured at 25 to 40 ms of CPU at full speed,
-      // so 100 to 160 ms at 4x; smaller units and pre-rendering ahead in idle time were tried and made it worse
-      // (2026-11-21). At most 3% of frames over 50 ms keeps the relaxed worst frame from hiding a regression.
+      // Limits at 4x. The worst frame may reach 200 ms: the browser draws the math of a section's first units in the
+      // frame in which the section reaches the window, 100 to 180 ms at 4x; the ways of splitting that work tried so
+      // far give more frames over 50 ms (build/lib/render.mjs, "Units"; 2026-11-21 and 2026-11-23). At most 3% of
+      // frames over 50 ms keeps the relaxed worst frame from hiding a regression.
       if (cpu >= 4 && steady.p95 > 33.4) fail(`steady scroll${tag} has a 95th-percentile frame of ${steady.p95.toFixed(1)} ms (limit 33 ms)`);
       if (cpu >= 4 && steady.worst > 200) fail(`steady scroll${tag} has a ${steady.worst.toFixed(0)} ms frame (limit 200 ms)`);
       if (cpu >= 4 && steady.slow > 0.03 * steady.frames) fail(`steady scroll${tag} has ${steady.slow} of ${steady.frames} frames over 50 ms (limit 3%)`);
@@ -522,19 +523,9 @@ async function main() {
       const t0 = Date.now();
       let ids = [];
       const setup = new Map();
-      await stage('the figure setup measurement', async () => {
-      // A fresh load, so that no figure has started yet.
-      await page.setViewport({ width: 1240, height: 900 });
-      await page.goto(url, { waitUntil: 'load' });
-      await page.evaluate(() => window.MX.hydration.promise);
-      // Real figure modules only (placeholders and static SVGs have no .viz), optionally only the named ones.
-      ids = await page.evaluate((names) => [...document.querySelectorAll('figure.fig[id]')]
-        .filter((f) => f.querySelector('.viz[data-viz]'))
-        .filter((f) => !names.length || names.includes(f.id) || names.includes(f.querySelector('.viz').getAttribute('data-viz')))
-        .map((f) => f.id), args.figureNames);
       // Setup at 4x, as a reader meets it: from 2.5 windows above the figure, with the page settled at full speed,
       // the page is scrolled down 5% of a window per frame at 4x until the figure has started and drawn once.
-      for (const id of ids) await stage(`the setup measurement of figure #${id}`, async () => {
+      const measureSetup = async (id) => {
         const y0 = await page.evaluate((i) => Math.max(0, document.getElementById(i).getBoundingClientRect().top + scrollY - 2.5 * innerHeight), id);
         await page.evaluate((y) => { document.dispatchEvent(new Event('pointerdown')); scrollTo(0, y); }, y0);
         await sleep(700);
@@ -552,12 +543,23 @@ async function main() {
           requestAnimationFrame(step);
         }), id);
         await throttle(1);
-        setup.set(id, await page.evaluate((i) => {
+        return page.evaluate((i) => {
           const v = document.querySelector(`#${CSS.escape(i)} .viz`);
           const k = window.Kit.figures.findIndex((x) => x.el === v);
           return k < 0 ? null : window.Kit.stats()[k];
-        }, id));
-      });
+        }, id);
+      };
+      await stage('the figure setup measurement', async () => {
+      // A fresh load, so that no figure has started yet.
+      await page.setViewport({ width: 1240, height: 900 });
+      await page.goto(url, { waitUntil: 'load' });
+      await page.evaluate(() => window.MX.hydration.promise);
+      // Real figure modules only (placeholders and static SVGs have no .viz), optionally only the named ones.
+      ids = await page.evaluate((names) => [...document.querySelectorAll('figure.fig[id]')]
+        .filter((f) => f.querySelector('.viz[data-viz]'))
+        .filter((f) => !names.length || names.includes(f.id) || names.includes(f.querySelector('.viz').getAttribute('data-viz')))
+        .map((f) => f.id), args.figureNames);
+      for (const id of ids) await stage(`the setup measurement of figure #${id}`, async () => { setup.set(id, await measureSetup(id)); });
       });
       console.log(`capturing ${ids.length} figure(s)`);
       for (const w of [400, 1920]) {
@@ -619,7 +621,7 @@ async function main() {
       const FRAMES = 40;
       await page.setViewport({ width: 1240, height: 900 });
       const rows = [];
-      for (const id of ids) await stage(`the frame measurement of figure #${id}`, async () => {
+      const measureFrames = async (id) => {
         await page.evaluate((i) => window.MX.goTo(i, false), id);
         await page.waitForFunction((i) => {
           const v = document.querySelector(`#${CSS.escape(i)} .viz`);
@@ -628,7 +630,7 @@ async function main() {
         }, { timeout: 8000, polling: 'raf' }, id).catch(() => {});
         await page.evaluate((i) => { document.dispatchEvent(new Event('pointerdown')); document.getElementById(i).scrollIntoView({ block: 'center' }); }, id);
         await frames(page, 4);
-        const row = { id, setup: setup.get(id) };
+        const row = { id };
         for (const cpu of [1, 4]) {
           await throttle(cpu);
           row[cpu] = await page.evaluate((i, n) => new Promise((resolve) => {
@@ -666,22 +668,49 @@ async function main() {
           }), id, FRAMES);
         }
         await throttle(1);
-        rows.push(row);
-      });
+        return row;
+      };
+      for (const id of ids) await stage(`the frame measurement of figure #${id}`, async () => { rows.push({ ...(await measureFrames(id)), setup: setup.get(id) }); });
       const f2 = (v) => (v == null ? 'n/a' : v.toFixed(2));
       const ph = (r, k) => (r && r[k] ? `${f2(r[k].med)} / ${f2(r[k].p95)} ms (${r[k].n} frames)` : 'none');
       console.log(`figure frame costs (median / 95th percentile of steady frames), measured in ${((Date.now() - t1) / 1000).toFixed(0)} s`);
       if (rows.length && rows[0][1]) console.log(`  kit page setup ${f2(rows[0][1].page)} ms, once per page, in idle time`);
-      for (const r of rows) {
-        if (!r[1]) { fail(`figure #${r.id} could not be measured (it never became ready)`); continue; }
+      const line = (r) => {
         const su = r.setup || {};
-        console.log(`  figure ${r.id} (${r[1].name}): setup at 4x: labels ${f2(su.prepareMs)} ms, init ${f2(su.initMs)} ms, first frame ${f2(su.firstMs)} ms; animate 1x ${ph(r[1], 'animate')}, 4x ${ph(r[4], 'animate')}${r[1].drag ? `; drag 1x ${ph(r[1], 'drag')}, 4x ${ph(r[4], 'drag')}` : ''}`);
+        return `setup at 4x: labels ${f2(su.prepareMs)} ms, init ${f2(su.initMs)} ms, first frame ${f2(su.firstMs)} ms; animate 1x ${ph(r[1], 'animate')}, 4x ${ph(r[4], 'animate')}${r[1].drag ? `; drag 1x ${ph(r[1], 'drag')}, 4x ${ph(r[4], 'drag')}` : ''}`;
+      };
+      const breaches = (r) => {
+        const su = r.setup || {}, out = [];
         const med1 = Math.max(r[1].animate ? r[1].animate.med : 0, r[1].drag ? r[1].drag.med : 0);
         const p95 = Math.max(r[4] && r[4].animate ? r[4].animate.p95 : 0, r[4] && r[4].drag ? r[4].drag.p95 : 0);
         const task = Math.max(su.prepareMs || 0, su.initMs || 0, su.firstMs || 0);
-        if (med1 > 4) fail(`figure #${r.id} (${r[1].name}) has a median frame of ${med1.toFixed(2)} ms at full speed (limit 4 ms)`);
-        if (p95 > 16) fail(`figure #${r.id} (${r[1].name}) has a 95th-percentile frame of ${p95.toFixed(2)} ms at 4x (limit 16 ms)`);
-        if (task > 50) fail(`figure #${r.id} (${r[1].name}) has a ${task.toFixed(0)} ms setup task at 4x (limit 50 ms)`);
+        if (med1 > 4) out.push(`a median frame of ${med1.toFixed(2)} ms at full speed (limit 4 ms)`);
+        if (p95 > 16) out.push(`a 95th-percentile frame of ${p95.toFixed(2)} ms at 4x (limit 16 ms)`);
+        if (task > 50) out.push(`a ${task.toFixed(0)} ms setup task at 4x (limit 50 ms)`);
+        return out;
+      };
+      // A figure over a limit is measured once more, alone on a fresh load, and fails only if it is over a limit again.
+      // On the 4-core desktop these pages are checked on, one full run at 4x puts one to three figures over a limit by
+      // chance: in four runs on 2026-11-23, ten figures went over once (a setup task up to 102 ms, a 95th-percentile
+      // frame up to 19.6 ms), a different set each run, and each was within every limit in the other three runs. A
+      // figure that is over every time, as padic-tree's first frame was before its fonts were warmed (45 to 62 ms on
+      // every load), still fails.
+      for (const r of rows) {
+        if (!r[1]) { fail(`figure #${r.id} could not be measured (it never became ready)`); continue; }
+        console.log(`  figure ${r.id} (${r[1].name}): ${line(r)}`);
+        let over = breaches(r);
+        if (!over.length) continue;
+        await stage(`the second measurement of figure #${r.id}`, async () => {
+          await page.setViewport({ width: 1240, height: 900 });
+          await page.goto(url, { waitUntil: 'load' });
+          await page.evaluate(() => window.MX.hydration.promise);
+          const su = await measureSetup(r.id);
+          const again = { ...(await measureFrames(r.id)), setup: su };
+          if (!again[1]) { over = ['no second measurement (it never became ready)']; return; }
+          console.log(`    over a limit (${over.join('; ')}); measured again on a fresh load: ${line(again)}`);
+          over = breaches(again);
+        });
+        for (const m of over) fail(`figure #${r.id} (${r[1].name}) has ${m}`);
       }
     }
 

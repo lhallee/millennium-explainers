@@ -117,7 +117,7 @@ Measured in units of $\sqrt x$, the error of the prime count wanders in a band o
 Purpose: show the normalized errors (psi(x)-x)/sqrt(x) and M(x)/sqrt(x) next to a coin-flip random walk, and the proved envelope.
 Scene: horizontal axis log10 x from 1 to 6 (x up to 10^6, sieved by the kit on load), vertical axis from -3 to 3
   in units of sqrt(x). Draw (psi(x)-x)/sqrt(x) at every integer x in gold (decimated to about 3000 points
-  with min/max per pixel column so jumps stay visible). Draw horizontal guide lines at +-1 in muted grey.
+  with min/max per pixel column so jumps stay visible). Draw horizontal guide lines at +-1 in muted gray.
   Draw Schoenfeld's envelope +-log^2(x)/(8 pi) as two red dashed curves (clipped by the frame, so it leaves the
   frame near log10 x = 3.8). Optional second curve: M(x)/sqrt(x) in teal.
 Controls: toggle "M(x)/sqrt(x)"; a button "new coin walk" that draws S_N/sqrt(N) in violet for N up to 10^6 from a
