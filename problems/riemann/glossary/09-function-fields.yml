@@ -1,0 +1,64 @@
+- term: finite field
+  pattern: "finite fields?"
+  definition: A field with finitely many elements. For each prime power q there is one, F_q, up to isomorphism, and every element satisfies a^q = a.
+  anchor: ff-refresher
+
+- term: monic polynomial
+  pattern: "monic"
+  definition: A polynomial whose leading coefficient is 1. Monic polynomials play the role of positive integers in F_q[T].
+  anchor: ff-dictionary
+
+- term: irreducible polynomial
+  pattern: "irreducible polynomials?"
+  definition: A nonconstant polynomial that is not a product of two polynomials of smaller degree. Monic irreducible polynomials are the primes of F_q[T].
+  anchor: ff-dictionary
+
+- term: Moebius inversion
+  pattern: "Moebius inversion|Möbius inversion"
+  definition: The rule that turns G(n) = sum over d dividing n of g(d) into g(n) = sum over d dividing n of mu(d) G(n/d).
+  anchor: t-ff-ppt
+
+- term: Frobenius
+  pattern: "(?<!as a |prescribed |arithmetic )Frobenius(?! elements?| class| at\\b)"
+  definition: In characteristic p, the map raising every element, or every coordinate of a point, to the q-th power. On a curve over F_q its fixed points are the points with coordinates in F_q.
+  anchor: ff-frobenius
+
+- term: smooth projective curve
+  pattern: "smooth projective curves?"
+  definition: A one-dimensional object cut out by polynomial equations, with a tangent line at every point and with its points at infinity included. Over F_q it has points over every extension field.
+  anchor: d-ff-curve
+
+- term: genus
+  pattern: "of genus|its genus|genus of (a|the|this) curve"
+  definition: A nonnegative integer measuring how far a curve is from the projective line. The numerator of its zeta function has degree 2g, and exactly g pole orders are missing at any point.
+  anchor: d-ff-genus
+
+- term: elliptic curve
+  pattern: "elliptic curves?"
+  definition: A smooth projective curve of genus 1 with a chosen point, for example y^2 = x^3 + ax + b with nonzero discriminant. Its points form a group.
+  anchor: ff-curves
+
+- term: closed point
+  pattern: "closed points?"
+  definition: An orbit of Frobenius on the points of a curve over the algebraic closure. A closed point of degree d is the curve's analog of a prime of norm q^d.
+  anchor: ff-zeta
+
+- term: zeta function of a curve
+  pattern: "zeta functions? of (a|the) curve"
+  definition: Z(C, u) = exp(sum of N_n u^n / n), which equals L(u) / ((1 - u)(1 - qu)) with L a polynomial of degree 2g.
+  anchor: d-ff-zeta
+
+- term: inverse roots
+  pattern: "inverse roots?"
+  definition: The numbers alpha_1, ..., alpha_2g with L(u) = product of (1 - alpha_i u). They are the eigenvalues of Frobenius, and the Riemann Hypothesis for curves says each has absolute value sqrt(q).
+  anchor: t-ff-rationality
+
+- term: Hasse bound
+  pattern: "Hasse['’]s bound|Hasse interval|Hasse bound"
+  definition: For an elliptic curve over F_q, the bound |N - q - 1| <= 2 sqrt(q) on its number of points.
+  anchor: ff-rh
+
+- term: Lefschetz fixed point formula
+  pattern: "Lefschetz"
+  definition: The formula counting fixed points of a map as an alternating sum of traces on cohomology. For Frobenius on a curve it gives N_n = 1 - sum of alpha_i^n + q^n.
+  anchor: ff-frobenius

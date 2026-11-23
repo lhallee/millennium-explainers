@@ -1,0 +1,64 @@
+- term: diagonal mass
+  pattern: "diagonal mass(es)?"
+  definition: The integral of a kernel k(x, y) over its diagonal x = y, with respect to dt/t, after the diagonal values have been defined by averaging over shrinking squares. For a trace-class operator it equals the trace.
+  anchor: d-ck-kernel
+
+- term: spectral kernel
+  pattern: "spectral kernels?"
+  definition: The kernel of the operator that projects the coarse space W_a onto the orthogonal complement of the theta sums and then convolves by phi. It is a limit of finite-rank kernels built from the zeros in the strip, and its diagonal mass is the zero sum over the strip.
+  anchor: d-ck-spec-geom
+
+- term: geometric kernel
+  pattern: "geometric kernels?"
+  definition: The convolution kernel phi(x/y) minus the spectral kernel. It describes convolution on the theta sums, and its diagonal mass is minus the zero sum over the strip.
+  anchor: d-ck-spec-geom
+
+- term: smoothening
+  pattern: "smoothen(ing|ed|ings)?"
+  definition: The value of a measurable kernel at a point of the diagonal, defined as the limit of its averages over small squares centered there. For a trace-norm limit of finite-rank kernels the limit exists at almost every point of the diagonal.
+  anchor: s-ck-smoothening
+
+- term: proto-trace formula
+  pattern: "proto-trace formula"
+  definition: The identity saying that the diagonal mass of the geometric kernel is minus the sum of M phi(rho - 1/2) over the zeros in the strip, which holds because the convolution kernel vanishes on the diagonal when phi(1) = 0.
+  anchor: t-ck-proto
+
+- term: indentation
+  pattern: "indentations?"
+  definition: A cutoff function on the ideles whose average over the rational numbers is 1, such as the indicator of a fundamental domain. It is used to lift a kernel from the idele class group to the ideles.
+  anchor: s-ck-ideles
+
+- term: skewered diagonal
+  pattern: "skewered (diagonals?|form|mass)"
+  definition: The sets of pairs (x, xi x) of ideles, one for each nonzero rational xi. The diagonal mass on the class group equals the integral over a fundamental domain of the lifted kernel summed over all of them.
+  anchor: t-ck-skewered
+
+- term: divisorial stratification
+  pattern: "(divisorial|primary) stratification"
+  definition: The decreasing chain of sets of ideles that are units at the first j primes beyond Y. Cutting a theta sum down to the j-th set deletes the multiples of those j primes.
+  anchor: d-ck-strata
+
+- term: sieved theta sum
+  pattern: "sieved (theta )?sums?"
+  definition: The theta sum with every integer divisible by one of the removed primes crossed out. Its Mellin transform is the Mellin transform of the theta sum times one factor 1 - p^(-s) for each removed prime.
+  anchor: t-ck-sieve
+
+- term: slice of the kernel
+  pattern: "slices? of the kernel|kernel slices?"
+  definition: The part of the lifted geometric kernel whose second variable is a unit at the earlier removed primes but not at the prime p. It acts on the orbital quotient at p, and its diagonal mass vanishes when p is beyond the support of phi.
+  anchor: s-ck-flag
+
+- term: shell structure
+  pattern: "shell structure"
+  definition: The source's name for the convergence of the sieved theta sums, as all primes beyond Y are removed, on regions t at least 1/R that stay away from t = 0.
+  anchor: s-ck-shell
+
+- term: Y-smooth integer
+  pattern: "Y-smooth"
+  definition: A nonzero integer whose prime factors are all at most Y. The sum of g(nt) over these integers is what remains of the theta sum after every prime beyond Y has been removed.
+  anchor: s-ck-shell
+
+- term: S-local kernel
+  pattern: "S-local kernels?"
+  definition: What remains of the lifted geometric kernel after every prime beyond Y has been cut away. It only involves the real numbers and the p-adic numbers for p at most Y, and it carries the whole diagonal mass.
+  anchor: s-ck-remnant

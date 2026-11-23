@@ -1,0 +1,17 @@
+ss-complex:
+  authors: E. M. Stein and R. Shakarchi
+  title: Complex Analysis (Princeton Lectures in Analysis II)
+  year: 2003
+  where: Princeton University Press
+
+ss-fourier:
+  authors: E. M. Stein and R. Shakarchi
+  title: "Fourier Analysis: An Introduction (Princeton Lectures in Analysis I)"
+  year: 2003
+  where: Princeton University Press
+
+ahlfors:
+  authors: L. V. Ahlfors
+  title: Complex Analysis
+  year: 1979
+  where: McGraw-Hill, 3rd edition

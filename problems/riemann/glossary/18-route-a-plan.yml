@@ -1,0 +1,44 @@
+- term: Lean declaration
+  pattern: "Lean declarations?"
+  definition: A named definition or theorem in the Lean code of the formal proof, such as riemannHypothesis in Main.lean. Part IV cites the code by declaration and file.
+  anchor: ra-read
+
+- term: spine of the formal proof
+  pattern: "spine of the formal proof"
+  definition: The chain of declarations from the five theorems of Main.lean down to the named inputs Row0b, TLiftK with GeoOne, and VWin, each link of which has been read in ordinary mathematics.
+  anchor: ra-map
+
+- term: scale dictionary
+  pattern: "scale dictionary"
+  definition: The table of how the quantities of the formal proof grow with the scale x, for example the chain length m about the square root of x and the frame order n about x to the power 2 + 8 epsilon.
+  anchor: ra-map
+
+- term: additive character
+  pattern: "additive characters?"
+  definition: A homomorphism from the additive group of a finite field to the unit circle. For a prime q the basic one is e_q(a) = exp(2 pi i a / q), and summing it over a full period gives q at 0 and 0 elsewhere.
+  anchor: ra-toy-sum
+
+- term: path quadric
+  pattern: "path quadrics?"
+  definition: The quadratic form x_1 x_2 + x_2 x_3 + ... + x_(k-1) x_k from the note's footnote, whose terms follow the edges of a path through the coordinates.
+  anchor: eq-ra-path-quadric
+
+- term: zero mode
+  pattern: "zero[- ]modes?"
+  definition: The term h = 0 of the footnote's sum over additive characters, which has no oscillation and equals M^k, the k-th power of the plain sum of the weights.
+  anchor: ra-toy-parseval
+
+- term: Parseval's identity
+  pattern: "Parseval['’]s identity"
+  definition: On a finite field, the sum over y of the squared size of sum_x v(x) e_q(hxy) equals q times the sum of |v(x)|^2 whenever h is not 0. It says that the finite Fourier transform is a scaled isometry.
+  anchor: ra-toy-parseval
+
+- term: sign-only argument
+  pattern: "sign-only"
+  definition: The note's name for an argument that bounds a character sum by knowing only the sign of one side of an identity qN = M^k + R, with the other side controlled by Parseval. Part IV reconstructs the identity and not the sign.
+  anchor: ra-toy-sign
+
+- term: our reading
+  pattern: "our reading"
+  definition: A passage of Part IV that connects the note's words to the code, infers a mechanism, works out a special case, or draws an analogy. It is the page's interpretation, not a statement of either source.
+  anchor: ra-read

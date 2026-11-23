@@ -1,0 +1,19 @@
+# A small problem that exercises every part of the build: every container, a card, references, citations,
+# glossary terms, a numbered equation, a table, a static figure, and two interactive figures.
+id: _demo
+title: Demo explainer
+subtitle: A two-chapter test page for the build, the template, and the figure kit
+lede: >-
+  This page tests the shared infrastructure with real mathematics: the primes counted with weights, and the
+  zeta function seen as a coloring of the complex plane.
+sources:
+  - key: titchmarsh
+    read: 2026-11-20
+  - key: edwards
+    read: 2026-11-20
+parts:
+  - Counting
+  - The complex plane
+chapters:
+  - 01-weighted-count
+  - 02-zeta-plane

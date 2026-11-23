@@ -1,0 +1,49 @@
+- term: S-adeles
+  pattern: "S-adeles?"
+  definition: The finite product of the real line and the p-adic numbers for the primes p at most Y, a locally compact ring with one coordinate for each place in S.
+  anchor: d-tf-s-adeles
+
+- term: S-units
+  pattern: "S-units?"
+  definition: The rational numbers plus or minus a product of powers, positive or negative, of the primes up to Y. They are discrete in the S-ideles and have S-norm 1.
+  anchor: d-tf-s-adeles
+
+- term: S-idele class group
+  pattern: "S-idele class group"
+  definition: The S-ideles modulo the S-units, isomorphic to the positive reals times the product of the p-adic units for p at most Y, with the norm as projection to the positive reals.
+  anchor: d-tf-s-adeles
+
+- term: self-dual measure
+  pattern: "self-dual measures?"
+  definition: The additive Haar measure for which the Fourier transform with the standard character is inverted by the same formula with the opposite sign. On the real line it is dx, on Q_p it gives Z_p volume 1.
+  anchor: d-tf-measures
+
+- term: fixed-point weight
+  pattern: "fixed-point weights?"
+  definition: The number 1/|1 - (derivative)| that the Atiyah-Bott formula assigns to an isolated fixed point. For the dilation x to x/y of the line it is |y|/|1 - y|, and it is the limit of the cut-off trace of the dilation.
+  anchor: t-tf-dilation
+
+- term: Weil's principal value
+  pattern: "Weil['’]s (local )?principal values?"
+  definition: The regularized integral of phi(y)|y|^(1/2)/|1 - y| over the multiplicative group of a completion, defined through the Fourier transform of log|x|. For test functions with phi(1) = 0 it is the ordinary integral.
+  anchor: t-tf-s-local
+
+- term: Weil's local term
+  pattern: "Weil['’]s local terms?"
+  definition: The contribution of one place to the side of Weil's explicit formula built from primes and places. In the normalization of Part III, at a prime p it is log p times the sum over m at least 1 of p^(-m/2)(phi(p^m) + phi(p^(-m))), and at the real place it is the archimedean term.
+  anchor: t-tf-local-prime
+
+- term: archimedean term
+  pattern: "archimedean terms?"
+  definition: The term of Weil's explicit formula that comes from the real place, W_infinity in chapter 8. In the normalization of Part III, for a test function phi with phi(1) = 0, it is one half of the integral of phi(t) t^(1/2) (1/|1 - t| + 1/(1 + t)) dt/t.
+  anchor: d-wp-local-terms
+
+- term: pole terms
+  pattern: "pole terms?(?! contributes| alone)"
+  definition: The two terms of the explicit formula that come from the pole of zeta at s = 1 and its mirror image at s = 0. They are the Mellin transform of the test function at 1 and at 0 in the normalization of chapter 8, and at 1/2 and -1/2 in that of Part III.
+  anchor: d-wp-functional
+
+- term: weight one half
+  pattern: "weight (of )?(one half|1/2)"
+  definition: The exponent of |x|^(1/2) in the weighted theta sums. It is the only power for which |x|^(2w) times the multiplicative measure is the additive measure, which is where the 1/2 of the hypothesis comes from.
+  anchor: s-tf-half

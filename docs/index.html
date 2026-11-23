@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Millennium Prize Problems, explained</title>
+<script>(function(){try{var t=localStorage.getItem('mx-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<style>/* Shared page styles for every explainer. One sequential column at every width, the index always open beside it on
+   a wide screen and a collapsible box above it on a narrow one, type from 16 to 19 px, prose about 75 characters per
+   line, and tables, figures, and equations hugging their content at the left and free to use the column's full width. */
+
+:root {
+  --bg: #f4f6f8; --surface: #ffffff; --ink: #17212b; --muted: #59636f; --line: #d7dee6; --tint: #eaeff4;
+  --a: #0c6676; --a-soft: #dff0f2; --b: #84540f; --b-soft: #f5ead6;
+  --c-red: #b3261e; --c-red-soft: #fbe9e7; --c-violet: #5b3fb0; --c-violet-soft: #ece7fa;
+  --body: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  --display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  --mono: "Cascadia Mono", "SF Mono", Consolas, ui-monospace, "Liberation Mono", monospace;
+
+  /* Figure palette: the stage, its ink, and the named colors of NOTATION.md. The kit reads these. */
+  --viz-stage: #fbfaf7; --viz-fg: #1b222c; --viz-muted: #6a7482; --viz-grid: rgba(106, 116, 130, 0.17);
+  --viz-gold: #9a6200; --viz-blue: #1d64a8; --viz-teal: #0b7a64; --viz-red: #c23a2c; --viz-violet: #7041d0;
+
+  /* The background behind a sideways-scrolling box, for its edge shadows, and the shadow's color. */
+  --box-bg: var(--bg); --edge-shade: rgb(0 0 0 / .2);
+  /* Height estimate of a skipped section: fixed pixels plus characters of prose times pixels per character. */
+  --cpx: 0.4;
+  /* Running prose stops at this width, about 75 characters a line (68 to 81 in nine paragraphs of ten); ch is the
+     width of the digit 0 in the font of the element that uses it. The column is wider, for figures, tables, and wide
+     equations, and the index and the column sit together in the middle of a wide screen. */
+  --measure: 64ch; --column: 46rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f151b; --surface: #172029; --ink: #e5ecf2; --muted: #9eabb8; --line: #2a3541; --tint: #1e2933;
+    --a: #62c6d3; --a-soft: #11353b; --b: #e2b262; --b-soft: #3a2d13;
+    --c-red: #ff8a7f; --c-red-soft: #3a1c1a; --c-violet: #b9a3ff; --c-violet-soft: #2a2342;
+    --viz-stage: #0c1016; --viz-fg: #e8edf3; --viz-muted: #8c97a6; --viz-grid: rgba(140, 151, 166, 0.16);
+    --viz-gold: #f2c14e; --viz-blue: #5ab4e6; --viz-teal: #3fcfae; --viz-red: #ff6b5e; --viz-violet: #b799ff;
+    --edge-shade: rgb(0 0 0 / .55);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f151b; --surface: #172029; --ink: #e5ecf2; --muted: #9eabb8; --line: #2a3541; --tint: #1e2933;
+  --a: #62c6d3; --a-soft: #11353b; --b: #e2b262; --b-soft: #3a2d13;
+  --c-red: #ff8a7f; --c-red-soft: #3a1c1a; --c-violet: #b9a3ff; --c-violet-soft: #2a2342;
+  --viz-stage: #0c1016; --viz-fg: #e8edf3; --viz-muted: #8c97a6; --viz-grid: rgba(140, 151, 166, 0.16);
+  --viz-gold: #f2c14e; --viz-blue: #5ab4e6; --viz-teal: #3fcfae; --viz-red: #ff6b5e; --viz-violet: #b799ff;
+  --edge-shade: rgb(0 0 0 / .55);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+/* Type grows slightly with the monitor, so a larger screen keeps the line length and reads from a little further away. */
+html { font-size: clamp(16px, 0.3vw + 11.6px, 19px); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 0.94rem; line-height: 1.6;
+  text-rendering: optimizeLegibility; overflow-wrap: break-word; }
+/* The page is as wide as the index, the gap, and the column, and sits in the middle of a wider screen. */
+.wrap { margin: 0 auto; padding-block: 28px 72px;
+  max-width: calc(clamp(232px, 16vw, 320px) + clamp(24px, 2.6vw, 52px) + var(--column) + 2 * clamp(16px, 2.4vw, 56px));
+  padding-left: max(clamp(16px, 2.4vw, 56px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(16px, 2.4vw, 56px), env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4, h5 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.22; letter-spacing: -0.005em; }
+h1 { font-size: 2rem; font-weight: 650; letter-spacing: -0.015em; }
+p { margin: 0; }
+a { color: var(--a); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+b, strong { font-weight: 600; }
+/* Lean names and file paths run to 90 characters with no spaces; inline code may break anywhere. */
+code { font-family: var(--mono); font-size: 0.88em; background: var(--tint); padding: 0.05em 0.3em; border-radius: 3px;
+  overflow-wrap: anywhere; }
+pre { font-family: var(--mono); font-size: 0.82rem; background: var(--tint); border-radius: 6px; padding: 10px 14px; overflow-x: auto;
+  width: fit-content; max-width: 100%; margin: 0; }
+pre code { background: none; padding: 0; }
+:focus-visible { outline: 2px solid var(--a); outline-offset: 2px; }
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 40; background: var(--surface); padding: 6px 10px; border-radius: 4px; }
+.skip:focus { left: 12px; }
+
+/* Reading progress: a thin bar at the top. Scroll-driven where supported, else moved by the runtime. */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 30; pointer-events: none; }
+.progress-bar { height: 100%; background: var(--a); transform-origin: 0 50%; transform: scaleX(0); }
+@supports (animation-timeline: scroll()) {
+  .progress-bar { animation: mx-progress linear both; animation-timeline: scroll(root block); }
+  @keyframes mx-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+/* Page head. */
+.page-head { position: relative; display: grid; gap: 10px; max-width: calc(var(--measure) + 3rem); padding-right: 3rem; }
+.subtitle { font-family: var(--display); font-size: 1.12rem; color: var(--muted); }
+.lede { display: grid; gap: 8px; color: var(--muted); max-width: var(--measure); font-size: 0.9rem; }
+.lede .sources b { color: var(--ink); }
+.theme-toggle { position: absolute; top: 0; right: 0; width: 2.3rem; height: 2.3rem; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.theme-toggle:hover { border-color: var(--muted); }
+.theme-toggle svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .i-moon { fill: currentColor; stroke: none; }
+.theme-toggle .i-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: none; }
+}
+
+/* Index: always open beside the content on wide screens, a collapsible box above it on narrow ones. */
+.cols { display: grid; grid-template-columns: clamp(232px, 16vw, 320px) minmax(0, var(--column)); justify-content: center; gap: clamp(24px, 2.6vw, 52px); margin-top: 30px; align-items: start; }
+nav.index { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 14px); max-height: calc(100vh - 28px); overflow-y: auto;
+  overscroll-behavior: contain; font-size: 0.8rem; line-height: 1.4; padding-right: 6px; scrollbar-width: thin; }
+nav.index summary { font-family: var(--display); font-weight: 600; font-size: 0.95rem; cursor: pointer; padding: 4px 0 2px; }
+nav.index h4 { font-family: var(--body); font-size: 0.68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted);
+  margin: 16px 0 6px; font-weight: 600; display: grid; gap: 1px; }
+nav.index h4 span { color: var(--a); }
+nav.index ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; }
+nav.index a { display: grid; grid-template-columns: 2.3rem minmax(0, 1fr); gap: 4px; padding: 3px 6px 3px 4px; border-radius: 4px;
+  color: var(--ink); text-decoration: none; }
+nav.index a:hover { background: var(--tint); }
+nav.index a .n { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding-top: 0.12em; }
+nav.index .idx-ch-link { font-weight: 500; }
+nav.index .idx-secs { margin: 1px 0 6px 0; }
+nav.index .idx-secs a { color: var(--muted); grid-template-columns: 2.3rem minmax(0, 1fr); padding-left: 4px; }
+nav.index .idx-ch:not(.cur) .idx-secs { display: none; }
+nav.index .idx-ch.cur > .idx-ch-link { background: var(--a-soft); color: var(--a); }
+nav.index .idx-ch.cur > .idx-ch-link .n { color: var(--a); }
+nav.index .idx-secs a.on { color: var(--ink); background: var(--tint); box-shadow: inset 2px 0 0 var(--a); }
+nav.index .katex { font-size: 1em; }
+@media (min-width: 881px) {
+  nav.index summary { pointer-events: none; list-style: none; cursor: default; }
+  nav.index summary::-webkit-details-marker { display: none; }
+}
+
+main { display: block; min-width: 0; }
+
+/* Parts and chapters. */
+.part-head { display: grid; gap: 4px; padding: 26px 0 14px; margin: 46px 0 8px; border-top: 2px solid var(--ink); }
+.part-head:first-child { margin-top: 0; }
+.part-no { font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--a); font-weight: 600; }
+.part-title { font-family: var(--display); font-size: 1.55rem; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+.chapter { display: block; min-width: 0; padding-top: 30px; }
+.chapter + .chapter { margin-top: 30px; border-top: 1px solid var(--line); }
+.ch-head { display: grid; gap: 8px; max-width: var(--measure); margin-bottom: 22px; scroll-margin-top: 16px; }
+.chapter { scroll-margin-top: 0; }
+.ch-eyebrow { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: .04em; }
+.ch-title { font-size: 1.62rem; font-weight: 650; letter-spacing: -0.012em; }
+.ch-summary { font-size: 1.02rem; color: var(--muted); }
+.ch-needs { font-size: 0.82rem; color: var(--muted); }
+.ch-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 34px; font-size: 0.85rem; }
+.ch-nav a { display: grid; gap: 1px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
+  text-decoration: none; color: var(--ink); max-width: min(100%, 30rem); }
+.ch-nav a span { font-size: 0.7rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.ch-nav a:hover { border-color: var(--a); }
+.ch-nav .next { margin-left: auto; text-align: right; }
+
+/* Sections are skipped by the renderer while far from the screen. The intrinsic size is an estimate from the build
+   that the browser replaces with the real height once the section has been drawn. */
+.sec { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0; padding-block: 10px 6px;
+  padding-inline: 6px; margin-inline: -6px;
+  content-visibility: auto; contain-intrinsic-size: auto calc(var(--fx, 400) * 1px + var(--tc, 2000) * var(--cpx) * 1px);
+  scroll-margin-top: 4px; }
+.sec-plain { content-visibility: visible; }
+/* A long section's blocks come in units (built by the build) that are skipped the same way, so the browser lays out a
+   long section a unit at a time as it comes near. The padding and negative margin keep room for outlines and shadows,
+   which a skipped box would clip, and leave the spacing between blocks as it is in the section. */
+.cvu { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0; padding: 4px 6px; margin: -4px -6px;
+  content-visibility: auto; contain-intrinsic-size: auto calc(var(--fx, 300) * 1px + var(--tc, 1000) * var(--cpx) * 1px); }
+/* A heavy result card is cut into units between its parts; they keep the card's spacing. */
+.card-parts > .cvu { gap: 12px; }
+:root.cv-off .sec, :root.cv-off .cvu { content-visibility: visible; }
+@media (max-width: 1500px) { :root { --cpx: 0.36; } }
+@media (max-width: 560px) { :root { --cpx: 0.45; } }
+@media (max-width: 440px) { :root { --cpx: 0.55; } }
+.sec > *, .cvu > *, .blk-body > *, .thm-body > *, .part-body > *, .part-inner > * { min-width: 0; }
+.sec-title { font-size: 1.28rem; font-weight: 620; margin-top: 18px; display: flex; gap: 0.6rem; align-items: baseline; }
+.sec-no { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+.sec-name { min-width: 0; }
+.sub-title { font-size: 1.06rem; font-weight: 620; margin-top: 8px; scroll-margin-top: 16px; }
+h5.sub-title { font-size: 0.98rem; }
+.anchor { margin-left: 0.4rem; color: var(--muted); text-decoration: none; opacity: 0; font-weight: 400; font-size: 0.9em; }
+.sec-title:hover .anchor, .sub-title:hover .anchor, .anchor:focus-visible { opacity: 1; }
+
+.sec p, .sec li, .blk-body p, .part-body p { max-width: var(--measure); }
+.sec ul, .sec ol { margin: 0; padding-left: 1.5rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; }
+.sec li > p + p { margin-top: 6px; }
+.sec li > * + * { margin-top: 6px; }
+blockquote { margin: 0; padding: 4px 0 4px 14px; border-left: 3px solid var(--line); color: var(--muted); }
+hr { border: 0; border-top: 1px solid var(--line); margin: 6px 0; width: 100%; }
+
+/* Math. KaTeX is rendered at build time. Display equations hug the left edge and scroll inside their own box when
+   wider than the column. */
+.katex { font-size: 1.1em; text-rendering: auto; }
+.katex-display { margin: 0; text-align: left; }
+.katex-display > .katex { text-align: left; white-space: nowrap; }
+.eq { display: flex; align-items: center; gap: 1.4rem; width: fit-content; max-width: 100%; scroll-margin-top: 16px; }
+.eq-math { min-width: 0; overflow-x: auto; overflow-y: hidden; padding: 4px 2px; scrollbar-width: thin; }
+/* A box that scrolls sideways (a long equation, a wide table or figure, code) shows a soft shadow at an edge where
+   content is cut. Two covers in the box's own background scroll with the content (background-attachment: local)
+   and hide the shadows at the ends, so a shadow shows only where more content lies past the edge; nothing runs on
+   scroll and nothing is laid out. --box-bg is the background behind the box. */
+.eq-math, .tablebox, pre, .svgbox {
+  background:
+    linear-gradient(to right, var(--box-bg) 40%, transparent) left center / 28px 100% no-repeat local,
+    linear-gradient(to left, var(--box-bg) 40%, transparent) right center / 28px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, var(--edge-shade), transparent) left center / 12px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, var(--edge-shade), transparent) right center / 12px 100% no-repeat scroll,
+    var(--box-bg);
+}
+.tablebox { --box-bg: var(--surface); }
+pre { --box-bg: var(--tint); }
+.eq-no { font-family: var(--body); color: var(--muted); font-size: 0.88rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+li .eq { margin-block: 4px; }
+.math-error { color: var(--c-red); background: var(--c-red-soft); }
+
+/* Tables hug their content at the left. */
+.tablebox { overflow-x: auto; width: fit-content; max-width: 100%; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 1.6rem 7px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { white-space: nowrap; }
+td .katex { font-size: 1.05em; }
+
+/* Theorem-like blocks, numbered chapter.counter. */
+.thm { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--a); border-radius: 6px; padding: 12px 16px 14px;
+  display: grid; gap: 8px; scroll-margin-top: 16px; width: fit-content; max-width: 100%; min-width: min(100%, 34rem); }
+.thm-definition { border-left-color: var(--b); }
+.thm-conjecture { border-left-color: var(--c-violet); }
+.thm-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.thm-num { font-family: var(--display); font-weight: 650; }
+.thm-title { color: var(--muted); }
+.thm-title::before { content: "("; } .thm-title::after { content: ")"; }
+.thm-body { display: grid; gap: 10px; }
+.src { font-size: 0.82rem; color: var(--muted); }
+
+/* Result cards: every card has the same parts in the same order. */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px 20px; display: grid; gap: 14px;
+  scroll-margin-top: 16px; min-width: 0; box-shadow: 0 1px 0 rgb(0 0 0 / .03); }
+.card-head { display: grid; gap: 6px; justify-items: start; }
+.card-num { font-family: var(--mono); font-size: 0.74rem; font-weight: 500; padding: 2px 8px; border-radius: 4px; background: var(--a-soft); color: var(--a); }
+.card-definition .card-num { background: var(--b-soft); color: var(--b); }
+.card-conjecture .card-num { background: var(--c-violet-soft); color: var(--c-violet); }
+.card-title { font-size: 1.14rem; font-weight: 620; max-width: var(--measure); }
+.card-parts { display: grid; gap: 12px; }
+.part { display: grid; grid-template-columns: 8.4rem minmax(0, 1fr); gap: 4px 18px; min-width: 0; }
+.part-label { font-size: 0.68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding-top: 0.32rem; }
+.part-body, .part-inner { display: grid; gap: 10px; min-width: 0; }
+.part-meta { font-size: 0.82rem; color: var(--muted); }
+.part-statement .part-body { border-left: 3px solid var(--a); padding: 2px 0 2px 12px; }
+.card-definition .part-statement .part-body { border-left-color: var(--b); }
+.part-plain .part-body { background: var(--tint); border-radius: 5px; padding: 8px 12px; }
+details.part-body > summary { cursor: pointer; color: var(--a); font-size: 0.88rem; padding-top: 0.15rem; width: fit-content; }
+details.part-body[open] > summary { margin-bottom: 4px; }
+
+/* Unnumbered blocks. */
+.blk { display: grid; gap: 8px; min-width: 0; scroll-margin-top: 16px; }
+.blk-head, details.blk > summary { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.blk-label { font-size: 0.68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 650; }
+.blk-title { font-weight: 600; }
+.blk-body { display: grid; gap: 10px; min-width: 0; }
+.blk-plain { background: var(--tint); border-radius: 6px; padding: 12px 16px; }
+.blk-plain .blk-label { color: var(--a); }
+.blk-why { border-left: 3px solid var(--b); padding: 2px 0 2px 14px; }
+.blk-why .blk-label { color: var(--b); }
+.blk-idea { border-left: 3px solid var(--a); padding: 2px 0 2px 14px; }
+.blk-idea .blk-label { color: var(--a); }
+.blk-proof, .blk-sketch { padding: 2px 0 2px 14px; border-left: 1px solid var(--line); }
+.blk-proof .blk-label, .blk-sketch .blk-label { color: var(--ink); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 0.94rem; font-weight: 600; }
+.qed { display: block; justify-self: end; width: 0.62em; height: 0.62em; border: 1.5px solid var(--muted); margin-top: -4px; }
+.blk-example { background: var(--surface); border: 1px dashed var(--line); border-radius: 6px; padding: 12px 16px; }
+/* One counter for the whole block: a display equation between two steps splits the list into several lists, and
+   the build sets the counter of a list that continues one (start="n") to n - 1, so the steps run 1 to n. */
+.blk-steps { counter-reset: step; }
+.blk-steps ol { list-style: none; padding-left: 0; gap: 10px; }
+.blk-steps ol > li { counter-increment: step; position: relative; padding-left: 2.2rem; }
+.blk-steps ol > li::before { content: counter(step); position: absolute; left: 0; top: 0.05rem; width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: var(--a-soft); color: var(--a); font-size: 0.78rem; font-weight: 600; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
+.blk-warning { background: var(--c-red-soft); border-radius: 6px; padding: 12px 16px; }
+.blk-warning .blk-label { color: var(--c-red); }
+.thm, .card, .blk-example, .blk-recap, details.blk, figure, .fig { --box-bg: var(--surface); }
+.blk-plain, details.blk-recall, .part-plain .part-body { --box-bg: var(--tint); }
+.blk-warning { --box-bg: var(--c-red-soft); }
+details.blk-proof, details.blk-sketch { --box-bg: inherit; }
+.blk-aside { font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--line); padding: 2px 0 2px 14px; }
+.blk-recap { border: 1px solid var(--line); border-top: 3px solid var(--a); border-radius: 6px; padding: 12px 16px; background: var(--surface); }
+.blk-recap .blk-label { color: var(--a); }
+.blk-used { font-size: 0.88rem; }
+.blk-lean, .part-lean .part-body { font-size: 0.88rem; }
+.lean-decl { font-size: 0.82rem; color: var(--muted); }
+.blk-symbols .tablebox td:first-child { font-size: 1.02em; }
+
+details.blk { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 16px; }
+details.blk-proof, details.blk-sketch { background: none; border: 0; border-left: 1px solid var(--line); border-radius: 0; padding: 2px 0 2px 14px; }
+details.blk-recall { background: var(--tint); border: 0; }
+details.blk > summary, details.part-body > summary { list-style: none; }
+details.blk > summary::-webkit-details-marker, details.part-body > summary::-webkit-details-marker { display: none; }
+details.blk > summary { cursor: pointer; }
+details.blk > summary::after, details.part-body > summary::after { content: ""; width: 0.42em; height: 0.42em; border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); margin-left: 0.5em; align-self: center; color: var(--muted); transition: transform .15s; display: inline-block; }
+details[open].blk > summary::after, details[open].part-body > summary::after { transform: rotate(45deg); }
+details.blk[open] > summary { margin-bottom: 8px; }
+
+/* Cross-references and citations. */
+.xref { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--a) 40%, transparent); }
+.xref:hover { border-bottom-color: var(--a); }
+.cite { font-size: 0.92em; color: var(--muted); }
+.cite a { text-decoration: none; }
+.xref-broken, .cite-broken { color: var(--c-red); background: var(--c-red-soft); }
+
+/* Figures hug the left edge. The stage height is the authored height at desktop width and shrinks with the column,
+   down to 60% of it on a phone. */
+figure, .fig { margin: 0; display: grid; gap: 10px; width: 100%; max-width: 64rem; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 8px; padding: 12px; min-width: 0; container-type: inline-size; scroll-margin-top: 16px; }
+.viz, .viz-missing { position: relative; width: 100%; border-radius: 5px; overflow: hidden; background: var(--viz-stage);
+  height: clamp(calc(var(--hn) * 0.6px), calc(var(--hn) * 0.125cqw), calc(var(--hn) * 1px)); }
+/* A figure's own changes (canvas, moving labels, readouts) stay inside it: the stage is fully contained, and the
+   controls row contains its layout and style. */
+.viz { contain: strict; }
+.viz-controls { contain: layout style; }
+.viz canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: pan-y; }
+.viz canvas.grab { cursor: grab; } .viz canvas.grabbing { cursor: grabbing; }
+.viz:focus-within { outline: 2px solid var(--a); outline-offset: 2px; }
+.viz canvas:focus { outline: none; }
+.viz-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.viz-label { position: absolute; left: 0; top: 0; white-space: nowrap; line-height: 1; will-change: transform; color: var(--viz-fg);
+  text-shadow: 0 0 2px var(--viz-stage), 0 0 4px var(--viz-stage), 0 0 6px var(--viz-stage); }
+.viz-label .katex { font-size: 1.12em; }
+.viz-missing { display: grid; place-items: center; border: 1.5px dashed var(--line); background: var(--tint); color: var(--muted); font-size: 0.88rem;
+  padding: 16px; text-align: center; }
+.svgbox { overflow-x: auto; }
+.svgbox > svg { display: block; width: 100%; height: auto; max-width: 100%; color: var(--ink); font-family: var(--body); }
+figcaption { font-size: 0.86rem; color: var(--muted); display: grid; gap: 6px; max-width: var(--measure); }
+.fig-num { font-weight: 600; color: var(--ink); }
+
+/* Figure controls: accessible HTML under the stage. */
+.vc[hidden] { display: none !important; }
+.vc-off { opacity: .45; }
+.vc-off input, .vc-off select, .vc-off button { cursor: not-allowed; }
+.vc-track { position: relative; display: inline-flex; align-items: center; padding-bottom: 7px; }
+.vc-mark { position: absolute; bottom: 0; width: 2px; height: 6px; margin-left: -1px; border-radius: 1px; background: var(--viz-muted); pointer-events: none; }
+.viz canvas.probe:not(.grab):not(.grabbing) { cursor: crosshair; }
+.viz-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; min-height: 2.3rem; font-size: 0.84rem; }
+.viz-controls:empty { display: none; }
+.vc { display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; }
+.vc-name { color: var(--muted); white-space: nowrap; }
+.vc-name .katex { color: var(--ink); }
+.vc input[type="range"] { width: clamp(110px, 22cqw, 220px); accent-color: var(--a); margin: 0; }
+.vc output { font-family: var(--mono); font-size: 0.8rem; min-width: 3.6em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.vc-btn { font: inherit; font-size: 0.82rem; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px;
+  padding: 4px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.vc-btn:hover { border-color: var(--muted); }
+.vc-btn:not(.vc-play)[aria-pressed="true"] { background: var(--a-soft); border-color: var(--a); color: var(--a); }
+.vc-play { width: 2rem; height: 2rem; padding: 0; justify-content: center; border-radius: 50%; }
+.vc-play svg { width: 0.85rem; height: 0.85rem; fill: currentColor; }
+.vc-play .i-pause { display: none; }
+.vc-play[aria-pressed="true"] .i-pause { display: block; }
+.vc-play[aria-pressed="true"] .i-play { display: none; }
+.vc-scrub input[type="range"] { width: clamp(140px, 34cqw, 340px); }
+.vc-toggle input { accent-color: var(--a); width: 1rem; height: 1rem; margin: 0; }
+.vc select { font: inherit; font-size: 0.82rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 3px 6px; }
+.vc-reset { margin-left: auto; }
+
+/* Notation appendix and references. */
+.swatch { white-space: nowrap; }
+.swatch::before { content: ""; display: inline-block; width: 0.8em; height: 0.8em; border-radius: 2px; background: var(--sw); margin-right: 0.35em; vertical-align: -0.06em; }
+.refs { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: calc(var(--measure) + 2.6rem); font-size: 0.88rem; }
+.refs li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 6px; scroll-margin-top: 16px; }
+.ref-n { font-family: var(--mono); color: var(--muted); font-size: 0.8rem; padding-top: 0.1em; }
+.ref-url { word-break: break-all; }
+.refs li:target { background: var(--a-soft); border-radius: 4px; }
+
+/* Click-to-define terms and the drawer that shows a definition. */
+.term { cursor: pointer; text-decoration: underline dotted var(--muted); text-decoration-thickness: 1.5px; text-underline-offset: 3px; border-radius: 2px; }
+.term:hover, .term[aria-expanded="true"] { color: var(--a); text-decoration-color: var(--a); }
+#def { position: fixed; z-index: 20; bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
+  max-width: 620px; margin: 0 auto; background: var(--surface); color: var(--ink); border: 1px solid var(--ink); border-radius: 8px;
+  padding: 14px 16px; display: grid; gap: 6px; box-shadow: 0 10px 34px rgb(0 0 0 / .22); }
+#def h4 { font-family: var(--display); font-size: 1rem; margin: 0; padding-right: 4.5rem; }
+#def p { font-size: 0.9rem; }
+#def .more { font-size: 0.82rem; }
+#def .x { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 0.8rem; padding: 3px 9px; border-radius: 4px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--tint); color: var(--ink); }
+
+.to-index { display: none; }
+
+/* Narrow screens: the index becomes a box above the text, and a small button returns to it. */
+@media (max-width: 880px) {
+  .cols { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  nav.index { position: static; max-height: none; overflow: visible; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; font-size: 0.86rem; }
+  nav.index .idx-ch:not(.cur) .idx-secs { display: none; }
+  .part { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .part-label { padding-top: 0; }
+  h1 { font-size: 1.6rem; }
+  .ch-title { font-size: 1.4rem; }
+  .part-title { font-size: 1.3rem; }
+  .card { padding: 14px; }
+  .thm { min-width: 0; width: auto; }
+  .to-index { display: block; position: fixed; z-index: 15; right: max(14px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    font: inherit; font-size: 0.8rem; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    box-shadow: 0 4px 16px rgb(0 0 0 / .16); cursor: pointer; }
+  #def:not([hidden]) ~ .to-index { display: none; }
+  th, td { padding-right: 1rem; }
+  .vc-reset { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .figure, .fig { padding: 8px; }
+  .page-head { padding-right: 2.8rem; }
+}
+
+/* Landing page. */
+.landing { max-width: 70rem; }
+.problem-list { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 12px; }
+.problem-list a { display: grid; gap: 4px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink); }
+.problem-list a:hover { border-color: var(--a); }
+.problem-list span { color: var(--muted); font-size: 0.9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  nav.index, .progress, .theme-toggle, .to-index, #def { display: none !important; }
+  .cols { display: block; }
+  .sec, .cvu { content-visibility: visible; }
+}
+
+/* Uppercase labels must not change the letters of math inside them. */
+th .katex, .blk-label .katex, .part-label .katex, nav.index h4 .katex { text-transform: none; letter-spacing: 0; }
+
+/* Formula placeholders: the TeX source until the runtime fills in KaTeX's rendering from the compressed table.
+   The main column stays hidden until the formulas near the starting position are filled. */
+:root.mx-hydrating main, :root.mx-hydrating nav.index { visibility: hidden; }
+k-d { display: block; }
+k-d:not([h]) { min-height: calc(var(--mh, 1.2) * 1.04rem + 8px); font-family: var(--mono); font-size: 0.82rem; color: var(--muted); white-space: pre-wrap; }
+k-m:not([h]) { color: var(--muted); }
+
+</style>
+</head>
+<body>
+<div class="wrap landing">
+<header class="page-head"><h1>Millennium Prize Problems, explained</h1>
+<p class="subtitle">Step-by-step explainers for readers with an undergraduate mathematics degree, from first principles to the end of the proof or to the frontier.</p></header>
+<ul class="problem-list">
+<li><a href="riemann/index.html"><b>The Riemann Hypothesis</b><span>From counting primes to the two proofs of 2026, step by step</span></a></li>
+</ul>
+</div>
+</body>
+</html>

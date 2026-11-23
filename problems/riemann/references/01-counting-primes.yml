@@ -1,0 +1,47 @@
+apostol:
+  authors: T. M. Apostol
+  title: Introduction to Analytic Number Theory
+  year: 1976
+  where: Springer, Undergraduate Texts in Mathematics
+
+davenport:
+  authors: H. Davenport, revised by H. L. Montgomery
+  title: Multiplicative Number Theory
+  year: 2000
+  where: Springer, Graduate Texts in Mathematics 74, 3rd edition
+
+edwards:
+  authors: H. M. Edwards
+  title: Riemann's Zeta Function
+  year: 1974
+  where: Academic Press (Dover reprint, 2001)
+
+hadamard1896:
+  authors: J. Hadamard
+  title: Sur la distribution des zéros de la fonction ζ(s) et ses conséquences arithmétiques
+  year: 1896
+  where: Bulletin de la Société Mathématique de France 24, pp. 199-220
+
+vallee1896:
+  authors: C.-J. de la Vallée Poussin
+  title: Recherches analytiques sur la théorie des nombres premiers
+  year: 1896
+  where: Annales de la Société Scientifique de Bruxelles 20
+
+littlewood1914:
+  authors: J. E. Littlewood
+  title: Sur la distribution des nombres premiers
+  year: 1914
+  where: Comptes Rendus de l'Académie des Sciences 158, pp. 1869-1872
+
+vonkoch1901:
+  authors: H. von Koch
+  title: Sur la distribution des nombres premiers
+  year: 1901
+  where: Acta Mathematica 24, pp. 159-182
+
+mertens1874:
+  authors: F. Mertens
+  title: Ein Beitrag zur analytischen Zahlentheorie
+  year: 1874
+  where: Journal für die reine und angewandte Mathematik 78, pp. 46-62

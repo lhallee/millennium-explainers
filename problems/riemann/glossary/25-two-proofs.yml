@@ -1,0 +1,49 @@
+- term: Route A
+  pattern: "Route A"
+  definition: The proof of the hypothesis for zeta and every Dirichlet L-function by L. Alpoge with Claude, a descendant of Stepanov's method that exists as a Lean formalization and a four-page note, as told in Part IV of this page.
+  anchor: route-a-plan
+
+- term: windowed Landau theorem
+  pattern: "windowed Landau theorem"
+  definition: The form of Landau's theorem that the formal proof proves. An upper bound C y^alpha on a positively weighted combination of smoothed prime sums, known only on windows [Y, Y^(1+delta)] for arbitrarily large Y, excludes every zero of the family to the right of alpha.
+  anchor: t-le-windowed
+
+- term: not unfolded
+  pattern: "not unfolded|did not unfold|could not unfold"
+  definition: Said of a region of the formal proof whose definitions or proofs no reader of this page opened down to ordinary mathematics. The formal proof establishes it; the page states it and does not show why it holds.
+  anchor: ra-read
+
+- term: stub
+  pattern: "stubs?"
+  definition: A section or chapter of the draft monograph behind Route M that has a heading and little or no text, such as its Chapter 13, which was meant to state and prove the main theorems.
+  anchor: tp-form
+
+- term: one-sided test function
+  pattern: "test functions? on one side of 1"
+  definition: A test function on the positive reals that vanishes on one side of the point 1, such as one supported in (1, Y), or the weight (X/n - 1) that vanishes for n at least X. Both proofs feed the explicit formula functions of this kind.
+  anchor: tp-share-sides
+
+- term: zero-free half-plane
+  pattern: "zero-free half-planes?"
+  definition: A half-plane Re s > alpha on which an L-function has no zeros. Both proofs reach the critical line through a family of such half-planes whose edges approach 1/2.
+  anchor: t-le-classical-zero-free
+
+- term: Expectation 1.7.1
+  pattern: "Expectation 1\\.7\\.1"
+  definition: The statement in Masullo's letter of an expected bound on the multiplicities of the zeros of Hecke L-functions other than the central one, which the letter says is reserved for a sequel and not part of the monograph.
+  anchor: tp-open-m
+
+- term: higher rank
+  pattern: "higher rank"
+  definition: The L-functions of cuspidal automorphic representations of GL_n with n > 1, beyond the Hecke characters (the case n = 1) that Route M covers.
+  anchor: tp-open-m
+
+- term: shorter route
+  pattern: "shorter route"
+  definition: This page's endgame for Route M. Weil's explicit formula and the Trace Formula have the same prime side, so subtracting them leaves the zeros outside the strip summing to zero against every admissible test function, which forces them to be absent.
+  anchor: t-tg-subtraction
+
+- term: Hecke L-function
+  pattern: "Hecke L-functions?"
+  definition: The L-function of a Hecke character of a number field, with an Euler product over prime ideals. Dirichlet L-functions and Dedekind zeta functions are special cases.
+  anchor: s-rh-fields

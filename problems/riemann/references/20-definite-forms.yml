@@ -1,0 +1,77 @@
+siegel1935:
+  authors: C. L. Siegel
+  title: Über die analytische Theorie der quadratischen Formen
+  year: 1935
+  where: Annals of Mathematics 36, pp. 527-606
+
+weil1964:
+  authors: A. Weil
+  title: Sur certains groupes d'opérateurs unitaires
+  year: 1964
+  where: Acta Mathematica 111, pp. 143-211
+
+weil1965:
+  authors: A. Weil
+  title: Sur la formule de Siegel dans la théorie des groupes classiques
+  year: 1965
+  where: Acta Mathematica 113, pp. 1-87
+
+kneser1957:
+  authors: M. Kneser
+  title: Klassenzahlen definiter quadratischer Formen
+  year: 1957
+  where: Archiv der Mathematik 8, pp. 241-250
+
+borel-harishchandra1962:
+  authors: A. Borel and Harish-Chandra
+  title: Arithmetic subgroups of algebraic groups
+  year: 1962
+  where: Annals of Mathematics 75, pp. 485-535
+
+gross1999:
+  authors: B. H. Gross
+  title: Algebraic modular forms
+  year: 1999
+  where: Israel Journal of Mathematics 113, pp. 61-93
+
+conway-sloane1999:
+  authors: J. H. Conway and N. J. A. Sloane
+  title: Sphere Packings, Lattices and Groups
+  year: 1999
+  where: Springer, Grundlehren der mathematischen Wissenschaften 290, 3rd edition
+
+cox1989:
+  authors: D. A. Cox
+  title: "Primes of the Form x^2 + ny^2: Fermat, Class Field Theory, and Complex Multiplication"
+  year: 1989
+  where: John Wiley and Sons
+
+serre1977-weight-one:
+  authors: J.-P. Serre
+  title: Modular forms of weight one and Galois representations
+  year: 1977
+  where: "In A. Fröhlich (ed.), Algebraic Number Fields: L-functions and Galois Properties, Academic Press, pp. 193-268"
+
+iwaniec1997:
+  authors: H. Iwaniec
+  title: Topics in Classical Automorphic Forms
+  year: 1997
+  where: American Mathematical Society, Graduate Studies in Mathematics 17
+
+howe1989:
+  authors: R. Howe
+  title: Transcending classical invariant theory
+  year: 1989
+  where: Journal of the American Mathematical Society 2, pp. 535-552
+
+gan-takeda2016:
+  authors: W. T. Gan and S. Takeda
+  title: A proof of the Howe duality conjecture
+  year: 2016
+  where: Journal of the American Mathematical Society 29, pp. 473-493
+
+kudla1984:
+  authors: S. S. Kudla
+  title: Seesaw dual reductive pairs
+  year: 1984
+  where: "In Automorphic Forms of Several Variables (Katata, 1983), Progress in Mathematics 46, Birkhäuser, pp. 244-268"

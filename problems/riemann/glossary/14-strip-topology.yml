@@ -1,0 +1,54 @@
+- term: continuous functional
+  pattern: "continuous (linear )?functionals?"
+  definition: A linear functional bounded by a constant times the norm. Only continuous functionals extend to the completion of a normed space and pass to quotients by closed subspaces.
+  anchor: d-sp-continuous-functional
+
+- term: Hardy-Sobolev space
+  pattern: "Hardy-Sobolev (spaces?|norms?|completions?)"
+  definition: The completion W_a of rapidly decaying functions on the positive reals in the norm weighted by max(t^(2a), t^(-2a)). Its Mellin transforms are holomorphic on the strip of half-width a.
+  anchor: d-sp-wa
+
+- term: Hardy space
+  pattern: "Hardy space"
+  definition: A Hilbert space of holomorphic functions on a region, normed by their square integrals on the boundary. The Mellin transform turns W_a into one on the strip of half-width a.
+  anchor: t-sp-hardy
+
+- term: evaluation functional
+  pattern: "evaluations? of the Mellin transform|point evaluations?"
+  definition: The functional that sends a function to the value of its Mellin transform at a point z0. In W_a it is continuous exactly when the real part of z0 lies strictly between -a and a.
+  anchor: t-sp-evaluation
+
+- term: strip quotient
+  pattern: "strip quotient"
+  definition: The Hilbert space H_a, the quotient of W_a by the closure of the weighted theta sums. It remembers only the zeros of zeta inside the strip of half-width a.
+  anchor: d-sp-quotient
+
+- term: Markushevich basis
+  pattern: "Markushevich bas(is|es)"
+  definition: A system of vectors and functionals that are biorthogonal, whose vectors span a dense subspace and whose functionals separate points. It is weaker than a Schauder basis because expansions need not converge.
+  anchor: t-sp-quotient
+
+- term: Jordan block
+  pattern: "Jordan blocks?"
+  definition: A triangular block with one repeated value on its diagonal. Convolution acts on the jet at a zero of multiplicity m by an m by m Jordan block with diagonal entry M phi(rho - 1/2).
+  anchor: t-sp-spectral-trace
+
+- term: spectral trace
+  pattern: "spectral traces?"
+  definition: The trace of convolution by a test function phi on the strip quotient, the sum over the zeros rho with real part within a of 1/2 of the multiplicity of rho times the Mellin transform of phi at rho - 1/2. It is the zero side of the Trace Formula.
+  anchor: t-sp-spectral-trace
+
+- term: fine topology
+  pattern: "fine topolog(y|ies)"
+  definition: A topology with many open sets, such as that of rapidly decaying functions, in which every evaluation of the Mellin transform is continuous. There the trace formula is Weil's explicit formula again.
+  anchor: s-sp-contrast
+
+- term: Paley-Wiener condition
+  pattern: "Paley-Wiener (levels?|conditions?)"
+  definition: A support condition on functions that makes evaluations of the Mellin transform continuous beyond one edge of the strip. The source uses such conditions to bring the orbital bases into the coarse space.
+  anchor: s-sp-evaluation
+
+- term: Sobolev degree
+  pattern: "Sobolev degree"
+  definition: The exponent of the extra factor (1 + log^2 t)^(degree/2) in the source's general Hardy-Sobolev norm. This page uses degree 0, as the source's introduction does; positive degrees add capped edge terms.
+  anchor: d-sp-wa

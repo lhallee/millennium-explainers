@@ -1,0 +1,29 @@
+ss-complex:
+  authors: E. M. Stein and R. Shakarchi
+  title: Complex Analysis (Princeton Lectures in Analysis II)
+  year: 2003
+  where: Princeton University Press
+
+ss-fourier:
+  authors: E. M. Stein and R. Shakarchi
+  title: "Fourier Analysis: An Introduction (Princeton Lectures in Analysis I)"
+  year: 2003
+  where: Princeton University Press
+
+riemann1859:
+  authors: B. Riemann
+  title: "Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse"
+  year: 1859
+  where: "Monatsberichte der Königlichen Preussischen Akademie der Wissenschaften zu Berlin, pp. 671-680"
+
+titchmarsh:
+  authors: E. C. Titchmarsh, revised by D. R. Heath-Brown
+  title: The Theory of the Riemann Zeta-function
+  year: 1986
+  where: Oxford University Press, 2nd edition
+
+edwards:
+  authors: H. M. Edwards
+  title: Riemann's Zeta Function
+  year: 1974
+  where: Academic Press (Dover reprint, 2001)

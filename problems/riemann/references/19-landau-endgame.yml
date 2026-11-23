@@ -1,0 +1,54 @@
+# References cited in chapter 19. Entries shared with other chapters are copied exactly.
+landau1905:
+  authors: E. Landau
+  title: Über einen Satz von Tschebyschef
+  year: 1905
+  where: Mathematische Annalen 61, pp. 527-550
+
+montgomeryvaughan:
+  authors: H. L. Montgomery and R. C. Vaughan
+  title: "Multiplicative Number Theory I: Classical Theory"
+  year: 2007
+  where: Cambridge University Press
+
+davenport:
+  authors: H. Davenport, revised by H. L. Montgomery
+  title: Multiplicative Number Theory
+  year: 2000
+  where: Springer, Graduate Texts in Mathematics 74, 3rd edition
+
+titchmarsh:
+  authors: E. C. Titchmarsh, revised by D. R. Heath-Brown
+  title: The Theory of the Riemann Zeta-function
+  year: 1986
+  where: Oxford University Press, 2nd edition
+
+ss-complex:
+  authors: E. M. Stein and R. Shakarchi
+  title: Complex Analysis (Princeton Lectures in Analysis II)
+  year: 2003
+  where: Princeton University Press
+
+post1930:
+  authors: E. L. Post
+  title: Generalized differentiation
+  year: 1930
+  where: Transactions of the American Mathematical Society 32, pp. 723-781
+
+widder1941:
+  authors: D. V. Widder
+  title: The Laplace Transform
+  year: 1941
+  where: Princeton University Press
+
+chernoff1952:
+  authors: H. Chernoff
+  title: A measure of asymptotic efficiency for tests of a hypothesis based on the sum of observations
+  year: 1952
+  where: Annals of Mathematical Statistics 23, pp. 493-507
+
+green1955:
+  authors: J. A. Green
+  title: The characters of the finite general linear groups
+  year: 1955
+  where: Transactions of the American Mathematical Society 80, pp. 402-447

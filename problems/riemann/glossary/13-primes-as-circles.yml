@@ -1,0 +1,64 @@
+- term: toy circle
+  pattern: "toy circle"
+  definition: The quotient of the positive reals by the powers of a number lambda greater than 1, in which x and lambda times x are the same point. With the measure dt/t it is a circle of length log lambda.
+  anchor: d-pc-circle
+
+- term: periodization
+  pattern: "periodization|periodiz(e|es|ed|ing)"
+  definition: Summing all the copies of a function moved by a discrete group, which gives a function on the quotient. Adding the translates f(x + n) over the integers gives a function on a circle; adding the rescaled copies psi(lambda^k x) over all integers k gives a function on the toy circle; summing over the nonzero rationals turns an adelic function into a theta sum.
+  anchor: d-pc-periodization
+
+- term: exponential basis
+  pattern: "exponential (basis|system)"
+  definition: The waves t^(2 pi i m / log lambda), m an integer, on the circle of length log lambda. They form an absolute Schauder basis whose coefficient functionals are the Fourier coefficients.
+  anchor: t-pc-exponential
+
+- term: Schauder basis
+  pattern: "Schauder bas(is|es)"
+  definition: A sequence of vectors with continuous coefficient functionals such that every vector is the convergent sum of its coefficients times the basis vectors. It lets a trace be computed as a sum of diagonal entries.
+  anchor: d-pc-schauder
+
+- term: coefficient functional
+  pattern: "coefficient functionals?"
+  definition: The continuous linear functional that reads off the coefficient of one basis vector in the expansion of a vector in a Schauder basis.
+  anchor: d-pc-schauder
+
+- term: nuclear operator
+  pattern: "nuclear operators?|nuclearity"
+  definition: An operator that is a rapidly convergent sum of rank-one operators, the analog of a trace-class operator on spaces such as rapidly decaying functions. Its trace equals the sum of the diagonal entries of its matrix in a Schauder basis.
+  anchor: s-pc-schauder
+
+- term: closed orbit
+  pattern: "closed orbits?|orbit points?"
+  definition: On the circle of length log lambda, the scaling factors lambda^k that bring every point back to itself after k laps. The geometric side of the circle trace sums the test function over them.
+  anchor: t-pc-circle-trace
+
+- term: orbital quotient
+  pattern: "orbital quotients?"
+  definition: The space of theta sums modulo the theta sums with the multiples of a prime p deleted. It is the space of smooth functions on the circle of length log p.
+  anchor: d-pc-orbital-quotient
+
+- term: orbital trace
+  pattern: "orbital traces?"
+  definition: The trace of convolution by a test function on the orbital quotient at p, equal to log p times the sum of the test function over the powers of p, and zero for every prime beyond its support.
+  anchor: t-pc-orbital-trace
+
+- term: orbital basis
+  pattern: "orbital (Schauder )?bas(is|es)"
+  definition: The exponential basis of the circle of length log p carried over to the orbital quotient of theta sums. Its coefficient functionals evaluate the Mellin transform at the zeros of 1 - p^(-s).
+  anchor: t-pc-orbital-trace
+
+- term: strong coprimality
+  pattern: "strong co-?primality"
+  definition: The theorem that the orbital quotient of theta sums at p equals the corresponding quotient of all rapidly decaying functions. It rests on zeta having no zeros on the line real part 1.
+  anchor: t-pc-orbital-circle
+
+- term: polar multiplicities
+  pattern: "polar multiplicit(y|ies)"
+  definition: The orders of the poles shared by local Euler factors. Over the rationals the factors 1 - p^(-s) for different primes share only the point s = 0, because the logarithms of primes are linearly independent over the rationals.
+  anchor: t-pc-polar
+
+- term: periodic orbit
+  pattern: "periodic orbits?"
+  definition: In the dynamical reading of a trace formula, a closed orbit of an underlying flow, which contributes a term weighted by its length. In the explicit formula the periodic orbits are indexed by the primes p, with length log p and repetitions of length k log p; in Masullo's source the orbit at p is the loop of length log p that supports the dual basis of the orbital quotient at p.
+  anchor: wp-trace

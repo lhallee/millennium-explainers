@@ -1,0 +1,11 @@
+# Problem macros, added to the shared set in AUTHORING.md. Owned by the main session.
+# Keys and values are single-quoted so that YAML keeps the backslashes.
+'\Li': '\operatorname{Li}'
+'\li': '\operatorname{li}'
+'\Res': '\operatorname*{Res}'
+'\ord': '\operatorname{ord}'
+'\Gal': '\operatorname{Gal}'
+'\Frob': '\operatorname{Frob}'
+'\GL': '\operatorname{GL}'
+'\AA': '\mathbb{A}'
+'\Tr': '\operatorname{Tr}'

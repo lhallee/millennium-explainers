@@ -1,0 +1,3 @@
+# Problem macros, added to the shared set. Keys are single-quoted so YAML keeps the backslash.
+'\Li': '\operatorname{Li}'
+'\li': '\operatorname{li}'

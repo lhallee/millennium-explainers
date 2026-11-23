@@ -1,0 +1,47 @@
+id: riemann
+title: The Riemann Hypothesis
+subtitle: From counting primes to the two proofs of 2026, step by step
+lede: >-
+  The Riemann Hypothesis says that the primes are spread as evenly as they can be. This page starts from
+  counting primes and ends with the two proofs released on 2026-11-20: a trace formula on the idele class
+  group, and a descendant of Stepanov's method over the integers. Every step comes with the reason it is
+  taken.
+sources:
+  - key: masullo
+    read: 2026-11-20
+  - key: alpoge-note
+    read: 2026-11-20
+  - key: alpoge-lean
+    read: 2026-11-20
+parts:
+  - The question
+  - The hinge and the model
+  - "Route one: a trace formula on the idele class group"
+  - "Route two: Stepanov's method over the integers"
+  - Two proofs, one theorem
+chapters:
+  - 01-counting-primes
+  - 02-euler-product
+  - 03-complex-toolkit
+  - 04-zeta-continued
+  - 05-zeros
+  - 06-explicit-formula
+  - 07-what-rh-says
+  - 08-weil-positivity
+  - 09-function-fields
+  - 10-stepanov
+  - 11-adeles
+  - 12-tate-theta
+  - 13-primes-as-circles
+  - 14-strip-topology
+  - 15-cutting-the-kernel
+  - 16-trace-formula
+  - 17-trace-to-grh
+  - 18-route-a-plan
+  - 19-landau-endgame
+  - 20-definite-forms
+  - 21-multiplicity-from-lifts
+  - 22-integrality-and-galois
+  - 23-cohomology-window
+  - 24-inputs-and-assembly
+  - 25-two-proofs

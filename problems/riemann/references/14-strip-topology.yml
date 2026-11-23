@@ -1,0 +1,17 @@
+ss-fourier:
+  authors: E. M. Stein and R. Shakarchi
+  title: "Fourier Analysis: An Introduction (Princeton Lectures in Analysis I)"
+  year: 2003
+  where: Princeton University Press
+
+connes1999:
+  authors: A. Connes
+  title: Trace formula in noncommutative geometry and the zeros of the Riemann zeta function
+  year: 1999
+  where: Selecta Mathematica (New Series) 5, pp. 29-106
+
+meyer2005:
+  authors: R. Meyer
+  title: On a representation of the idele class group related to primes and zeros of L-functions
+  year: 2005
+  where: Duke Mathematical Journal 127, pp. 519-595

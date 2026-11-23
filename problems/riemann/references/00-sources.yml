@@ -1,0 +1,22 @@
+# The page's primary sources. Owned by the main session. Any chapter file that repeats one of these keys must
+# repeat the entry exactly.
+masullo:
+  authors: A. M. Masullo
+  title: The Music of the Primes
+  year: 2026
+  where: Draft of 2026-11-20, 940 pages, read 2026-11-20
+  url: https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/
+
+alpoge-note:
+  authors: L. Alpoge
+  title: Untitled remark announcing a proof of the Riemann Hypothesis found with Claude
+  year: 2026
+  where: Four pages, released 2026-11-20, read 2026-11-20
+  url: https://alpo.ge/remark.pdf
+
+alpoge-lean:
+  authors: L. Alpoge and Claude
+  title: Lean 4 formalization of the Riemann Hypothesis and of the generalized hypothesis for Dirichlet L-functions
+  year: 2026
+  where: 175,187 Lean files in 14 archive parts linked from the remark, Lean 4.33.1, read 2026-11-20 and 2026-11-21
+  url: https://alpo.ge/lean.tar.gz.part01

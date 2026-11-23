@@ -1,0 +1,53 @@
+washington-cyclotomic:
+  authors: L. C. Washington
+  title: Introduction to Cyclotomic Fields
+  year: 1997
+  where: Springer, Graduate Texts in Mathematics 83, 2nd edition
+
+neukirch-ant:
+  authors: J. Neukirch
+  title: Algebraic Number Theory
+  year: 1999
+  where: Springer, Grundlehren der mathematischen Wissenschaften 322
+
+nsw-cohomology:
+  authors: J. Neukirch, A. Schmidt, and K. Wingberg
+  title: Cohomology of Number Fields
+  year: 2008
+  where: Springer, Grundlehren der mathematischen Wissenschaften 323, 2nd edition
+
+ribet1976:
+  authors: K. A. Ribet
+  title: A modular construction of unramified p-extensions of Q(μ_p)
+  year: 1976
+  where: Inventiones Mathematicae 34, 151 to 162
+
+ferrero-washington1979:
+  authors: B. Ferrero and L. C. Washington
+  title: The Iwasawa invariant μ_p vanishes for abelian number fields
+  year: 1979
+  where: Annals of Mathematics (2) 109, 377 to 395
+
+buhler-harvey2011:
+  authors: J. Buhler and D. Harvey
+  title: Irregular primes to 163 million
+  year: 2011
+  where: Mathematics of Computation 80
+
+kato2004:
+  authors: K. Kato
+  title: p-adic Hodge theory and values of zeta functions of modular forms
+  year: 2004
+  where: Astérisque 295, 117 to 290
+
+labesse2011:
+  authors: J.-P. Labesse
+  title: Changement de base CM et séries discrètes
+  year: 2011
+  where: In L. Clozel, M. Harris, J.-P. Labesse, and B. C. Ngô (eds.), On the Stabilization of the Trace Formula, International Press
+
+weibel-kbook:
+  authors: C. A. Weibel
+  title: "The K-book: An Introduction to Algebraic K-theory"
+  year: 2013
+  where: American Mathematical Society, Graduate Studies in Mathematics 145

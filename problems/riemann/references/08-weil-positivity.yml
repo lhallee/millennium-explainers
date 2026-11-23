@@ -1,0 +1,71 @@
+guinand1948:
+  authors: A. P. Guinand
+  title: A summation formula in the theory of prime numbers
+  year: 1948
+  where: Proceedings of the London Mathematical Society (2) 50, pp. 107-119
+
+weil1952:
+  authors: A. Weil
+  title: "Sur les « formules explicites » de la théorie des nombres premiers"
+  year: 1952
+  where: Communications du Séminaire Mathématique de l'Université de Lund, tome supplémentaire, pp. 252-265
+
+bombieri2000:
+  authors: E. Bombieri
+  title: "Problems of the Millennium: the Riemann Hypothesis"
+  year: 2000
+  where: Official problem description, Clay Mathematics Institute
+
+bombieri2000lincei:
+  authors: E. Bombieri
+  title: Remarks on Weil's quadratic functional in the theory of prime numbers, I
+  year: 2000
+  where: Rendiconti Lincei, Matematica e Applicazioni (9) 11, pp. 183-233
+
+yoshida1992:
+  authors: H. Yoshida
+  title: On Hermitian forms attached to zeta functions
+  year: 1992
+  where: "Zeta Functions in Geometry (Tokyo, 1990), Advanced Studies in Pure Mathematics 21, Kinokuniya, pp. 281-325"
+
+whittaker1927:
+  authors: E. T. Whittaker and G. N. Watson
+  title: A Course of Modern Analysis
+  year: 1927
+  where: Cambridge University Press, 4th edition
+
+davenport:
+  authors: H. Davenport, revised by H. L. Montgomery
+  title: Multiplicative Number Theory
+  year: 2000
+  where: Springer, Graduate Texts in Mathematics 74, 3rd edition
+
+li1997:
+  authors: X.-J. Li
+  title: The positivity of a sequence of numbers and the Riemann hypothesis
+  year: 1997
+  where: Journal of Number Theory 65, pp. 325-333
+
+selberg1956:
+  authors: A. Selberg
+  title: Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series
+  year: 1956
+  where: Journal of the Indian Mathematical Society (New Series) 20, pp. 47-87
+
+hejhal1976:
+  authors: D. A. Hejhal
+  title: The Selberg Trace Formula for PSL(2,R), Volume 1
+  year: 1976
+  where: Lecture Notes in Mathematics 548, Springer
+
+connes1999:
+  authors: A. Connes
+  title: Trace formula in noncommutative geometry and the zeros of the Riemann zeta function
+  year: 1999
+  where: Selecta Mathematica (New Series) 5, pp. 29-106
+
+conrey2003:
+  authors: J. B. Conrey
+  title: The Riemann Hypothesis
+  year: 2003
+  where: Notices of the American Mathematical Society 50, pp. 341-353

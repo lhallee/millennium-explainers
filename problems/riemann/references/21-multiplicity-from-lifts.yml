@@ -1,0 +1,59 @@
+goodman-wallach:
+  authors: R. Goodman and N. R. Wallach
+  title: Symmetry, Representations, and Invariants
+  year: 2009
+  where: Springer, Graduate Texts in Mathematics 255
+
+ggp2012:
+  authors: W. T. Gan, B. H. Gross, and D. Prasad
+  title: Symplectic local root numbers, central critical L values, and restriction problems in the representation theory of classical groups
+  year: 2012
+  where: Astérisque 346, pp. 1-109
+
+agrs2010:
+  authors: A. Aizenbud, D. Gourevitch, S. Rallis, and G. Schiffmann
+  title: Multiplicity one theorems
+  year: 2010
+  where: Annals of Mathematics (2) 172, pp. 1407-1434
+
+sunzhu2012:
+  authors: B. Sun and C.-B. Zhu
+  title: "Multiplicity one theorems: the Archimedean case"
+  year: 2012
+  where: Annals of Mathematics (2) 175, pp. 23-44
+
+siegel1935:
+  authors: C. L. Siegel
+  title: Über die analytische Theorie der quadratischen Formen
+  year: 1935
+  where: Annals of Mathematics 36, pp. 527-606
+
+ganhankeyu2001:
+  authors: W. T. Gan, J. P. Hanke, and J.-K. Yu
+  title: On an exact mass formula of Shimura
+  year: 2001
+  where: Duke Mathematical Journal 107, pp. 103-133
+
+rallis1984:
+  authors: S. Rallis
+  title: Injectivity properties of liftings associated to Weil representations
+  year: 1984
+  where: Compositio Mathematica 52, pp. 139-169
+
+gan-qiu-takeda2014:
+  authors: W. T. Gan, Y. Qiu, and S. Takeda
+  title: The regularized Siegel-Weil formula (the second term identity) and the Rallis inner product formula
+  year: 2014
+  where: Inventiones Mathematicae 198
+
+chowlaselberg1967:
+  authors: S. Chowla and A. Selberg
+  title: On Epstein's zeta-function
+  year: 1967
+  where: Journal für die reine und angewandte Mathematik 227, pp. 86-110
+
+kudla1984:
+  authors: S. S. Kudla
+  title: Seesaw dual reductive pairs
+  year: 1984
+  where: "In Automorphic Forms of Several Variables (Katata, 1983), Progress in Mathematics 46, Birkhäuser, pp. 244-268"

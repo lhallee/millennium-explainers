@@ -1,0 +1,23 @@
+tate1967:
+  authors: J. T. Tate
+  title: Fourier analysis in number fields and Hecke's zeta-functions (Tate's thesis, 1950)
+  year: 1967
+  where: "In J. W. S. Cassels and A. Fröhlich (eds.), Algebraic Number Theory, Academic Press, Chapter XV"
+
+weil1952:
+  authors: A. Weil
+  title: Sur les « formules explicites » de la théorie des nombres premiers
+  year: 1952
+  where: Communications du Séminaire Mathématique de l'Université de Lund, tome supplémentaire, pp. 252-265
+
+connes1999:
+  authors: A. Connes
+  title: Trace formula in noncommutative geometry and the zeros of the Riemann zeta function
+  year: 1999
+  where: Selecta Mathematica (New Series) 5, pp. 29-106
+
+titchmarsh:
+  authors: E. C. Titchmarsh, revised by D. R. Heath-Brown
+  title: The Theory of the Riemann Zeta-function
+  year: 1986
+  where: Oxford University Press, 2nd edition

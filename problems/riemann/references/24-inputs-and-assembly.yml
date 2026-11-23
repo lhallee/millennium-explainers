@@ -1,0 +1,137 @@
+moura2021lean4:
+  authors: L. de Moura and S. Ullrich
+  title: The Lean 4 theorem prover and programming language
+  year: 2021
+  where: "Automated Deduction, CADE 28, Lecture Notes in Computer Science 12699, Springer, pp. 625-635"
+
+mathlib2020:
+  authors: The mathlib Community
+  title: The Lean mathematical library
+  year: 2020
+  where: "Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (CPP 2020), pp. 367-381"
+
+neukirch-ant:
+  authors: J. Neukirch
+  title: Algebraic Number Theory
+  year: 1999
+  where: Springer, Grundlehren der mathematischen Wissenschaften 322
+
+tate1967:
+  authors: J. T. Tate
+  title: Fourier analysis in number fields and Hecke's zeta-functions (Tate's thesis, 1950)
+  year: 1967
+  where: "In J. W. S. Cassels and A. Fröhlich (eds.), Algebraic Number Theory, Academic Press, Chapter XV"
+
+hecke1918-zeta:
+  authors: E. Hecke
+  title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen
+  year: 1918
+  where: Mathematische Zeitschrift 1, pp. 357-376
+
+iwaniec-kowalski-ant:
+  authors: H. Iwaniec and E. Kowalski
+  title: Analytic Number Theory
+  year: 2004
+  where: American Mathematical Society Colloquium Publications 53
+
+chebotarev1926:
+  authors: N. Tschebotareff
+  title: Die Bestimmung der Dichtigkeit einer Menge von Primzahlen, welche zu einer gegebenen Substitutionsklasse gehören
+  year: 1926
+  where: Mathematische Annalen 95
+
+siegel1935:
+  authors: C. L. Siegel
+  title: Über die analytische Theorie der quadratischen Formen
+  year: 1935
+  where: Annals of Mathematics 36, pp. 527-606
+
+weil1965:
+  authors: A. Weil
+  title: Sur la formule de Siegel dans la théorie des groupes classiques
+  year: 1965
+  where: Acta Mathematica 113, pp. 1-87
+
+serre1973:
+  authors: J.-P. Serre
+  title: A Course in Arithmetic
+  year: 1973
+  where: Springer, Graduate Texts in Mathematics 7
+
+serre1977:
+  authors: J.-P. Serre
+  title: Linear Representations of Finite Groups
+  year: 1977
+  where: Springer, Graduate Texts in Mathematics 42
+
+harristaylor2001:
+  authors: M. Harris and R. Taylor
+  title: The Geometry and Cohomology of Some Simple Shimura Varieties
+  year: 2001
+  where: Princeton University Press, Annals of Mathematics Studies 151
+
+henniart2000:
+  authors: G. Henniart
+  title: Une preuve simple des conjectures de Langlands pour GL(n) sur un corps p-adique
+  year: 2000
+  where: Inventiones Mathematicae 139, pp. 439-455
+
+scholze2013:
+  authors: P. Scholze
+  title: The local Langlands correspondence for GL_n over p-adic fields
+  year: 2013
+  where: Inventiones Mathematicae 192, pp. 663-715
+
+green1955:
+  authors: J. A. Green
+  title: The characters of the finite general linear groups
+  year: 1955
+  where: Transactions of the American Mathematical Society 80, pp. 402-447
+
+hironaka1964:
+  authors: H. Hironaka
+  title: Resolution of singularities of an algebraic variety over a field of characteristic zero, I and II
+  year: 1964
+  where: Annals of Mathematics 79, pp. 109-203 and 205-326
+
+nadel1990:
+  authors: A. M. Nadel
+  title: Multiplier ideal sheaves and Kähler-Einstein metrics of positive scalar curvature
+  year: 1990
+  where: Annals of Mathematics 132, pp. 549-596
+
+lazarsfeld2004:
+  authors: R. Lazarsfeld
+  title: "Positivity in Algebraic Geometry II: Positivity for Vector Bundles, and Multiplier Ideals"
+  year: 2004
+  where: Springer, Ergebnisse der Mathematik und ihrer Grenzgebiete 49
+
+faltingschai1990:
+  authors: G. Faltings and C.-L. Chai
+  title: Degeneration of Abelian Varieties
+  year: 1990
+  where: Springer, Ergebnisse der Mathematik und ihrer Grenzgebiete 22
+
+lan2013:
+  authors: K.-W. Lan
+  title: Arithmetic Compactifications of PEL-Type Shimura Varieties
+  year: 2013
+  where: Princeton University Press, London Mathematical Society Monographs 36
+
+messing1972:
+  authors: W. Messing
+  title: The Crystals Associated to Barsotti-Tate Groups, with Applications to Abelian Schemes
+  year: 1972
+  where: Springer, Lecture Notes in Mathematics 264
+
+ega3:
+  authors: A. Grothendieck, with J. Dieudonné
+  title: "Éléments de géométrie algébrique III: Étude cohomologique des faisceaux cohérents"
+  year: 1961
+  where: "Publications Mathématiques de l'IHÉS 11 (1961) and 17 (1963)"
+
+atiyahbott1967:
+  authors: M. F. Atiyah and R. Bott
+  title: A Lefschetz fixed point formula for elliptic complexes, I and II
+  year: 1967
+  where: Annals of Mathematics 86 (1967), pp. 374-407, and 88 (1968), pp. 451-491

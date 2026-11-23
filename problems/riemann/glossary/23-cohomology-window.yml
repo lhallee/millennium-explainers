@@ -1,0 +1,59 @@
+- term: ideal class group
+  pattern: "(?<!generalized )ideal class groups?|class groups? of (a |the )?(number field|imaginary quadratic|real|CM|cyclotomic)"
+  definition: The group of nonzero fractional ideals of the ring of integers of a number field modulo the principal ones. It is finite, and it is trivial exactly when elements factor uniquely.
+  anchor: d-cw-class-group
+
+- term: class number
+  pattern: "class numbers?"
+  definition: The order of the ideal class group of a number field. For the field of p-th roots of unity it factors as h = h+ h-, the class number of the real subfield times the relative class number.
+  anchor: d-cw-class-group
+
+- term: plus and minus parts
+  pattern: "plus parts?|minus parts?"
+  definition: For a group of odd order on which complex conjugation acts, the subgroups where conjugation acts as +1 and as -1. For cohomology with coefficients twisted by -k, the code takes the eigenvalues (-1)^k and (-1)^(k+1).
+  anchor: d-cw-plus-minus
+
+- term: irregular prime
+  pattern: "irregular primes?"
+  definition: An odd prime p that divides the class number of Q(zeta_p), equivalently, by Kummer's criterion, the numerator of one of B_2, B_4, ..., B_(p-3). The first is 37, which divides B_32.
+  anchor: t-cw-kummer
+
+- term: Vandiver's conjecture
+  pattern: "Vandiver['’]?s conjecture"
+  definition: The open statement that p never divides the class number of the real field Q(zeta_p + zeta_p^-1), that is, that the plus part of the p-part of the class group of Q(zeta_p) is zero. Verified for every p below 163 million.
+  anchor: t-cw-vandiver
+
+- term: Tate twist
+  pattern: "Tate twists?"
+  definition: The group Q_l/Z_l with the Galois group acting through a power of the l-adic cyclotomic character. The twist by -k changes which eigenspace of the class groups up the tower of l-power roots of unity the cohomology sees.
+  anchor: d-cw-twist
+
+- term: locally trivial classes
+  pattern: "locally trivial (cohomology )?class(es)?"
+  definition: The group Sha^1 of classes in the first cohomology group, with given coefficients, of the Galois group of the largest extension of a number field unramified outside l, that become trivial at every prime above l. With trivial coefficients these are the characters of the class group that kill the primes above l.
+  anchor: d-cw-sha
+
+- term: cyclotomic tower
+  pattern: "cyclotomic towers?"
+  definition: The sequence of fields obtained from a number field by adjoining l-power roots of unity, each layer of degree l over the last. Its union is the cyclotomic Z_l-extension, the setting of Iwasawa theory.
+  anchor: d-cw-tower
+
+- term: Iwasawa module
+  pattern: "Iwasawa modules?"
+  definition: An inverse limit of l-parts of class groups, or of related Galois groups, along a cyclotomic tower, viewed as a module over the ring of power series in one variable over Z_l. Ferrero and Washington's theorem bounds its number of generators for abelian base fields.
+  anchor: d-cw-tower
+
+- term: Ferrero and Washington theorem
+  pattern: "Ferrero and Washington"
+  definition: The theorem of 1979 that the Iwasawa invariant mu vanishes for the cyclotomic Z_l-extension of an abelian number field, so the l-rank of the class groups stays bounded up the tower.
+  anchor: t-cw-iwasawa
+
+- term: exceptional twist
+  pattern: "exceptional twists?"
+  definition: A twist k in a range [1, Z] that is l-adically closer than l^(-floor(log_l Z)) to one of the at most R points s_i of the Iwasawa bound. Each s_i makes at most one twist exceptional.
+  anchor: d-cw-exceptional
+
+- term: Euler system
+  pattern: "Euler systems?"
+  definition: A compatible family of Galois cohomology classes over a tower of fields, used to bound Selmer groups. In the proof, Kato's Euler system for modular forms bounds the generic cases of the plus part of the window bound.
+  anchor: cw-plus

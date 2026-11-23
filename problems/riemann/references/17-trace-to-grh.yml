@@ -1,0 +1,18 @@
+# References cited in chapter 17. Entries shared with other chapters are copied exactly.
+weil1952:
+  authors: A. Weil
+  title: "Sur les « formules explicites » de la théorie des nombres premiers"
+  year: 1952
+  where: Communications du Séminaire Mathématique de l'Université de Lund, tome supplémentaire, pp. 252-265
+
+tate1967:
+  authors: J. T. Tate
+  title: Fourier analysis in number fields and Hecke's zeta-functions (Tate's thesis, 1950)
+  year: 1967
+  where: "In J. W. S. Cassels and A. Fröhlich (eds.), Algebraic Number Theory, Academic Press, Chapter XV"
+
+ss-complex:
+  authors: E. M. Stein and R. Shakarchi
+  title: Complex Analysis (Princeton Lectures in Analysis II)
+  year: 2003
+  where: Princeton University Press

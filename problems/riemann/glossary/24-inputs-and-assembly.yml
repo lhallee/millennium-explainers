@@ -1,0 +1,64 @@
+- term: formal proof
+  pattern: "formal proofs?"
+  definition: A statement written in a precise logical language together with a proof term that a small checking program, the kernel of a proof assistant such as Lean, accepts. Nothing is left for a human reader to fill in.
+  anchor: d-ia-formal
+
+- term: Lean's kernel
+  pattern: "Lean['’]s kernel"
+  definition: The small program at the core of Lean that checks that a proof term has the type of the statement it claims to prove. Everything else in Lean only produces terms for it to check.
+  anchor: d-ia-formal
+
+- term: Mathlib
+  pattern: "Mathlib"
+  definition: The community library of mathematics for Lean, with definitions and theorems from undergraduate algebra and analysis to parts of research mathematics. The Lean tree of the second proof builds on a fixed revision of it.
+  anchor: d-ia-formal
+
+- term: import closure
+  pattern: "import closures?"
+  definition: The set of files reachable from a given Lean file by following its import lines, and theirs, and so on. It is the set of files whose declarations a proof in that file can use.
+  anchor: d-ia-closure
+
+- term: dependency cone
+  pattern: "dependency cones?"
+  definition: The declarations a proof mentions, the declarations their proofs mention, and so on. Measured here in files and lines by a heuristic tool, so the sizes are approximate and overlapping.
+  anchor: d-ia-cone
+
+- term: wrapper theorem
+  pattern: "wrapper theorems?"
+  definition: In the Lean tree of the second proof, a one- or two-line theorem that states a published theorem and proves it by naming a proof elsewhere in the tree.
+  anchor: d-ia-wrapper
+
+- term: Dirichlet density
+  pattern: "Dirichlet density"
+  definition: A set of primes has Dirichlet density delta when the sum of N(p)^(-s) over its primes, divided by log(1/(s - 1)), tends to delta as s decreases to 1.
+  anchor: d-ia-density
+
+- term: Chebotarev's density theorem
+  pattern: "Chebotarev['’]s density theorem|Chebotarev density theorem"
+  definition: For a finite Galois extension of number fields, the primes whose Frobenius class lies in a conjugation-stable set C of the Galois group G have density |C|/|G|.
+  anchor: t-ia-chebotarev
+
+- term: mass formula
+  pattern: "mass formulas?"
+  definition: Siegel's formula for the sum, over the classes of a genus of definite lattices, of one over the order of each automorphism group, as a product of local factors.
+  anchor: t-ia-siegel
+
+- term: Siegel and Weil formula
+  pattern: "Siegel and Weil formula|Siegel-Weil formula"
+  definition: The identity saying that the average of theta series over a genus, or of a theta function over an adelic quotient, is an Eisenstein series. Weil proved it for classical groups in the convergent range.
+  anchor: t-ia-siegel
+
+- term: local Langlands correspondence
+  pattern: "local Langlands correspondence"
+  definition: The bijection, for a p-adic field F, between irreducible smooth representations of GL_n(F) and n-dimensional Weil-Deligne representations of the Weil group of F that matches L-factors and epsilon-factors of pairs.
+  anchor: t-ia-llc
+
+- term: Weil-Deligne representation
+  pattern: "Weil and Deligne representations?|Weil-Deligne representations?"
+  definition: A finite-dimensional representation of the Weil group of a local field together with a nilpotent operator compatible with it. The Galois side of the local Langlands correspondence.
+  anchor: t-ia-llc
+
+- term: assembly theorem
+  pattern: "assembly theorem"
+  definition: In the Lean tree of the second proof, the theorem every_character_of_literature_of_vWin, where the Galois input Row0b, the local Langlands statement RecTExists, the window bound VWin, and the bundles of published theorems meet and from which no zero of a Dirichlet L-function to the right of one half follows.
+  anchor: t-ia-assembly

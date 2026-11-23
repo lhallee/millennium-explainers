@@ -1,0 +1,49 @@
+- term: prime counting function
+  pattern: "prime[- ]counting function"
+  definition: The function pi(x) that counts the primes p with p <= x. It is a step function of a real variable that jumps by 1 at each prime.
+  anchor: d-cp-pi
+
+- term: step function
+  pattern: "step functions?|staircase"
+  definition: A function that is constant on each interval between a discrete set of points and jumps at those points. The functions pi(x) and psi(x) are step functions.
+  anchor: d-cp-pi
+
+- term: logarithmic integral
+  pattern: "logarithmic integral"
+  definition: The smooth function Li(x), the integral of 1/log t from 2 to x. It is the estimate for the number of primes up to x that follows from a density of 1/log t.
+  anchor: d-cp-li
+
+- term: prime number theorem
+  pattern: "prime number theorem"
+  definition: The statement that pi(x) is asymptotic to x/log x, equivalently to Li(x), so that the ratio of the true count to the estimate tends to 1.
+  anchor: t-cp-pnt
+
+- term: asymptotic equivalence
+  pattern: "asymptotic to|asymptotically equivalent|asymptotic equivalence"
+  definition: Two functions f and g are asymptotic, written f ~ g, when f(x)/g(x) tends to 1 as x grows. It controls the relative error and says nothing about the difference.
+  anchor: t-cp-pnt
+
+- term: prime power
+  pattern: "prime powers?"
+  definition: A number p^k where p is prime and k is a positive integer, such as 2, 4, 8, 16 or 3, 9, 27. The von Mangoldt function is nonzero exactly at prime powers.
+  anchor: d-cp-lambda
+
+- term: von Mangoldt function
+  pattern: "von Mangoldt function"
+  definition: The function Lambda(n) that equals log p when n is a power of the prime p and 0 otherwise.
+  anchor: d-cp-lambda
+
+- term: Chebyshev function
+  pattern: "Chebyshev function"
+  definition: The step function psi(x), the sum of Lambda(n) over n <= x. It weights each prime power by the logarithm of its prime, so its expected density is 1.
+  anchor: d-cp-psi
+
+- term: partial summation
+  pattern: "partial summation"
+  definition: The discrete analogue of integration by parts. It rewrites a sum of a_n f(n) as a boundary term minus an integral of the running total of a_n against f'.
+  anchor: l-cp-abel
+
+- term: Riemann's count
+  pattern: "Riemann['’]s count"
+  definition: The function J(x), the sum of Lambda(n)/log n over n <= x, which counts each prime once, each prime square one half, each prime cube one third, and so on.
+  anchor: cp-dictionary
