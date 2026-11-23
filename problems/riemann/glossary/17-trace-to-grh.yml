@@ -1,0 +1,39 @@
+- term: holomorphic family
+  pattern: "holomorphic famil(y|ies)"
+  definition: The functions phi_z(t) = t^(-z) for t > 1 and 0 for t < 1, with value 1/2 at t = 1. Their Mellin transform at w is 1/(z - w), and they turn the prime side into -zeta'/zeta(z + 1/2).
+  anchor: d-tg-family
+
+- term: smoothed truncation
+  pattern: "smoothed truncations?"
+  definition: A smooth compactly supported test function that approximates t^(-z) on (1, infinity), made by multiplying by a bump h and, in the source, mollifying. It vanishes at 1, so the Trace Formula applies to it.
+  anchor: s-tg-source
+
+- term: Montel's theorem
+  pattern: "Montel['’]s theorem"
+  definition: A family of holomorphic functions that is bounded on compact sets has a subsequence converging uniformly on compact sets, and the limit is holomorphic.
+  anchor: s-tg-source
+
+- term: off-strip zeros
+  pattern: "zeros outside the strip"
+  definition: The nontrivial zeros with |Re rho - 1/2| at least a. They appear in Weil's explicit formula and not in the Trace Formula, so their Mellin sum is zero against every admissible test function, which forces them to be absent.
+  anchor: t-tg-subtraction
+
+- term: fixed cutoff
+  pattern: "fixed cutoffs?"
+  definition: A smooth function h_0 on the positive reals that is 0 up to t = 3/2 and 1 from t = 2 on. Multiplying t^(-z) by it gives test functions that vanish near 1 without changing the prime side, because no prime power lies strictly between 1 and 2.
+  anchor: t-tg-rh
+
+- term: topological phenomenon
+  pattern: "topological phenomenon"
+  definition: The source's description of the hypothesis. The geometric side of the trace formula is the same in a fine topology, where every zero is seen, and in the coarse strip topology, where only zeros near the line are, so the others must be absent.
+  anchor: s-tg-topology
+
+- term: shared Euler poles
+  pattern: "share infinitely many zeros"
+  definition: Over a function field every reciprocal Euler factor 1 - q^(-ds) vanishes at all the points 2 pi i k / log q, so the factors overlap infinitely often. This is why the prime-by-prime sieve of Route M cannot be run there.
+  anchor: s-tg-function-fields
+
+- term: Route M
+  pattern: "Route M"
+  definition: The proof of the hypothesis through a trace formula on the idele class group, following A. M. Masullo, as told in Part III of this page.
+  anchor: s-tg-route

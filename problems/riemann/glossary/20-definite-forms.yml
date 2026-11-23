@@ -1,0 +1,59 @@
+- term: CM field
+  pattern: "CM fields?"
+  definition: A totally imaginary quadratic extension E of a totally real field F. Complex conjugation is the same field automorphism of E under every complex embedding. The imaginary quadratic fields, with F the rationals, are the smallest examples.
+  anchor: d-df-cm
+
+- term: Hermitian form
+  pattern: "Hermitian forms?(?! in )"
+  definition: A map h on pairs of vectors over a CM field, linear in the second variable, with h(y, x) equal to the conjugate of h(x, y). Its values h(x, x) lie in the totally real subfield.
+  anchor: d-df-hermitian
+
+- term: totally definite
+  pattern: "totally definite"
+  definition: A Hermitian space whose form is definite under every complex embedding of the CM field. Its unitary group is compact at every infinite place, which makes the automorphism groups of its lattices finite.
+  anchor: d-df-definite
+
+- term: Hermitian lattice
+  pattern: "Hermitian lattices?"
+  definition: A finitely generated module over the ring of integers of a CM field, sitting inside a Hermitian space and spanning it, with the form restricted to it.
+  anchor: d-df-lattice
+
+- term: unimodular
+  pattern: "unimodular"
+  definition: A lattice equal to its own dual, the set of vectors whose pairing with every lattice vector is integral.
+  anchor: d-df-lattice
+
+- term: isometry class
+  pattern: "isometry class(es)?"
+  definition: The set of lattices that a linear isometry of the ambient Hermitian or quadratic space carries onto a given one.
+  anchor: d-df-class-genus
+
+- term: genus of lattices
+  pattern: "genus of (Hermitian |definite |positive definite )?lattices"
+  definition: The set of lattices in a Hermitian space that become isometric to a given one after completing at every prime. In a totally definite space a genus is a union of finitely many isometry classes.
+  anchor: d-df-class-genus
+
+- term: mass of a genus
+  pattern: "mass of (a|the|this|each) genus"
+  definition: The sum over the classes of a genus of one over the order of the automorphism group of each class.
+  anchor: d-df-mass
+
+- term: theta series
+  pattern: "theta series"
+  definition: The generating function of the norms of the vectors of a lattice, the sum of q to the power h(x, x) over all lattice vectors x. Its n-th coefficient counts the vectors of norm n.
+  anchor: d-df-theta
+
+- term: automorphic form on a definite group
+  pattern: "automorphic forms? on (a|the) (totally )?definite"
+  definition: For a totally definite unitary group with a fixed genus, a function from the finite set of classes to a vector space. With scalar values it is a list of numbers, one per class.
+  anchor: d-df-forms
+
+- term: Kneser neighbor
+  pattern: "Kneser neighbors?"
+  definition: Two lattices of a genus are neighbors at a prime ideal when they agree away from it and its conjugate and each contains their intersection with index equal to the norm of the prime. Counting neighbors by class gives the matrix of a Hecke operator.
+  anchor: d-df-neighbor
+
+- term: lift matrix
+  pattern: "lift matri(x|ces)"
+  definition: The matrix of a theta lift between two definite genera. Its entry for a pair of classes counts the isometric embeddings of the first lattice into the second, and the lift multiplies by one over the automorphism group order of the source class.
+  anchor: d-df-lift

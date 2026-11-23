@@ -1,0 +1,53 @@
+stepanov1969:
+  authors: S. A. Stepanov
+  title: On the number of points of a hyperelliptic curve over a finite prime field
+  year: 1969
+  where: Izvestiya Akademii Nauk SSSR, Seriya Matematicheskaya 33, pp. 1171-1181
+
+iwaniec-kowalski-ant:
+  authors: H. Iwaniec and E. Kowalski
+  title: Analytic Number Theory
+  year: 2004
+  where: American Mathematical Society Colloquium Publications 53
+
+schmidt1976:
+  authors: W. M. Schmidt
+  title: "Equations over Finite Fields: An Elementary Approach"
+  year: 1976
+  where: Lecture Notes in Mathematics 536, Springer
+
+buium2005:
+  authors: A. Buium
+  title: Arithmetic Differential Equations
+  year: 2005
+  where: American Mathematical Society, Mathematical Surveys and Monographs 118
+
+siegel1929:
+  authors: C. L. Siegel
+  title: Über einige Anwendungen diophantischer Approximationen
+  year: 1929
+  where: Abhandlungen der Preussischen Akademie der Wissenschaften, Physikalisch-mathematische Klasse, Nr. 1
+
+bost1996:
+  authors: J.-B. Bost
+  title: Périodes et isogénies des variétés abéliennes sur les corps de nombres (d'après D. Masser et G. Wüstholz)
+  year: 1996
+  where: "Séminaire Bourbaki 1994/95, Exposé 795, Astérisque 237, pp. 115-161"
+
+bombieri1989:
+  authors: E. Bombieri and J. Pila
+  title: The number of integral points on arcs and ovals
+  year: 1989
+  where: Duke Mathematical Journal 59, pp. 337-357
+
+heathbrown2002:
+  authors: D. R. Heath-Brown
+  title: The density of rational points on curves and surfaces
+  year: 2002
+  where: Annals of Mathematics (2) 155, pp. 553-595
+
+rosen2002:
+  authors: M. Rosen
+  title: Number Theory in Function Fields
+  year: 2002
+  where: Springer, Graduate Texts in Mathematics 210

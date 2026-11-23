@@ -1,0 +1,54 @@
+- term: p-adic absolute value
+  pattern: "p-adic absolute values?"
+  definition: The size |x|_p = p^(-m) of a rational number x = p^m a/b with a and b prime to p. A number is small at p when it is divisible by a high power of p.
+  anchor: d-ad-padic-abs
+
+- term: product formula
+  pattern: "product formula(?! then follows)"
+  definition: For every nonzero rational x, the ordinary size |x| times the sizes |x|_p at all primes p equals 1. It is unique factorization written as a balance.
+  anchor: t-ad-product-formula
+
+- term: p-adic numbers
+  pattern: "p-adic numbers"
+  definition: The field Q_p, the completion of the rationals for the p-adic absolute value. Its elements are base-p expansions that may continue forever toward higher powers of p.
+  anchor: d-ad-qp
+
+- term: p-adic integers
+  pattern: "p-adic integers"
+  definition: The ring Z_p of p-adic numbers of size at most 1. A rational number lies in Z_p exactly when p does not divide its denominator.
+  anchor: d-ad-qp
+
+- term: Haar measure
+  pattern: "Haar measures?"
+  definition: The translation-invariant measure on a locally compact group, unique up to a constant. On Q_p it is normalized to give Z_p volume 1, and multiplying by a changes volumes by |a|_p.
+  anchor: d-ad-haar
+
+- term: adeles
+  pattern: "(?<!S-)adeles|adele ring"
+  definition: The ring of sequences (x_infinity, x_2, x_3, ...) with one real component and one p-adic component for each prime, almost all of them p-adic integers. The rationals sit in it diagonally, discretely, with compact quotient.
+  anchor: d-ad-adeles
+
+- term: restricted product
+  pattern: "restricted products?"
+  definition: The part of an infinite product of groups in which all but finitely many components lie in a fixed compact open subgroup, with the topology that makes it locally compact.
+  anchor: d-ad-adeles
+
+- term: profinite integers
+  pattern: "profinite integers"
+  definition: The compact ring Zhat, the product of the p-adic integers Z_p over all primes p. Its units are the product of the unit groups Z_p^x.
+  anchor: d-ad-adeles
+
+- term: Schwartz-Bruhat function
+  pattern: "Schwartz-Bruhat functions?"
+  definition: An adelic test function, a finite sum of products of a Schwartz function at infinity and locally constant compactly supported functions at the primes, equal to the indicator of Z_p at almost all p.
+  anchor: d-ad-schwartz-bruhat
+
+- term: ideles
+  pattern: "(?<!S-)ideles|idele group"
+  definition: The group of invertible adeles, with every component nonzero and almost all components units, carrying the restricted product topology of the pairs (Q_p^x, Z_p^x).
+  anchor: d-ad-ideles
+
+- term: idele class group
+  pattern: "(?<!S-)idele class group"
+  definition: The quotient C_Q of the ideles by the nonzero rationals. Over Q it is the positive reals times the units of the profinite integers, and the norm of a class is its positive real coordinate.
+  anchor: t-ad-class-group

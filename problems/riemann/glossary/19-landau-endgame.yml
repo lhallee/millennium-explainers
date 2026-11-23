@@ -1,0 +1,59 @@
+- term: one-sided bound
+  pattern: "one-sided bounds?"
+  definition: An inequality that limits a function from one side only, in the endgame an upper bound C X^alpha on a combination of smoothed prime sums, with no lower bound. It is enough to exclude zeros because every zero to the right of alpha pushes the smoothed sum upward somewhere.
+  anchor: le-sign
+
+- term: window of scales
+  pattern: "windows? of scales"
+  definition: An interval [Y, Y^(1+delta)] of real numbers, with delta > 0 fixed. A statement holds on windows when it holds on such intervals for arbitrarily large Y, and possibly nowhere between them. On the logarithmic scale the window is [U, (1+delta)U] with U = log Y, so its length grows with U.
+  anchor: le-why-windows
+
+- term: Landau's theorem
+  pattern: "Landau['’]s theorem"
+  definition: A Laplace or Mellin integral of a function that is nonnegative from some point on converges up to its first singularity on the real axis. Applied to a smoothed prime sum with an allowance subtracted, it turns a one-sided bound into a half-plane free of zeros.
+  anchor: t-le-landau-classical
+
+- term: abscissa of convergence
+  pattern: "abscissas? of convergence"
+  definition: The infimum of the real numbers sigma for which a Mellin or Laplace integral converges at s = sigma. To its right the integral defines an analytic function.
+  anchor: t-le-landau-classical
+
+- term: Laplace transform
+  pattern: "Laplace transforms?"
+  definition: For a function F(u) on u > 0, the function Phi(s) = integral of F(u) e^(-su) du. With u = log y it is the Mellin transform integral of F(log y) y^(-s-1) dy over y > 1.
+  anchor: le-laplace
+
+- term: Taylor coefficient
+  pattern: "Taylor coefficients? of (the|a) Laplace transform"
+  definition: Here b_k(z) = (-1)^k Phi^(k)(z)/k!, the k-th coefficient of the Laplace transform Phi expanded leftward from the point z. It equals the integral of the function against the kernel u^k e^(-zu)/k!, and it grows like d^(-k) when the nearest pole of Phi lies at distance d from z.
+  anchor: le-laplace
+
+- term: Gamma kernel
+  pattern: "Gamma kernels?"
+  definition: The function u^k e^(-sigma u)/k! on u > 0. Up to the factor sigma^(k+1) it is the Gamma probability density with mean (k+1)/sigma and standard deviation sqrt(k+1)/sigma, so for large k it lives on a short relative stretch around k/sigma.
+  anchor: le-kernel
+
+- term: Chernoff bound
+  pattern: "Chernoff bounds?"
+  definition: An estimate of the mass a positive kernel puts outside an interval, obtained by multiplying the kernel by an exponential e^(l(u - V)) or e^(l(U - u)) that is at least 1 off the interval and integrating exactly.
+  anchor: le-kernel
+
+- term: Cauchy estimate
+  pattern: "Cauchy estimates?"
+  definition: If a function is analytic on a disc of radius r about z, its k-th Taylor coefficient at z is at most B/r'^k for every r' < r, with B the average size of the function on the circle of radius r'.
+  anchor: le-poles
+
+- term: Euler factor
+  pattern: "Euler factors?"
+  definition: The factor of an Euler product that belongs to one prime p, (1 - chi(p) p^(-s))^(-1) for a Dirichlet L-function and (1 - p^(-s))^(-1) for zeta; the word is also used for its reciprocal. The L-function of an imprimitive character is that of its primitive character times finitely many reciprocal Euler factors, which vanish only on the line Re s = 0.
+  anchor: le-five
+
+- term: cyclic level
+  pattern: "cyclic levels?"
+  definition: The code's bookkeeping object Level.cyc for a primitive character chi of order r, made of the r primitive characters inducing chi^0, chi^1, ..., chi^(r-1), with weight 1 on the trivial one and 1/(3r+1) on the others.
+  anchor: d-le-gr
+
+- term: Post and Widder inversion
+  pattern: "Post and Widder|Post-Widder"
+  definition: The formula that recovers a function from its Laplace transform as the limit of (k/u)^(k+1) times (-1)^k Phi^(k)(k/u)/k!, which reads the function through Gamma kernels centered at u.
+  anchor: le-kernel

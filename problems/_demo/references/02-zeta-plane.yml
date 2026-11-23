@@ -1,0 +1,15 @@
+titchmarsh:
+  authors: E. C. Titchmarsh, revised by D. R. Heath-Brown
+  title: The Theory of the Riemann Zeta-function
+  year: 1986
+  where: Oxford University Press, 2nd edition
+edwards:
+  authors: H. M. Edwards
+  title: Riemann's Zeta Function
+  year: 1974
+  where: Academic Press
+riemann1859:
+  authors: B. Riemann
+  title: Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse
+  year: 1859
+  where: Monatsberichte der Königlich Preussischen Akademie der Wissenschaften zu Berlin

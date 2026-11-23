@@ -1,0 +1,54 @@
+- term: theta sum
+  pattern: "theta sums?"
+  definition: For an even Schwartz function g, the function Theta_g(t) = sum over nonzero integers n of g(nt), on the positive reals. Riemann's theta function is the case of the Gaussian.
+  anchor: d-tt-theta-sum
+
+- term: weighted theta sum
+  pattern: "weighted theta sums?"
+  definition: The function V_g(t) = t^(1/2) times the theta sum of g, for an even Schwartz function g with g(0) = 0 and integral 0. Its Mellin transform in the variable z = s - 1/2 is the completed zeta function at z + 1/2 times an entire function, so the critical line is Re z = 0.
+  anchor: d-tt-theta-space
+
+- term: adelic theta function
+  pattern: "(?:global )?adelic theta functions?|global theta functions?"
+  definition: For a Schwartz-Bruhat function f on the adeles, the function on the idele class group obtained by summing f(xi x) over the nonzero rationals xi, or over the nonzero elements of a number field. When f is an even Schwartz function g at the real place times the indicator of Z_p at every prime, it is the theta sum of g.
+  anchor: eq-tt-adelic-theta
+
+- term: adelic Riemann-Roch
+  pattern: "adelic Riemann-Roch"
+  definition: Tate's identity Theta_g(t) = Theta_ghat(1/t)/t + ghat(0)/t - g(0), which is Poisson summation for the rationals inside the adeles.
+  anchor: t-tt-riemann-roch
+
+- term: Weil's identity
+  pattern: "Weil['’]s identity"
+  definition: Replacing the indicator of Z_p by the indicator of its units in an adelic function multiplies its zeta integral by 1 - p^(-s); on theta sums it deletes the terms divisible by p.
+  anchor: t-tt-dp
+
+- term: exponentially decaying functions
+  pattern: "exponentially decaying (Schwartz-Bruhat )?functions"
+  definition: The space S_E of smooth functions on the positive reals that, with all their derivatives in t d/dt, decay faster than t^N and t^(-N) for every N at both ends.
+  anchor: d-tt-spaces
+
+- term: Schwartz-Bergman space
+  pattern: "Schwartz-Bergman space"
+  definition: The space AS of entire functions that decay faster than any power of |z| on every vertical strip of bounded width. It is the Mellin image of the exponentially decaying functions.
+  anchor: d-tt-spaces
+
+- term: converse theorem
+  pattern: "converse theorems?"
+  definition: The statement that a rapidly decaying function is a weighted theta sum exactly when its Mellin transform is xi(z + 1/2) times an entire function.
+  anchor: t-tt-converse
+
+- term: jet
+  pattern: "(?<!measured are |variables, the |quantities are |valuations of the |divisibility of |of some )\\bjets?\\b(?! of (?:powers|determinant))"
+  definition: At a point where a zero of multiplicity m sits, the m numbers given by the value there of the Mellin transform of a function and of its first m - 1 derivatives. For a nontrivial zero rho of zeta, in the variable z = s - 1/2, the point is rho - 1/2.
+  anchor: d-tt-jets
+
+- term: divisor exact sequence
+  pattern: "divisor exact sequence"
+  definition: The exact sequence 0 -> weighted theta sums -> exponentially decaying functions -> jets at the zeros of zeta, which says that two functions are equal modulo theta sums exactly when their jets at all the zeros agree. Every finite list of jets occurs.
+  anchor: t-tt-divisor
+
+- term: spectral realization
+  pattern: "spectral reali[sz]ations?"
+  definition: An operator whose eigenvalues are indexed by the zeros of zeta, as Connes proposed in 1999. In Route M it is convolution by a test function phi acting on functions modulo theta sums, with eigenvalue the Mellin transform of phi at rho - 1/2 for the zero rho.
+  anchor: t-tt-operator

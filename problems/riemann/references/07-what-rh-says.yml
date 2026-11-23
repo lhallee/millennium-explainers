@@ -1,0 +1,47 @@
+schoenfeld1976-chebyshev:
+  authors: L. Schoenfeld
+  title: Sharper bounds for the Chebyshev functions θ(x) and ψ(x). II
+  year: 1976
+  where: Mathematics of Computation 30, pp. 337-360
+
+littlewood1912-quelques:
+  authors: J. E. Littlewood
+  title: Quelques conséquences de l'hypothèse que la fonction ζ(s) de Riemann n'a pas de zéros dans le demi-plan R(s) > 1/2
+  year: 1912
+  where: Comptes Rendus de l'Académie des Sciences, Paris 154, pp. 263-266
+
+robin1984-grandes:
+  authors: G. Robin
+  title: Grandes valeurs de la fonction somme des diviseurs et hypothèse de Riemann
+  year: 1984
+  where: Journal de Mathématiques Pures et Appliquées (9) 63, pp. 187-213
+
+odlyzko1985-mertens:
+  authors: A. M. Odlyzko and H. J. J. te Riele
+  title: Disproof of the Mertens conjecture
+  year: 1985
+  where: Journal für die reine und angewandte Mathematik 357, pp. 138-160
+
+dirichlet1837-progression:
+  authors: P. G. L. Dirichlet
+  title: Beweis des Satzes, dass jede unbegrenzte arithmetische Progression, deren erstes Glied und Differenz ganze Zahlen ohne gemeinschaftlichen Factor sind, unendlich viele Primzahlen enthält
+  year: 1837
+  where: Abhandlungen der Königlich Preussischen Akademie der Wissenschaften zu Berlin
+
+hecke1918-zeta:
+  authors: E. Hecke
+  title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen
+  year: 1918
+  where: Mathematische Zeitschrift 1, pp. 357-376
+
+neukirch-ant:
+  authors: J. Neukirch
+  title: Algebraic Number Theory
+  year: 1999
+  where: Springer, Grundlehren der mathematischen Wissenschaften 322
+
+iwaniec-kowalski-ant:
+  authors: H. Iwaniec and E. Kowalski
+  title: Analytic Number Theory
+  year: 2004
+  where: American Mathematical Society Colloquium Publications 53

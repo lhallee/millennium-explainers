@@ -1,0 +1,49 @@
+- term: zeta function
+  pattern: "(?<!prime |Dedekind )zeta functions?(?! of (?:a |the )?(?:curve|field|projective line))"
+  definition: Riemann's zeta function, for real s above 1 the sum of n^(-s) over all positive integers n, which later chapters extend to complex s. The name is also used for the analogous generating functions of other arithmetic objects, such as a curve over a finite field, that package the counts of their primes or points.
+  anchor: d-ep-zeta
+
+- term: Dirichlet series
+  pattern: "Dirichlet series"
+  definition: A series of the form a_1 + a_2 2^(-s) + a_3 3^(-s) + ..., one coefficient attached to each positive integer. The zeta function has all coefficients equal to 1.
+  anchor: ep-zeta
+
+- term: harmonic series
+  pattern: "harmonic series"
+  definition: The divergent series 1 + 1/2 + 1/3 + ..., the zeta series at s = 1. Its partial sums grow like log x.
+  anchor: ep-zeta
+
+- term: Euler product
+  pattern: "Euler products?"
+  definition: The expression of a Dirichlet series with multiplicative coefficients as a product with one factor for each prime. For zeta it is the identity zeta(s) = product over all primes p of 1/(1 - p^(-s)), which is unique factorization written as an equation.
+  anchor: t-ep-euler
+
+- term: smooth number
+  pattern: "smooth numbers?"
+  definition: A positive integer is N-smooth when all of its prime factors are at most N. The partial Euler product up to N is the sum of n^(-s) over the N-smooth numbers.
+  anchor: d-ep-smooth
+
+- term: unique factorization
+  pattern: "unique factorization|fundamental theorem of arithmetic"
+  definition: Every integer above 1 is a product of primes, and the primes and their multiplicities are determined by the integer.
+  anchor: ep-meaning
+
+- term: absolute convergence
+  pattern: "absolute convergence|absolutely convergent"
+  definition: A series or integral converges absolutely when the series or integral of absolute values converges. Such a series can be rearranged and multiplied freely without changing its sum.
+  anchor: l-ep-nonneg
+
+- term: prime zeta function
+  pattern: "prime zeta function"
+  definition: The sum P(s) of p^(-s) over the primes, for real s above 1. The logarithm of zeta(s) equals P(s) plus a bounded remainder.
+  anchor: ep-divergence
+
+- term: Mertens's theorem
+  pattern: "Mertens['’]s (first |second )?theorem"
+  definition: Mertens proved in 1874 that the sum of 1/p over primes up to x equals log log x plus a constant, with error of order 1/log x.
+  anchor: t-ep-mertens
+
+- term: logarithmic derivative
+  pattern: "logarithmic derivatives?"
+  definition: For a differentiable function f, the quotient f'/f, which equals the derivative of log f where f is nonzero. It turns products into sums, and for a function of a complex variable it has a simple pole with residue m at each zero of order m.
+  anchor: ep-logderiv

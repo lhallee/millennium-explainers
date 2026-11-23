@@ -1,0 +1,59 @@
+- term: slope inequality
+  pattern: "slope inequalit(y|ies)"
+  definition: An inequality of Arakelov geometry that balances the slopes of Euclidean lattices over a number field against the local indices of a map between them. Named in the note's step 13; in the formal proof its counterpart is present but not used by the final theorem.
+  anchor: ml-ledger
+
+- term: chain of theta lifts
+  pattern: "chains? of theta lifts"
+  definition: The composite of m theta lifts between the unitary groups of totally definite spaces, which on forms seen as functions on class sets is a product of m weighted kernel matrices (the code's chainOpM).
+  anchor: d-ml-chainop
+
+- term: jet of a power series
+  pattern: "(?<=measured are |variables, the |quantities are |valuations of the |divisibility of |of some )jets?\\b|jets?(?= of (?:powers|determinant))"
+  definition: In Route A, the number Q(d)g(0) obtained by applying a constant-coefficient differential operator Q to a power series g and evaluating at the origin, such as a derivative of a theta function at a CM point divided by a period. Its divisibility by powers of a prime plays the role that the order of vanishing plays in Stepanov's method.
+  anchor: ml-thmp
+
+- term: branching rule
+  pattern: "branching (rule|law)s?"
+  definition: The rule that restricting an irreducible representation of U(k) to U(k-1) contains each irreducible once if its highest weight interlaces with the larger one and not at all otherwise.
+  anchor: t-ml-branching
+
+- term: interlacing
+  pattern: "interlac(e|es|ing)"
+  definition: Two sequences interlace when the terms of the shorter one sit in the gaps of the longer one, as in u_0 > v_0 > u_1 > ... > v_(k-2) > u_(k-1).
+  anchor: ml-branching
+
+- term: Harish-Chandra parameter
+  pattern: "Harish-Chandra parameters?"
+  definition: The highest weight of a representation shifted by half the sum of the positive roots. For U(k) it adds (k+1)/2 - i to the i-th entry, which turns weak interlacing of weights into strict interlacing.
+  anchor: ml-branching
+
+- term: Bessel period
+  pattern: "Bessel periods?"
+  definition: The integral of a form on a unitary group U(V) against a form on a subgroup U(W) and a character of a unipotent group, organized by Gan, Gross, and Prasad. Locally the space of corresponding functionals has dimension at most one.
+  anchor: d-ml-bessel
+
+- term: period map
+  pattern: "period maps?"
+  definition: In the formal proof, the linear map sending a ramified form on the first space to the periods of its m-fold lift. The rank condition RKC asks that its rank exceed half the dimension of its domain.
+  anchor: d-ml-rkc
+
+- term: seesaw identity
+  pattern: "seesaw identit(y|ies)"
+  definition: An identity that computes a period of a theta lift by exchanging the order of two integrations, so that a pairing on the large group becomes a pairing on the small one. On finite class sets it is the exchange of two finite sums.
+  anchor: ml-seesaw
+
+- term: Siegel's mass formula
+  pattern: "Siegel['’]s mass formula"
+  definition: The formula expressing the mass of a genus of definite lattices, the sum of 1/|Aut L| over its classes, as a product of local densities. The code uses its ratio between consecutive ranks.
+  anchor: t-df-siegel-mass
+
+- term: Rallis inner product formula
+  pattern: "Rallis inner product formula"
+  definition: The formula expressing the inner product of two theta lifts of cusp forms as a doubling zeta integral of the original forms, which controls the size of a lift.
+  anchor: t-ml-rallis
+
+- term: odd-level series
+  pattern: "odd-level series"
+  definition: The series gamma_l = 1/l + 1/l^3 + 1/l^5 + ... = l/(l^2 - 1), the odd-power part of Legendre's budget 1/(l - 1). It is the constant of ThmP and the note's exponent a/p + a/p^3 + ... per unit of a.
+  anchor: ml-thmp

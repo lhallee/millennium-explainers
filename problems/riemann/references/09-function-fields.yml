@@ -1,0 +1,53 @@
+lidl1997:
+  authors: R. Lidl and H. Niederreiter
+  title: Finite Fields
+  year: 1997
+  where: Cambridge University Press, Encyclopedia of Mathematics and its Applications 20, 2nd edition
+
+schmidt1931:
+  authors: F. K. Schmidt
+  title: Analytische Zahlentheorie in Körpern der Charakteristik p
+  year: 1931
+  where: Mathematische Zeitschrift 33, pp. 1-32
+
+rosen2002:
+  authors: M. Rosen
+  title: Number Theory in Function Fields
+  year: 2002
+  where: Springer, Graduate Texts in Mathematics 210
+
+weil1948:
+  authors: A. Weil
+  title: Sur les courbes algébriques et les variétés qui s'en déduisent
+  year: 1948
+  where: Actualités Scientifiques et Industrielles 1041, Hermann, Paris
+
+hasse1936:
+  authors: H. Hasse
+  title: Zur Theorie der abstrakten elliptischen Funktionenkörper I, II, III
+  year: 1936
+  where: Journal für die reine und angewandte Mathematik 175
+
+bombieri1974:
+  authors: E. Bombieri
+  title: Counting points on curves over finite fields (d'après S. A. Stepanov)
+  year: 1974
+  where: "Séminaire Bourbaki, 25e année (1972/73), Exposé 430, Lecture Notes in Mathematics 383, Springer, pp. 234-241"
+
+hartshorne1977:
+  authors: R. Hartshorne
+  title: Algebraic Geometry
+  year: 1977
+  where: Springer, Graduate Texts in Mathematics 52
+
+deligne1974:
+  authors: P. Deligne
+  title: La conjecture de Weil. I
+  year: 1974
+  where: Publications Mathématiques de l'IHÉS 43, pp. 273-307
+
+silverman2009:
+  authors: J. H. Silverman
+  title: The Arithmetic of Elliptic Curves
+  year: 2009
+  where: Springer, Graduate Texts in Mathematics 106, 2nd edition

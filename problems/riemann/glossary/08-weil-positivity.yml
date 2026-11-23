@@ -1,0 +1,59 @@
+- term: test function
+  pattern: "(?<!well-behaved )test functions?"
+  definition: A smooth function on the positive reals that vanishes outside a closed interval [a, b] with 0 < a < b. In the explicit formula it weights the prime powers n and their reciprocals 1/n.
+  anchor: d-wp-test
+
+- term: Weil's explicit formula
+  pattern: "Weil['’]s explicit formula"
+  definition: The identity that, for every test function f, the sum of the Mellin transform of f over the nontrivial zeros of zeta equals Weil's functional W(f), which is built from f at the prime powers, two pole terms, and a term at infinity.
+  anchor: t-wp-explicit
+
+- term: Weil's functional
+  pattern: "Weil['’]s functional|Weil functional"
+  definition: The linear functional W on test functions f equal to the Mellin transform of f at 0 plus its Mellin transform at 1, minus one term for every prime p and one term at infinity. Weil's explicit formula says that it equals the sum of the Mellin transform of f over the nontrivial zeros.
+  anchor: d-wp-functional
+
+- term: term at infinity
+  pattern: "terms? at infinity"
+  definition: The part of Weil's functional that comes from the Gamma factor of the completed zeta function, an integral of the test function over x > 1 plus a multiple of f(1).
+  anchor: d-wp-local-terms
+
+- term: place at infinity
+  pattern: "place at infinity|infinite prime"
+  definition: The real absolute value, treated as one more prime. Its local factor is the Gamma factor, and in the explicit formula it contributes like a prime whose powers fill the half-line x > 1.
+  anchor: wp-terms
+
+- term: local factor
+  pattern: "local factors?(?! of $| symmetric)"
+  definition: The factor of a zeta function attached to one place, (1 - p^(-s))^(-1) for a prime p and pi^(-s/2) Gamma(s/2) for the place at infinity. Each contributes one local term to the explicit formula.
+  anchor: wp-terms
+
+- term: multiplicative convolution
+  pattern: "multiplicative convolution"
+  definition: The product (f * h)(x) = integral of f(x/y) h(y) dy/y on the positive reals. Its Mellin transform is the product of the Mellin transforms of f and h.
+  anchor: d-wp-convolution
+
+- term: transposed conjugate
+  pattern: "transposed conjugates?"
+  definition: For a test function f, the function x^(-1) times the complex conjugate of f(1/x). Its Mellin transform at s is the conjugate of the transform of f at the mirror point 1 - conj(s).
+  anchor: d-wp-tilde
+
+- term: Weil's criterion
+  pattern: "Weil['’]s criterion|positivity criterion"
+  definition: The theorem that the Riemann Hypothesis holds exactly when Weil's functional is nonnegative on the multiplicative convolution of f with its transposed conjugate, for every test function f.
+  anchor: t-wp-criterion
+
+- term: spectral side
+  pattern: "spectral side"
+  definition: The side of a trace formula that sums over a spectrum. In the explicit formula it is the sum over the nontrivial zeros.
+  anchor: wp-terms
+
+- term: trace formula
+  pattern: "(?<![-A-Za-z]|relative |comparing )trace formulas?"
+  definition: An identity that computes one quantity in two ways, as a sum over a spectrum and as a sum over periodic orbits weighted by their lengths. The explicit formula has this shape, with prime powers as orbits of length k log p.
+  anchor: wp-trace
+
+- term: Hilbert and Polya idea
+  pattern: "Hilbert and Polya"
+  definition: The unpublished suggestion that the zeros 1/2 + i gamma are eigenvalues of a self-adjoint operator, which would make every gamma real and prove the Riemann Hypothesis.
+  anchor: wp-trace

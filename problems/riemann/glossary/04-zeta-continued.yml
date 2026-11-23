@@ -1,0 +1,49 @@
+- term: alternating zeta series
+  pattern: "alternating (zeta )?series"
+  definition: The series eta(s), the sum of (-1)^(n-1) n^(-s), which converges for real part of s positive and equals (1 - 2^(1-s)) times zeta(s).
+  anchor: d-zc-eta
+
+- term: partial sums
+  pattern: "partial sums?"
+  definition: The finite sums of the first N terms of an infinite series, whose limit, when it exists, is the sum of the series. For the series of zeta below the line real part 1 they spiral around the value zeta(s) without converging.
+  anchor: t-zc-partial-sums
+
+- term: Euler's constant
+  pattern: "Euler['’]s constant|Euler-Mascheroni constant"
+  definition: The number 0.5772157..., the limit of 1 + 1/2 + ... + 1/N - log N, which is the constant term of zeta(s) at its pole s = 1.
+  anchor: t-zc-euler-constant
+
+- term: theta function
+  pattern: "(?<!adelic |global |S-local |CM |effect on |spaces of |kinds of |objects called |\\), and )theta functions?(?! with trivial| of a given| has the form| built| over a| in two| at every| at a CM| in several| and their)|Jacobi theta"
+  definition: The sum of exp(-pi n^2 t) over all integers n, a sum of Gaussians sampled at the integers.
+  anchor: d-zc-theta
+
+- term: completed zeta function
+  pattern: "completed zeta functions?"
+  definition: The entire function xi(s) = s(s-1)/2 times pi^(-s/2) Gamma(s/2) zeta(s), which satisfies xi(s) = xi(1-s) and has exactly the nontrivial zeros of zeta.
+  anchor: d-zc-xi
+
+- term: functional equation
+  pattern: "functional equations?"
+  definition: A symmetry relating the values of a zeta function or L-function at s and at a mirror point. For Riemann's zeta it is xi(s) = xi(1-s) for the completed zeta function xi; for a Dirichlet L-function it relates s and 1 - s after the analogous completion, and for the zeta function of a curve over F_q it relates u and 1/(qu).
+  anchor: t-zc-functional-equation
+
+- term: trivial zeros
+  pattern: "trivial zeros?"
+  definition: The zeros of zeta at the negative even integers -2, -4, -6, and so on, which come from the poles of the Gamma function.
+  anchor: d-zc-trivial-zero
+
+- term: nontrivial zero
+  pattern: "non-?trivial zeros?"
+  definition: A zero of the entire function xi, equivalently a zero of zeta that is not one of the trivial zeros at -2, -4, -6, and so on. It is a complex number rho = beta + i gamma lying in the open strip 0 < beta < 1.
+  anchor: d-ze-nontrivial-zero
+
+- term: Tate's thesis
+  pattern: "Tate['’]s thesis"
+  definition: Tate's 1950 proof of the functional equation of zeta and of L-functions by Poisson summation on the adeles, which generalizes Riemann's proof of the functional equation of zeta through the theta function.
+  anchor: s-zc-bridge
+
+- term: theta lifts
+  pattern: "theta lifts?"
+  definition: Maps that carry automorphic forms from one group to another using a theta function built from a Weil representation. One of the two 2026 proofs chains them.
+  anchor: s-zc-bridge

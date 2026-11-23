@@ -1,0 +1,69 @@
+- term: square-root cancellation
+  pattern: "square-root cancellation"
+  definition: The phenomenon that a sum of N terms of size 1 with unrelated signs has size about the square root of N, because most of it cancels. It is the heuristic reason that the exponent 1/2 is natural.
+  anchor: s-rh-coin
+
+- term: Mertens function
+  pattern: "Mertens function"
+  definition: M(x), the sum of the Moebius function mu(n) over n <= x. It behaves like a random walk, and the Riemann Hypothesis is equivalent to M(x) = O(x^(1/2+eps)).
+  anchor: s-rh-coin
+
+- term: smoothed sum
+  pattern: "smoothed sums?"
+  definition: S(X) = sum over n <= X of Lambda(n)(X/n - 1), the prime-power count with the sharp cutoff replaced by a linear ramp. Its explicit formula has an absolutely convergent sum over zeros.
+  anchor: d-rh-smoothed
+
+- term: Dirichlet character
+  pattern: "Dirichlet characters?"
+  definition: A function on the integers obtained from a homomorphism of (Z/q)^x to the nonzero complex numbers, extended by 0 to integers not coprime to q. It is completely multiplicative and periodic with period q.
+  anchor: d-rh-character
+
+- term: principal character
+  pattern: "principal characters?"
+  definition: The Dirichlet character modulo q that equals 1 on integers coprime to q and 0 on the others.
+  anchor: d-rh-character
+
+- term: primitive character
+  pattern: "primitive (?:Dirichlet )?characters?"
+  definition: A Dirichlet character that is not induced by a character of a smaller modulus. Only primitive characters have the clean functional equation.
+  anchor: s-rh-dirichlet
+
+- term: completed function
+  pattern: "completed (?:L-)?functions?"
+  definition: An L-function multiplied by its Gamma factor and a power of its modulus or discriminant, so that the product satisfies a functional equation under s to 1 - s. For zeta it is xi(s) = (1/2) s(s - 1) pi^(-s/2) Gamma(s/2) zeta(s), and for a primitive Dirichlet character chi modulo q of parity a it is the entire function (q/pi)^((s+a)/2) Gamma((s+a)/2) L(s, chi).
+  anchor: t-rh-l-fe
+
+- term: Dirichlet L-function
+  pattern: "Dirichlet L-functions?"
+  definition: The Dirichlet series L(s, chi) = sum of chi(n) n^(-s) attached to a Dirichlet character chi. It has an Euler product and, for primitive chi, a functional equation under s to 1 - s.
+  anchor: d-rh-l-function
+
+- term: Generalized Riemann Hypothesis
+  pattern: "Generalized Riemann Hypothesis|generalized Riemann hypothesis|GRH"
+  definition: The statement that every nontrivial zero of every Dirichlet L-function of a primitive character has real part 1/2. In Part III, following Masullo's usage, the name covers the L-functions of all unitary Hecke characters of all number fields.
+  anchor: d-rh-grh
+
+- term: number field
+  pattern: "number fields?"
+  definition: A finite extension of the rational numbers, such as Q(i). Its ring of integers and ideals replace the integers and the numbers n in the zeta function.
+  anchor: s-rh-fields
+
+- term: Dedekind zeta function
+  pattern: "Dedekind zeta(?: functions?)?"
+  definition: The sum of N(a)^(-s) over nonzero ideals a of the ring of integers of a number field K. For Q it is zeta, and for Q(i) it equals zeta(s) L(s, chi_4).
+  anchor: d-rh-dedekind
+
+- term: Hecke character
+  pattern: "Hecke characters?|Gr[oö]ssencharakter(?:e|s)?"
+  definition: A character of a generalized ideal class group of a number field that may also carry an angle at each infinite place. Its L-function generalizes a Dirichlet L-function.
+  anchor: s-rh-fields
+
+- term: extended Riemann Hypothesis
+  pattern: "extended Riemann [Hh]ypothesis"
+  definition: The statement that every nontrivial zero of every function in a family of L-functions, such as Dedekind zeta functions or unitary Hecke L-functions, has real part 1/2.
+  anchor: d-rh-erh
+
+- term: von Koch's theorem
+  pattern: "von Koch"
+  definition: The equivalence of the Riemann Hypothesis with the bound pi(x) = Li(x) + O(sqrt(x) log x).
+  anchor: t-rh-von-koch

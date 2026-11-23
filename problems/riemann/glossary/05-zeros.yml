@@ -1,0 +1,54 @@
+- term: nontrivial zero
+  pattern: "non-?trivial zeros?"
+  definition: A zero of the entire function xi, equivalently a zero of zeta that is not one of the trivial zeros at -2, -4, -6, and so on. It is a complex number rho = beta + i gamma lying in the open strip 0 < beta < 1.
+  anchor: d-ze-nontrivial-zero
+
+- term: critical strip
+  pattern: "critical strips?"
+  definition: The vertical strip of complex numbers s = sigma + it with 0 <= sigma <= 1. Every nontrivial zero of zeta lies inside it, and in fact in its interior.
+  anchor: d-ze-nontrivial-zero
+
+- term: critical line
+  pattern: "critical lines?"
+  definition: The vertical line sigma = 1/2 through the middle of the critical strip, the only vertical line that the symmetry s to 1 - s maps to itself.
+  anchor: d-ze-nontrivial-zero
+
+- term: multiplicity of a zero
+  pattern: "multiplicity of (?:a|the) zeros?|(?<!factors, )counted with multiplicity"
+  definition: The order of vanishing of a function at a zero, so that a zero of multiplicity m looks like (s - rho)^m near rho. Zeros are counted with multiplicity.
+  anchor: d-ze-nontrivial-zero
+
+- term: Hardy's Z function
+  pattern: "Hardy(?:['’]s)? Z(?:-| )function|Hardy function"
+  definition: The real-valued function Z(t) = exp(i theta_RS(t)) zeta(1/2 + it) on the critical line. It has the same absolute value as zeta there, and its sign changes certify zeros on the line.
+  anchor: d-ze-hardy-z
+
+- term: Riemann-Siegel theta function
+  pattern: "Riemann[-–]Siegel theta"
+  definition: The real function theta_RS(t) = Im log Gamma(1/4 + it/2) - (t/2) log pi that records how fast the unit complex factor in zeta(1/2 + it) rotates. It is unrelated to Jacobi's theta function and to Chebyshev's function.
+  anchor: d-ze-hardy-z
+
+- term: zero-counting function
+  pattern: "zero-counting function|counting function N\\(T\\)"
+  definition: N(T), the number of nontrivial zeros with 0 < gamma <= T, counted with multiplicity. It grows like (T/2pi) log(T/2pi) - T/2pi.
+  anchor: t-ze-riemann-von-mangoldt
+
+- term: Riemann-von Mangoldt formula
+  pattern: "Riemann[-–]von Mangoldt formula"
+  definition: The asymptotic formula for the number of zeros up to height T, with an error of size O(log T), stated by Riemann and proved by von Mangoldt.
+  anchor: t-ze-riemann-von-mangoldt
+
+- term: Hadamard product
+  pattern: "Hadamard (?:product|factorization)"
+  definition: The expression of the entire function xi as the constant 1/2 times the product over nontrivial zeros of (1 - s/rho), which shows that the zeros determine the function.
+  anchor: t-ze-hadamard
+
+- term: three-four-one inequality
+  pattern: "3 ?\\+ ?4 ?cos|three-four-one"
+  definition: The inequality 3 + 4 cos(theta) + cos(2 theta) = 2(1 + cos theta)^2 >= 0, which forces zeta to be nonzero on the line sigma = 1.
+  anchor: t-ze-nonvanishing-one
+
+- term: Riemann Hypothesis
+  pattern: "Riemann Hypothesis|Riemann hypothesis"
+  definition: The statement that every nontrivial zero of Riemann's zeta function has real part 1/2, that is, lies on the critical line. For a curve over the finite field F_q, the analogous statement, proved by Weil, is that the inverse roots of its zeta function have absolute value sqrt(q).
+  anchor: t-ze-rh

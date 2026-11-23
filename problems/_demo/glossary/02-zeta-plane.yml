@@ -1,0 +1,12 @@
+- term: domain coloring
+  pattern: "domain colou?ring"
+  definition: A picture of a complex function in which each point $s$ is painted with a hue for the angle of $f(s)$ and a brightness for its size.
+  anchor: zp-coloring
+- term: critical line
+  pattern: "critical line"
+  definition: The vertical line $\Re s = \tfrac12$ in the complex plane, where every computed nontrivial zero of $\zeta$ lies.
+  anchor: c-rh-demo
+- term: nontrivial zero
+  pattern: "nontrivial zeros?"
+  definition: A zero $\rho$ of $\zeta$ with $0 < \Re \rho < 1$, as opposed to the trivial zeros at $-2, -4, -6, \dots$
+  anchor: zp-zeros

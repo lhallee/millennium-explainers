@@ -1,0 +1,12 @@
+- term: prime power
+  pattern: "prime powers?"
+  definition: A number of the form $p^k$ with $p$ prime and $k \ge 1$, such as 2, 4, 8, 3, 9, and 5.
+  anchor: d-von-mangoldt
+- term: von Mangoldt function
+  pattern: "von Mangoldt function"
+  definition: The weight $\Lambda(n)$ that is $\log p$ when $n$ is a power of the prime $p$, and 0 for every other $n$.
+  anchor: d-von-mangoldt
+- term: explicit formula
+  pattern: "explicit formula"
+  definition: The identity that writes $\psi(x)$ as $x$ minus one oscillating term for each nontrivial zero of $\zeta$.
+  anchor: t-explicit

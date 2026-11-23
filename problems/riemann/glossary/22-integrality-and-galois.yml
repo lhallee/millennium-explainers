@@ -1,0 +1,64 @@
+- term: Galois representation
+  pattern: "Galois representations?"
+  definition: A continuous homomorphism from the absolute Galois group of a number field to invertible matrices over the l-adic numbers. At a prime where it is unramified, the Frobenius element has a well-defined characteristic polynomial.
+  anchor: d-ig-galrep
+
+- term: Frobenius element
+  pattern: "Frobenius (?:elements?|class(?:es)?|at\\b)"
+  definition: For a prime p of a number field and a Galois extension in which p is unramified, an element of the Galois group that acts on the residue field of a prime above p as the power map x to x^q, with q the size of the residue field of p. The elements above p form one conjugacy class, the Frobenius class of p.
+  anchor: ig-galois
+
+- term: cyclotomic character
+  pattern: "cyclotomic characters?"
+  definition: The one-dimensional Galois representation given by the action on roots of unity of l-power order. The Frobenius at a prime p different from l acts by raising to the power p, so its value is p.
+  anchor: eq-ig-cyc
+
+- term: Tate module
+  pattern: "Tate modules?"
+  definition: The limit over k of the groups of points of order dividing l^k on an elliptic curve, a free module of rank 2 over the l-adic integers on which Frobenius acts with trace a_p.
+  anchor: ig-galois
+
+- term: Satake parameters
+  pattern: "Satake parameters?"
+  definition: The n nonzero complex numbers that record all Hecke eigenvalues of an automorphic representation of GL_n at a place where it is unramified. The formal proof normalizes them in algSat by the factor q^((n-1)/2).
+  anchor: ig-galois
+
+- term: regular algebraic
+  pattern: "regular algebraic"
+  definition: A condition on an automorphic representation at infinity, that its infinitesimal character be that of an algebraic representation shifted by (n-1)/2 with distinct entries. It makes the Hodge and Tate weights distinct integers.
+  anchor: ig-row0b
+
+- term: polarized pair
+  pattern: "polarized pairs?"
+  definition: A cuspidal representation pi of GL_n over a CM field with a Hecke character chi of the totally real subfield, such that the dual of pi is its conjugate twisted by chi composed with the norm, with a sign condition at the real places.
+  anchor: t-ig-row0b
+
+- term: Hodge and Tate weights
+  pattern: "Hodge and Tate weights?"
+  definition: Integers attached to an l-adic Galois representation at each embedding of the field, read from its restriction to a decomposition group above l. For the representations of Row0b they are the weights at infinity of the automorphic representation.
+  anchor: t-ig-row0b
+
+- term: l-adic limit
+  pattern: "adic limits?"
+  definition: A limit in the topology in which high powers of the prime l are small. Eigenvalue systems that agree modulo higher and higher powers of l converge in it.
+  anchor: ig-limfinodd
+
+- term: inert prime
+  pattern: "inert prime powers?|primes? inert"
+  definition: A prime whose Frobenius element lies outside a chosen index-two subgroup of the Galois group of an auxiliary abelian field, as p = 3 mod 4 is inert in Q(i).
+  anchor: ig-toy
+
+- term: finite-group explicit formula
+  pattern: "finite-group explicit formula"
+  definition: The identity ch_balance writing the excess of a weighted count of inert prime powers over its expected size as a sum, over the characters of a finite abelian group, of smoothed prime sums.
+  anchor: t-ig-balance
+
+- term: kept character
+  pattern: "kept characters?"
+  definition: A character of the finite abelian group of the finite-group explicit formula that comes from the cyclic group of the primitive character under study. Kept characters enter the combination of smoothed prime sums that the endgame bounds with positive weights, and the others must be bounded in advance.
+  anchor: t-ig-core
+
+- term: auxiliary primes
+  pattern: "auxiliary primes"
+  definition: The primes q = 3 mod 8 and d = 7 mod 16 of PairGood, whose Jacobi-symbol twists have prime sums of square-root size on a long range of scales, found by averaging over all candidate primes.
+  anchor: t-ig-pairex

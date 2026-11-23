@@ -1,0 +1,44 @@
+- term: Perron switch
+  pattern: "Perron(?:['’]s)? (?:switch|integral|kernel)"
+  definition: The truncated integral of y^s/s along a vertical line, which approaches 1 for y > 1 and 0 for y < 1 as the line grows. It turns the cutoff n <= x into an integral.
+  anchor: d-ef-perron-switch
+
+- term: Perron's formula
+  pattern: "Perron(?:['’]s)? formula"
+  definition: The statement that the integral of y^s/s along a vertical line is the step function of y, with an explicit error bound for a finite segment.
+  anchor: t-ef-perron
+
+- term: explicit formula
+  pattern: "(?:von Mangoldt(?:['’]s)? )?explicit formulas?"
+  definition: An exact identity that writes a weighted sum over prime powers as main terms plus a sum over the zeros of zeta. Von Mangoldt's version is psi_0(x) = x - sum over zeros of x^rho/rho - log 2pi - (1/2) log(1 - x^-2), one wave for each zero; Weil's version replaces the sharp cutoff at x by a test function.
+  anchor: t-ef-von-mangoldt
+
+- term: midpoint value of the staircase
+  pattern: "midpoint value|psi_0|midpoint convention"
+  definition: The function psi_0(x), equal to psi(x) except at prime powers, where it takes the midpoint of the jump.
+  anchor: d-ef-psi0
+
+- term: wave of a zero
+  pattern: "waves? of (?:a|the) zeros?|zero wave"
+  definition: The real function -2 x^beta cos(gamma log x - arg rho)/|rho|, the combined contribution of a zero rho and its conjugate to the explicit formula. It is a cosine in log x with frequency gamma.
+  anchor: d-ef-zero-wave
+
+- term: conditionally convergent
+  pattern: "conditionally convergent|conditional convergence"
+  definition: A series that converges although the series of absolute values diverges, so that its value depends on the order of summation.
+  anchor: d-ef-conditional
+
+- term: symmetric truncation
+  pattern: "symmetric truncation|symmetric partial sums?"
+  definition: The rule that sums the zeros with |gamma| < T, a zero together with its conjugate, and then lets T grow, which is how the sum over zeros in the explicit formula is read.
+  anchor: d-ef-conditional
+
+- term: spectrum of the primes
+  pattern: "spectrum of the primes|prime spectrum"
+  definition: The list of frequencies gamma, the heights of the nontrivial zeros, with which the waves in the explicit formula oscillate in log x.
+  anchor: d-ef-spectrum
+
+- term: Gibbs phenomenon
+  pattern: "Gibbs (?:phenomenon|overshoot)"
+  definition: The overshoot of partial sums of a Fourier-type series next to a jump, which does not shrink in height as more terms are added and only narrows.
+  anchor: s-ef-sum

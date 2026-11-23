@@ -1,0 +1,79 @@
+- term: holomorphic function
+  pattern: "holomorphic(?! differential| Lefschetz| famil)"
+  definition: A function of a complex variable that has a complex derivative at every point of an open set. It is locally equal to a convergent power series, which is what makes it rigid.
+  anchor: d-ct-holomorphic
+
+- term: meromorphic function
+  pattern: "meromorphic"
+  definition: A function that is holomorphic on an open set except at isolated points, where it has poles.
+  anchor: d-ct-pole
+
+- term: domain coloring
+  pattern: "domain colou?ring"
+  definition: A picture of a complex function on the input plane, with hue showing the angle of the output and brightness showing its size.
+  anchor: d-ct-domain-coloring
+
+- term: analytic continuation
+  pattern: "analytic continuations?|analytically continue[sd]?"
+  definition: The unique holomorphic extension of a holomorphic function from a smaller connected region to a larger one.
+  anchor: d-ct-continuation
+
+- term: identity theorem
+  pattern: "identity theorem"
+  definition: Two holomorphic functions on a connected open set that agree on a set with a limit point in the region agree everywhere.
+  anchor: t-ct-identity
+
+- term: residue
+  pattern: "(?<!arithmetic |norm |counts |tree of )residues?(?! class| field| characteristic| degree| modulo| mod\\b)"
+  definition: The coefficient of 1/(z - a) in the Laurent expansion of a function at a pole a. It is the number that a contour integral around the pole picks up, divided by 2 pi i.
+  anchor: d-ct-pole
+
+- term: winding number
+  pattern: "winding numbers?"
+  definition: The signed number of counterclockwise laps that a closed path makes around a point.
+  anchor: d-ct-winding
+
+- term: argument principle
+  pattern: "argument principle"
+  definition: The number of zeros minus poles of a meromorphic function inside a contour equals the winding number of the image of the contour around 0.
+  anchor: t-ct-argument
+
+- term: Cauchy's theorem
+  pattern: "Cauchy['’]s theorem"
+  definition: A holomorphic function integrates to zero around any closed path in a region with no holes.
+  anchor: t-ct-cauchy
+
+- term: Gamma function
+  pattern: "Gamma functions?"
+  definition: The meromorphic function equal to the integral of e^(-x) x^(s-1) from 0 to infinity for real part of s positive. It interpolates the factorial and has simple poles at 0, -1, -2, and so on.
+  anchor: d-ct-gamma
+
+- term: Schwartz class
+  pattern: "Schwartz (class|functions?)"
+  definition: The smooth functions on the real line that decay, together with every derivative, faster than any power of x.
+  anchor: d-ct-schwartz
+
+- term: Fourier transform
+  pattern: "Fourier transforms?"
+  definition: The function that records how much of each pure wave e^(2 pi i x y) is contained in f, given by integrating f(x) e^(-2 pi i x y) over the real line. The same construction, with the characters of the group in place of the waves, exists on the p-adic numbers, on the adeles, and on finite groups such as Z/qZ, where the integral is a finite sum.
+  anchor: d-ct-fourier
+
+- term: Poisson summation
+  pattern: "Poisson summation( formula)?"
+  definition: For a Schwartz function, the sum of its values at the integers equals the sum of its Fourier transform at the integers.
+  anchor: t-ct-poisson
+
+- term: Mellin transform
+  pattern: "Mellin transforms?"
+  definition: The integral of f(x) x^s dx/x over the positive reals, which is the Fourier transform for the multiplicative group of positive real numbers.
+  anchor: d-ct-mellin
+
+- term: Mellin inversion
+  pattern: "Mellin inversion"
+  definition: The formula that recovers a function f on the positive reals from its Mellin transform by integrating the transform times x^(-s) up a vertical line and dividing by 2 pi i. It is Fourier inversion after the substitution x = e^u.
+  anchor: t-ct-mellin-inversion
+
+- term: Paley-Wiener theorem
+  pattern: "Paley(-| and )Wiener theorem"
+  definition: A function that is smooth and vanishes outside a bounded interval has a Fourier or Mellin transform that is entire and decays fast along vertical lines, and conversely.
+  anchor: s-ct-paley-wiener

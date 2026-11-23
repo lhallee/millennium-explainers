@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="{{description}}">
+<title>{{title}}</title>
+<script>document.documentElement.classList.add('mx-hydrating');(function(){try{var t=localStorage.getItem('mx-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<style>{{css}}</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
+<a class="skip" href="#main">Skip to the text</a>
+<div class="wrap" id="top">
+  <header class="page-head">
+    <button type="button" class="theme-toggle" aria-label="Switch to dark theme" title="Switch theme">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
+    <h1>{{title}}</h1>
+    {{header}}
+  </header>
+  <div class="cols">
+    <nav class="index" id="contents" aria-label="Contents">{{index}}</nav>
+    <main id="main">
+{{main}}
+    </main>
+  </div>
+</div>
+<div id="def" role="dialog" aria-labelledby="def-title" hidden>
+  <button type="button" class="x" id="def-close">Close</button>
+  <h4 id="def-title"></h4>
+  <p id="def-text"></p>
+  <a class="more" id="def-more" href="#top">Where it is explained</a>
+</div>
+<button type="button" class="to-index" aria-label="Go to the contents">Contents</button>
+<script type="application/json" id="glossary-data">{{glossary}}</script>
+{{mathData}}
+{{vizData}}
+{{vizScripts}}
+<script>{{runtime}}</script>
+</body>
+</html>

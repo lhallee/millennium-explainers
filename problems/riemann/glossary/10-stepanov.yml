@@ -1,0 +1,59 @@
+- term: auxiliary function
+  pattern: "auxiliary functions?"
+  definition: A function built for the occasion, by solving a linear system, to vanish to high order at every point being counted while keeping its degree or pole order small.
+  anchor: st-auxiliary
+
+- term: order of vanishing
+  pattern: "order of vanishing|vanish(es|ing)? to order"
+  definition: The integer ord_P(h) attached to a function h at a point P, positive at a zero and negative at a pole. For a polynomial it is the largest m with (x - r)^m dividing it.
+  anchor: d-st-order
+
+- term: Riemann and Roch space
+  pattern: "Riemann and Roch spaces?"
+  definition: The vector space L(D) of functions on a curve whose poles are bounded by a divisor D. Its dimension is deg D + 1 - g once deg D >= 2g - 1.
+  anchor: d-st-L
+
+- term: Riemann and Roch theorem
+  pattern: "Riemann and Roch(?! space)"
+  definition: The theorem computing the dimension of spaces of functions with bounded poles on a curve of genus g, l(D) - l(K - D) = deg D + 1 - g.
+  anchor: t-st-rr
+
+- term: pole order
+  pattern: "pole orders?"
+  definition: Minus the order of a function at a point where it has a pole. On a curve of genus g exactly g positive integers fail to be pole orders of functions with poles at a single point.
+  anchor: t-st-rr
+
+- term: quadratic twist
+  pattern: "quadratic twists?"
+  definition: For y^2 = f(x) over F_q, the curve d y^2 = f(x) with d a nonsquare. Each x feeds its points to exactly one of the two curves unless f(x) = 0.
+  anchor: st-lower
+
+- term: twisted count
+  pattern: "twisted counts?"
+  definition: The number N_sigma of points P over the algebraic closure with Frob(P) = sigma(P), for an automorphism sigma. It is the point count of a twisted copy of the curve.
+  anchor: d-st-twisted
+
+- term: Galois closure
+  pattern: "Galois closures?"
+  definition: The smallest Galois cover of the projective line through which a given cover factors. Its group permutes each unramified fiber simply transitively.
+  anchor: t-st-lower
+
+- term: Siegel's lemma
+  pattern: "Siegel['’]s lemma"
+  definition: A linear system of M equations in K > M unknowns with integer coefficients at most H has a nonzero integer solution with entries at most (K H)^(M / (K - M)).
+  anchor: st-used
+
+- term: determinant method
+  pattern: "determinant method"
+  definition: Showing that an auxiliary function exists by proving that a determinant of integers vanishes, because it is divisible by a large prime power yet smaller than it in absolute value.
+  anchor: st-used
+
+- term: multiplicity one
+  pattern: "(?<!each with |\\(|local )multiplicity one"
+  definition: The case of an auxiliary-function argument in which each counted point imposes a single condition, plain vanishing, rather than vanishing to higher order.
+  anchor: st-used
+
+- term: Stepanov determinant
+  pattern: "Stepanov determinant"
+  definition: A phrase from the timeline of the 2026 note, read on this page as the determinant of the linear system that defines a Stepanov-type auxiliary function. The auxiliary function exists exactly when that determinant vanishes.
+  anchor: st-used

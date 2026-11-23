@@ -1,0 +1,29 @@
+apostol:
+  authors: T. M. Apostol
+  title: Introduction to Analytic Number Theory
+  year: 1976
+  where: Springer, Undergraduate Texts in Mathematics
+
+euler1737:
+  authors: L. Euler
+  title: Variae observationes circa series infinitas
+  year: 1744 (presented 1737)
+  where: Commentarii academiae scientiarum Petropolitanae 9, pp. 160-188
+
+hardywright:
+  authors: G. H. Hardy and E. M. Wright
+  title: An Introduction to the Theory of Numbers
+  year: 2008
+  where: Oxford University Press, 6th edition, revised by D. R. Heath-Brown and J. H. Silverman
+
+mertens1874:
+  authors: F. Mertens
+  title: Ein Beitrag zur analytischen Zahlentheorie
+  year: 1874
+  where: Journal für die reine und angewandte Mathematik 78, pp. 46-62
+
+montgomeryvaughan:
+  authors: H. L. Montgomery and R. C. Vaughan
+  title: "Multiplicative Number Theory I: Classical Theory"
+  year: 2007
+  where: Cambridge University Press

@@ -1,0 +1,78 @@
+# References cited in chapter 22. Entries shared with other chapters are copied exactly.
+silverman2009:
+  authors: J. H. Silverman
+  title: The Arithmetic of Elliptic Curves
+  year: 2009
+  where: Springer, Graduate Texts in Mathematics 106, 2nd edition
+
+iwaniec-kowalski-ant:
+  authors: H. Iwaniec and E. Kowalski
+  title: Analytic Number Theory
+  year: 2004
+  where: American Mathematical Society Colloquium Publications 53
+
+diamond-shurman:
+  authors: F. Diamond and J. Shurman
+  title: A First Course in Modular Forms
+  year: 2005
+  where: Springer, Graduate Texts in Mathematics 228
+
+deligne1971:
+  authors: P. Deligne
+  title: Formes modulaires et représentations l-adiques
+  year: 1971
+  where: "Séminaire Bourbaki, 21e année (1968/69), Exposé 355, Lecture Notes in Mathematics 179, Springer"
+
+shin2011:
+  authors: S. W. Shin
+  title: Galois representations arising from some compact Shimura varieties
+  year: 2011
+  where: Annals of Mathematics 173
+
+chenevier-harris2013:
+  authors: G. Chenevier and M. Harris
+  title: Construction of automorphic Galois representations, II
+  year: 2013
+  where: Cambridge Journal of Mathematics 1
+
+blggt2014:
+  authors: T. Barnet-Lamb, T. Gee, D. Geraghty, and R. Taylor
+  title: Potential automorphy and change of weight
+  year: 2014
+  where: Annals of Mathematics 179
+
+caraiani2012:
+  authors: A. Caraiani
+  title: Local-global compatibility and the action of monodromy on nearby cycles
+  year: 2012
+  where: Duke Mathematical Journal 161
+
+wiles1988:
+  authors: A. Wiles
+  title: On ordinary λ-adic representations associated to modular forms
+  year: 1988
+  where: Inventiones Mathematicae 94
+
+taylor1991:
+  authors: R. Taylor
+  title: Galois representations associated to Siegel modular forms of low weight
+  year: 1991
+  where: Duke Mathematical Journal 63
+
+ramanujan1916:
+  authors: S. Ramanujan
+  title: On certain arithmetical functions
+  year: 1916
+  where: Transactions of the Cambridge Philosophical Society 22
+
+harris-kudla-sweet1996:
+  authors: M. Harris, S. S. Kudla, and W. J. Sweet
+  title: Theta dichotomy for unitary groups
+  year: 1996
+  where: Journal of the American Mathematical Society 9
+
+heathbrown1995:
+  authors: D. R. Heath-Brown
+  title: A mean value estimate for real character sums
+  year: 1995
+  where: Acta Arithmetica 72
