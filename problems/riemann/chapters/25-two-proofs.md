@@ -240,7 +240,7 @@ Tate's thesis is the one published theory that both routes stand on. Route M is 
 
 Most of each proof has no counterpart in the other, as far as this page shows. Route M uses no automorphic form beyond functions on the idele class group, no Galois representation, no Galois cohomology, no auxiliary function, and no count of multiplicity in Stepanov's sense. Route A uses no topology on a function space, no strip, no trace of an operator, no orbital basis, and no $S$-local computation. Even the word multiplicity means different things: in the note it is the order of vanishing of an auxiliary object, which Route A replaces by divisibility ([[ra-multiplicity]]), while in the monograph it is the multiplicity $m_\rho$ of a zero and the order of the poles of Euler factors ([[t-pc-polar]]). The two endgames share the reflection and the pole of [[tp-share-poles]], and nothing else. We know of no step of either proof that can be moved into the other.
 
-:::: figure {#f-tp-shapes viz="tp-shapes" height="720"}
+:::: figure {#f-tp-shapes viz="tp-shapes" height="780"}
 Each proof narrows to one statement through which all of its construction reaches the theorem, an identity in the first and an inequality in the second, and the two touch only at classical results that both use and at the theorem itself.
 
 ```vizspec

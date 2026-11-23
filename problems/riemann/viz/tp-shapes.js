@@ -32,13 +32,13 @@ Kit.register('tp-shapes', {
       { id: 'pois', r: 'S', k: 'shared', name: 'Poisson summation', ph: 'Poisson summation', sh: 'Poisson', row: 11, c: 0.25, ch: 11, a: 't-ad-poisson',
         t: 'The sum of a function over a lattice equals the sum of its Fourier transform over the dual lattice. Route M gets the symmetry of theta sums from it through Tate\'s thesis; in Route A the tree\'s proof of the Siegel and Weil formula runs it for the Weil representation.',
         s: 'Stein and Shakarchi, Fourier Analysis; on the adeles, Tate\'s thesis. Chapters 4, 11, and 24.' },
-      { id: 'tate', r: 'S', k: 'shared', name: 'Tate\'s thesis', ph: 'Tate\'s thesis', sh: 'Tate', row: 10, c: 0.95, ch: 24, a: 's-ia-tate',
+      { id: 'tate', r: 'S', k: 'shared', name: 'Tate\'s thesis', ph: 'Tate\'s thesis', sh: 'Tate', row: 10, c: 0.9, ch: 24, a: 's-ia-tate',
         t: 'Zeta integrals over the ideles continue every Hecke L-function and give its functional equation. Route M is Tate\'s thesis done in families; Route A uses its statement HeckeLEntireAndNonzeroAtOne as a field of one bundle of published inputs.',
         s: 'Tate, thesis of 1950, in Cassels and Fröhlich (1967), ch. XV. GlobalTheory.Published.HeckeLEntireAndNonzeroAtOne, Development/AbelianVarietyTheory/PublishedTheorems/TwistedTraceFormula/HeckeLEntireAndNonzeroAtOne.lean.' },
       { id: 'fe', r: 'S', k: 'shared', name: 'Functional equation', ph: 'the functional equation', sh: 'Reflection', row: 10, c: -1.15, ch: 4, a: 't-zc-functional-equation',
         t: 'ξ(s) = ξ(1 − s), and the same symmetry for the completed L-function of a primitive Dirichlet character. Both endgames use it to reflect the half-plane right of the line onto the left one; Route M also uses it in the divisor sequence and on the circle.',
         s: 'Riemann 1859; for L(s, χ), Davenport, Multiplicative Number Theory. Chapters 4 and 7.' },
-      { id: 'ld', r: 'S', k: 'shared', name: 'Zeros are poles', ph: 'the fact that a zero is a pole of −L′/L', sh: 'Poles', row: 4, c: 0, ch: 2, a: 't-ep-logderiv',
+      { id: 'ld', r: 'S', k: 'shared', name: 'Zeros are poles', ph: 'the fact that a zero is a pole of −L′/L', sh: 'Poles', row: 5, c: 0, ch: 2, a: 't-ep-logderiv',
         t: 'Minus the logarithmic derivative of ζ is the Dirichlet series of Λ(n), and a zero of order m is a simple pole of −L′/L with residue −m: the bridge of the explicit formula, in the form both proofs use it. Route M\'s endgame turns its prime side into −ζ′/ζ(z + ½); Route A\'s code builds the poles of its transform from P′/P.',
         s: 'Apostol, Introduction to Analytic Number Theory. In Route A: Deduction.poleData, Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/poleData.lean.' },
 
@@ -79,28 +79,28 @@ Kit.register('tp-shapes', {
         t: 'ζ has no zero on the line Re s = 1. The functional equation reflects the points the circle at p looks at onto that line, so ξ does not vanish there and the circle sees every theta sum.',
         s: 'de la Vallée Poussin 1896. Chapters 5 and 13; Masullo, Theorem 7.5.0.1, p. 374.' },
 
-      { id: 'fv', r: 'A', k: 'own', name: 'Five theorems', row: 1, d: 0.3, ch: 19, a: 't-le-five',
+      { id: 'fv', r: 'A', k: 'own', name: 'Five theorems', row: 1, d: 0.65, ch: 19, a: 't-le-five',
         t: 'If no primitive Dirichlet L-function vanishes right of ½, the five theorems of Main.lean follow: Euler factors handle the imprimitive characters, and the functional equation reflects the half-plane.',
         s: 'UpperTheory.Top.imprimitive, Development/AutomorphicArithmetic/CharacterBoxes/Imprimitive.lean.' },
-      { id: 'ct', r: 'A', k: 'own', name: 'Contract', row: 2, d: 0.3, ch: 19, a: 't-le-contract',
+      { id: 'ct', r: 'A', k: 'own', name: 'Contract', row: 2, d: 0.65, ch: 19, a: 't-le-contract',
         t: 'If for every small ε the cyclic combination satisfies $bound$ on windows $win$, then no L-function of its family vanishes right of ½: one application per ε, with no bootstrap.',
         s: 'Formalism.HC.level_of_tiedWin, Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/TopWin.lean.' },
-      { id: 'wl', r: 'A', k: 'own', name: 'Windowed Landau', row: 3, d: 1, ch: 19, a: 't-le-windowed',
+      { id: 'wl', r: 'A', k: 'own', name: 'Windowed Landau', row: 3, d: 0, ch: 19, a: 't-le-windowed',
         t: 'An upper bound $Cy$ on windows $winD$ for arbitrarily large Y, on a positive combination of smoothed prime sums, excludes every zero of the family to the right of θ.',
         s: 'Deduction.zeroFree_of_rpow_window, Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ZeroFreeOfRpowWindow.lean.' },
-      { id: 'iw', r: 'A', k: 'own', name: 'Inequality on windows', sh: 'Inequality', row: 3, d: 0.3, ch: 19, a: 't-le-interface', waist: true,
+      { id: 'iw', r: 'A', k: 'own', name: 'Inequality on windows', sh: 'Inequality', row: 3, d: 0.65, ch: 19, a: 't-le-interface', waist: true,
         t: 'For each primitive χ and small ε, the cyclic combination of smoothed prime sums satisfies $bound$ at the large scales of windows $win$. The code proves it in two halves: a conditional bound, and tied families on windows.',
         s: 'Formalism.HC.ChebyshevInequalityOnWindows, Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/TopWin.lean; proved for every level by level_gm_le_on_family_scales.' },
-      { id: 'cb', r: 'A', k: 'own', name: 'From count to bound', row: 4, d: 0.3, ch: 22, a: 't-ig-core',
+      { id: 'cb', r: 'A', k: 'own', name: 'From count to bound', row: 4, d: 0.65, ch: 22, a: 't-ig-core',
         t: 'An exact finite-group explicit formula writes the excess of the inert count as smoothed prime sums, and at a scale x a small gap between the count and its expected size bounds the cyclic combination by $xO$.',
         s: 'UpperTheory.Comparison₂.core_gm, Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean; the identity is AskMainBalance, Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean.' },
-      { id: 'tc', r: 'A', k: 'own', name: 'Chain of theta lifts', row: 5, d: 0.3, ch: 21, a: 'ml-chain',
+      { id: 'tc', r: 'A', k: 'own', name: 'Chain of theta lifts', row: 5, d: 0.65, ch: 21, a: 'ml-chain',
         t: 'At each scale x, a chain of between $mlen$ and twice that many theta lifts between totally definite unitary groups yields data tied at every large scale of some windows. How the chain\'s divisibility reaches the count was not traced on this page.',
         s: 'UpperTheory.Top.TopG, Development/AutomorphicArithmetic/CharacterBoxes/ZeroFreeAllOfTopG.lean, from Green and the record HypsAlt.' },
       { id: 'pi', r: 'A', k: 'own', name: 'Published inputs', row: 6, d: 0, ch: 24, a: 't-ia-assembly',
         t: 'Published theorems restated as propositions and proved in the tree. Row0b and local Langlands fill the record, and its bundles feed the theta-integral assembly that builds the record HypsAlt.',
         s: 'UpperTheory.LiteratureTheorems.OpenLiteratureStatements, Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/EveryCharacterOfLiteratureOfVWin.lean.' },
-      { id: 'hs', r: 'A', k: 'own', name: 'Hosts on windows', row: 6, d: 0.85, ch: 19, a: 'le-interface',
+      { id: 'hs', r: 'A', k: 'own', name: 'Hosts on windows', row: 6, d: 1, ch: 19, a: 'le-interface',
         t: 'From VWin and a pair of auxiliary primes whose Jacobi twists have square-root bounds (PairEx), the code builds hosts at every scale of some windows, with square-root bounds for the characters it cannot keep.',
         s: 'UpperTheory.Top.supplyChi, Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean; UpperTheory.Top.PairEx, Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean.' },
       { id: 'vw', r: 'A', k: 'own', name: 'Cohomological window', row: 7, d: 1, ch: 23, a: 't-cw-vwin',
@@ -109,13 +109,13 @@ Kit.register('tp-shapes', {
       { id: 'rb', r: 'A', k: 'own', name: 'Galois input (Row0b)', row: 8, d: 0.5, ch: 22, a: 't-ig-row0b',
         t: 'Every regular algebraic polarized cuspidal representation of GLₙ over a CM field has an $ell$-adic Galois representation whose Frobenius data are its local data. The tree proves it from GeoOne, Galois representations from geometry, and TLiftK, theta lifts between definite unitary groups.',
         s: 'UpperTheory.GalStar.Row0b, Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/WeightsConjBis.lean; derived in galoisRepresentations_of_thetaLift.' },
-      { id: 'sw', r: 'A', k: 'side', name: 'Siegel and Weil', row: 10, d: 0.05, ch: 24, a: 't-ia-siegel',
+      { id: 'sw', r: 'A', k: 'side', name: 'Siegel and Weil', row: 10, d: 0.12, ch: 24, a: 't-ia-siegel',
         t: 'Averaged over a genus of definite lattices with weights one over the orders of the automorphism groups, the theta series is an Eisenstein series, and the weights sum to an explicit mass.',
         s: 'Siegel 1935; GlobalTheory.ThK.Dbl.SiegelWeilStd, Development/WeilBound/ThetaLifts/LatticeBasics/HypothesesS.lean.' },
-      { id: 'll', r: 'A', k: 'side', name: 'Local Langlands', row: 10, d: 0.55, ch: 24, a: 't-ia-llc',
+      { id: 'll', r: 'A', k: 'side', name: 'Local Langlands', row: 10, d: 0.75, ch: 24, a: 't-ia-llc',
         t: 'At every finite place of every number field, a map from irreducible representations of GLₙ to Weil and Deligne representations that obeys the laws LawsT.',
         s: 'UpperTheory.Zero.LLC.RecTExists, Development/AutomorphicArithmetic/Foundations/LocalLanglands/IsRecTOfIsRec.lean.' },
-      { id: 'fw', r: 'A', k: 'side', name: 'Ferrero and Washington', row: 10, d: 0.97, ch: 23, a: 't-cw-iwasawa',
+      { id: 'fw', r: 'A', k: 'side', name: 'Ferrero and Washington', row: 9, d: 1, ch: 23, a: 't-cw-iwasawa',
         t: 'Along a cyclotomic tower the $ell$-part of the class number grows like $ell$ to an exponent linear in $ellj$ and in j, and over an abelian base field the coefficient of $ellj$ is zero.',
         s: 'Washington, Introduction to Cyclotomic Fields, ch. 7 and 13; UpperTheory.V.Published.FerreroWashington, Development/AutomorphicArithmetic/AutomorphicVarieties/PublishedTheorems/FerreroWashington.lean.' }
     ];
@@ -124,7 +124,7 @@ Kit.register('tp-shapes', {
     var EDGES = [
       ['tate', 'dv'], ['fe', 'dv'], ['dv', 'op'], ['dv', 'sq'], ['tate', 'ot', 0], ['fe', 'ot', 1], ['zc', 'ot'], ['op', 'sp'],
       ['sq', 'sp'], ['sp', 'pr'], ['ot', 'sv'], ['pr', 'rm'], ['sv', 'rm'], ['rm', 'tf'], ['sl', 'tf'], ['tf', 'eg'], ['fe', 'eg', 2],
-      ['ld', 'eg'], ['eg', 'rh'], ['eg', 'hk'],
+      ['ld', 'eg', 3], ['eg', 'rh'], ['eg', 'hk'],
       ['rb', 'vw'], ['fw', 'vw'], ['rb', 'pi'], ['ll', 'pi', 2], ['tate', 'pi', 1], ['vw', 'hs'], ['pi', 'tc'], ['sw', 'tc', 3],
       ['hs', 'tc'], ['tc', 'cb'], ['cb', 'iw'], ['iw', 'ct'], ['wl', 'ct'], ['ld', 'wl'], ['ct', 'fv'], ['fe', 'fv', 0], ['fv', 'rh'],
       ['pois', 'tate'], ['pois', 'fe'], ['pois', 'sw']
@@ -197,7 +197,7 @@ Kit.register('tp-shapes', {
        Route A to its right. A wide stage draws named pills; a narrow one draws dots and names only the key results. */
     function layout(W, H) {
       var wide = W >= 700, m = wide ? 8 : 6, c0 = wide ? Kit.clamp(0.085 * W, 64, 96) : Kit.clamp(0.13 * W, 34, 50);
-      var panelH = wide ? panelHeight(W) : 34, top = wide ? 24 : 20, pitch = (H - panelH - top - 4) / 12, cx = W / 2;
+      var panelH = wide ? panelHeight(W) : 34, top = wide ? 24 : 20, avail = H - panelH - top - 4, pitch = avail / 12, cx = W / 2;
       var fs = 11.5, cap = wide ? Kit.clamp(0.135 * W, 96, 132) : 0, hwMax = 0;
       NODES.forEach(function (n) {
         var g = { lines: null, w: 0, h: 0, ox: 0 };
@@ -205,15 +205,22 @@ Kit.register('tp-shapes', {
           var width = n.id === 'rh' ? Math.min(2 * c0 + 160, 0.4 * W) : n.r === 'S' ? 2 * c0 - 8 : n.k === 'side' ? 0.82 * cap : cap;
           g.lines = fig.wrap(n.name, width - 16, fs, 600);
           var tw = 0; g.lines.forEach(function (s) { tw = Math.max(tw, fig.measure(s, fs, 600)); });
-          g.w = Math.ceil(tw + 16); g.h = 9 + 14 * g.lines.length;
+          g.w = Math.ceil(tw + 16); g.h = 7 + 13 * g.lines.length;
           if (n.r === 'M' || n.r === 'A') hwMax = Math.max(hwMax, g.w / 2);
         } else { g.w = g.h = n.id === 'rh' ? 14 : n.k === 'side' ? 9 : 11; }
         G[n.id] = g;
       });
+      /* Rows: on a wide stage each row is as tall as its tallest pill (a waist counts its ring), and the space left is
+         shared equally between the rows, so two-line pills in neighboring rows keep a clear gap for their link. */
+      var rowH = [], rowY = [], y = top, gap;
+      for (var r = 0; r < 12; r++) rowH[r] = wide ? 20 : 0;
+      if (wide) NODES.forEach(function (n) { rowH[n.row] = Math.max(rowH[n.row], G[n.id].h + (n.waist ? 10 : 0)); });
+      gap = (avail - rowH.reduce(function (a, b) { return a + b; }, 0)) / 12;
+      for (r = 0; r < 12; r++) { rowY[r] = y + (rowH[r] + gap) / 2; y += rowH[r] + gap; }
       var hw = wide ? hwMax : 7, inner = cx - c0 - 16 - hw, outer = m + hw;
       NODES.forEach(function (n) {
         var g = G[n.id];
-        g.y = top + (n.row + 0.5) * pitch;
+        g.y = rowY[n.row];
         if (n.r === 'M' || n.r === 'A') { var xm = inner - n.d * (inner - outer); g.x = n.r === 'M' ? xm : W - xm; }
         else g.x = cx + n.c * c0;
       });
@@ -229,7 +236,7 @@ Kit.register('tp-shapes', {
           list.forEach(function (other, j) { PORT[(pair[1] === 'o' ? n.id + '>' + other : other + '>' + n.id) + pair[1]] = -span / 2 + span * j / (k - 1); });
         });
       });
-      return { wide: wide, cx: cx, c0: c0, pitch: pitch, outer: outer, panelTop: H - panelH, lane: function (side, k) { return cx + side * (c0 + 2 + 3.2 * k); } };
+      return { wide: wide, cx: cx, c0: c0, pitch: pitch, clear: wide ? gap : 0.6 * pitch, outer: outer, panelTop: H - panelH, lane: function (side, k) { return cx + side * (c0 + 2 + 3.2 * k); } };
     }
     /* Panel height for the longest reading at this width, estimated from character counts so that nothing is measured. */
     function panelHeight(W) {
@@ -246,20 +253,28 @@ Kit.register('tp-shapes', {
       if (!hollow) { ctx.fillStyle = fig.color('stage', 0.96); ctx.fill(); }
       fig.stroke({ color: color, width: width, alpha: alpha, dash: dash }); ctx.stroke(); ctx.setLineDash([]);
     }
+    /* How far a link stays from the center of a result: the edge of its pill or dot, or of the ring around a waist. */
+    function reachOf(n) {
+      var g = G[n.id];
+      return L.wide ? g.h / 2 + (n.waist ? 5.8 : 0) : (n.waist ? 9.5 : g.w / 2) + 1.5;
+    }
     /* A link: from the top of its source to the bottom of its target, leaving and arriving vertically; with a lane, it
-       climbs the lane between the two ends. Returns the end point. */
-    function curve(ctx, e) {
+       climbs the lane between the two ends. The path stops `inset` short of the target, where the arrowhead's base
+       is, so that the head keeps a sharp tip. Returns the tip. */
+    function curve(ctx, e, inset) {
       var u = e[0], v = e[1], gu = G[u], gv = G[v], key = u + '>' + v;
-      var x0 = gu.x + gu.ox + (PORT[key + 'o'] || 0), x1 = gv.x + gv.ox + (PORT[key + 'i'] || 0), y0 = gu.y - gu.h / 2, y1 = gv.y + gv.h / 2;
+      var x0 = gu.x + gu.ox + (PORT[key + 'o'] || 0), x1 = gv.x + gv.ox + (PORT[key + 'i'] || 0);
+      var y0 = gu.y - reachOf(byId[u]), y1 = gv.y + reachOf(byId[v]), ye = y1 + (inset || 0);
       ctx.moveTo(x0, y0);
-      if (e.length > 2 && L.wide) {
-        var xl = L.lane(byId[v].r === 'M' ? -1 : 1, e[2]), q = 0.6 * L.pitch;
+      if (e.length > 2) {
+        // the lane is left within the clear gap under the target, so the turn passes over nothing in the row below
+        var xl = L.lane(byId[v].r === 'M' ? -1 : 1, e[2]), q = 0.6 * L.pitch, qo = Math.min(q, L.clear);
         ctx.bezierCurveTo(x0, y0 - 0.6 * q, xl, y0 - 0.4 * q, xl, y0 - q);
-        ctx.lineTo(xl, y1 + q);
-        ctx.bezierCurveTo(xl, y1 + 0.4 * q, x1, y1 + 0.6 * q, x1, y1);
+        ctx.lineTo(xl, ye + qo);
+        ctx.bezierCurveTo(xl, ye + 0.4 * qo, x1, ye + 0.6 * qo, x1, ye);
       } else {
-        var k = Math.max(12, 0.5 * (y0 - y1));
-        ctx.bezierCurveTo(x0, y0 - k, x1, y1 + k, x1, y1);
+        var k = 0.5 * (y0 - ye);                     // no more than half the rise, so a short link never doubles back
+        ctx.bezierCurveTo(x0, y0 - k, x1, ye + k, x1, ye);
       }
       return [x1, y1];
     }
@@ -332,7 +347,7 @@ Kit.register('tp-shapes', {
         ctx.stroke(); ctx.lineCap = 'butt'; ctx.lineJoin = 'miter';
       });
       // links: first those from shared and side results, over a halo, then each route's own
-      var hs = wide ? 6 : 4.5;
+      var hs = wide ? 6.5 : 5, inset = 0.75 * hs;
       [0, 1].forEach(function (pass) {
         EDGES.forEach(function (e) {
           var u = byId[e[0]], own = u.k === 'own';
@@ -342,10 +357,11 @@ Kit.register('tp-shapes', {
           var on = !lit || edgeOn(e);
           if (!on) al *= 0.35;
           var width = on && lit ? 2.2 : own ? 1.5 : 1.2, dash = u.k === 'side' ? [4, 3] : null, end;
-          if (!own) { fig.stroke({ color: 'stage', width: width + 3, alpha: 0.75 * al }); ctx.beginPath(); curve(ctx, e); ctx.stroke(); }
-          fig.stroke({ color: u.col, width: width, alpha: (u.k === 'shared' && !(on && lit) ? 0.7 : 1) * al, dash: dash });
-          ctx.beginPath(); end = curve(ctx, e); ctx.stroke(); ctx.setLineDash([]);
-          head(end[0], end[1], hs, u.col, al);
+          var la = (u.k === 'shared' && !(on && lit) ? 0.75 : 1) * al;
+          if (!own) { fig.stroke({ color: 'stage', width: width + 3, alpha: 0.75 * al }); ctx.beginPath(); curve(ctx, e, inset); ctx.stroke(); }
+          fig.stroke({ color: u.col, width: width, alpha: la, dash: dash });
+          ctx.beginPath(); end = curve(ctx, e, inset); ctx.stroke(); ctx.setLineDash([]);
+          head(end[0], end[1], hs, u.col, la);
         });
       });
 
@@ -363,17 +379,28 @@ Kit.register('tp-shapes', {
       if (wide) [false, true].forEach(function (sideText) {   // names, in two passes of one font each
         NODES.forEach(function (n) {
           var al = alphaOf(n); if (al <= 0 || (n.k === 'side') !== sideText) return;
-          var g = G[n.id], y0 = g.y - (g.lines.length - 1) * 7;
-          g.lines.forEach(function (str, i) { fig.text(str, g.x + g.ox, y0 + 14 * i + 0.5, { color: sideText ? 'muted' : 'fg', size: 11.5, weight: 600, align: 'center', baseline: 'middle', alpha: al }); });
+          var g = G[n.id], y0 = g.y - (g.lines.length - 1) * 6.5;
+          g.lines.forEach(function (str, i) { fig.text(str, g.x + g.ox, y0 + 13 * i + 0.5, { color: sideText ? 'muted' : 'fg', size: 11.5, weight: 600, align: 'center', baseline: 'middle', alpha: al }); });
         });
       });
       else NODES.forEach(function (n) {              // on a phone only the shared results, the waists, and the theorem are named
         var al = alphaOf(n); if (al <= 0 || !(n.sh || n.waist)) return;
         var g = G[n.id], x = g.x + g.ox, label = n.sh || n.name;
-        if (n.id === 'rh') fig.text(label, x + 11, g.y + 0.5, { color: 'violet', size: 10.5, weight: 600, baseline: 'middle', alpha: al });
-        else if (n.r === 'S') fig.text(label, x, n.id === 'pois' ? g.y + g.h / 2 + 8 : g.y - g.h / 2 - 8, { color: 'red', size: 10.5, weight: 600, align: 'center', baseline: 'middle', alpha: al });
-        else fig.text(label, n.r === 'A' ? x - 12 : x + 12, g.y - 12, { color: n.col, size: 10.5, weight: 600, align: n.r === 'A' ? 'right' : 'left', baseline: 'middle', alpha: al });
+        if (n.id === 'rh') tag(label, x + 11, g.y + 0.5, 'left', 'violet', al);
+        // a shared result's links leave its top, so its name goes below the dot (nothing arrives at Poisson or the
+        // poles from below) or to its left
+        else if (n.r === 'S' && !ins[n.id].length) tag(label, x, g.y + g.h / 2 + 8, 'center', 'red', al);
+        else if (n.r === 'S') tag(label, x - g.w / 2 - 4, g.y + 0.5, 'right', 'red', al);
+        else tag(label, n.r === 'A' ? x - 12 : x + 12, g.y - 15, n.r === 'A' ? 'right' : 'left', n.col, al);
       });
+      /* A phone label over a plate of the stage color, so a link that passes under it stays readable on both sides. */
+      function tag(str, x, y, align, color, al) {
+        var w = fig.measure(str, 10.5, 600), x0 = align === 'right' ? x - w : align === 'center' ? x - w / 2 : x;
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(x0 - 3, y - 7, w + 6, 14, 4); else ctx.rect(x0 - 3, y - 7, w + 6, 14);
+        ctx.fillStyle = fig.color('stage', 0.72 * al); ctx.fill();
+        fig.text(str, x, y, { color: color, size: 10.5, weight: 600, align: align, baseline: 'middle', alpha: al });
+      }
       if (showM.value) fig.text('Route M', wide ? 10 : 6, wide ? 12 : 9, { color: 'blue', size: 12.5, weight: 700, baseline: 'middle' });
       if (showA.value) fig.text('Route A', W - (wide ? 10 : 6), wide ? 12 : 9, { color: 'gold', size: 12.5, weight: 700, align: 'right', baseline: 'middle' });
 

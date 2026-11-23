@@ -172,8 +172,14 @@ To keep each route to about ten results, these steps are drawn as one node each.
 
 ## Measured on 2026-11-23
 
-`node build/check.mjs --skip-scroll --figures tp-shapes` on the 4-core desktop, final module: setup at 4x CPU
-slowdown, labels 7.0 ms, init 14.5 ms, first frame 25.9 ms; steady frames at 1x 1.1 ms median and 2.7 ms at the
-95th percentile; at 4x, 5.5 ms median and 10.6 ms at the 95th percentile. All checks passed. The run before the
-last edits (node `zc` renamed, the summary reworded) gave 6.5, 20.3, and 31.7 ms of setup and 9.7 ms at the 95th
-percentile at 4x.
+`node build/check.mjs --skip-scroll --figures tp-shapes` on the 4-core desktop, after the arrow and layout pass
+(rows as tall as their pills, links stopping at rings and dots, lanes on the phone), two runs, both passed:
+
+| Run | Setup at 4x: labels, init, first frame | 1x median / p95 | 4x median / p95 |
+| --- | --- | --- | --- |
+| 1 | 6.5, 14.3, 25.8 ms | 1.1 / 4.3 ms | 6.4 / 13.5 ms |
+| 2 | 12.6, 25.5, 63.6 ms; again on a fresh load 3.9, 4.6, 18.2 ms | 1.3 / 1.7 ms | 6.1 / 9.5 ms |
+
+The 64 ms first frame of run 2 is the kind of chance excess the repository's AGENTS.md describes for full runs on
+this desktop; the check measured the figure again alone and it passed. Earlier runs of the first version gave first
+frames of 25.9 to 31.7 ms.
