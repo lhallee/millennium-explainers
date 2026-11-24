@@ -631,11 +631,20 @@
     return (rgbaCache[key] = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')');
   }
 
-  var raf = 0;
+  var raf = 0, farCheck = [];
   function schedule() { if (!raf && !document.hidden) raf = requestAnimationFrame(tick); }
   function tick(now) {
     raf = 0;
     var more = false;
+    // Figures that just finished setting up, checked once for distance (see begin). Reading the layout here, in the
+    // frame, costs nothing the frame would not spend anyway, where a read at the end of init can force an extra one.
+    for (var j = 0; j < farCheck.length; j++) {
+      var g = farCheck[j];
+      if (!g.ready || g.released) continue;
+      var r = g.el.getBoundingClientRect(), H = global.innerHeight;
+      if (r.bottom < -7 * H || r.top > 8 * H) g.release();
+    }
+    farCheck.length = 0;
     for (var i = 0; i < figs.length; i++) {
       var f = figs[i];
       if (!f.ready || !f.visible) continue;
@@ -2624,6 +2633,13 @@
             ro.observe(f.el);
             onScreen.observe(f.el);
             far.observe(f.el);
+            // A figure whose setup ends just as the reader jumps away can sit in a section the browser is skipping
+            // (content-visibility), where the far observer delivers nothing until the reader comes back, and it
+            // would keep its canvas until then: on 2026-11-24 a jump 700 ms after starting f-st-ladder at 4x CPU
+            // slowdown left 277,610 px held 20 screens away. So the next frame also checks its distance once, with
+            // the far observer's margin of 7 screens (tick).
+            farCheck.push(f);
+            schedule();
           });
         });
       } catch (err) { fail(f, err); }

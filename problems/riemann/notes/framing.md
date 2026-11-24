@@ -9,6 +9,37 @@ the writers' reports.
 - The coin-flip picture for a square-root sized error.
 - "Rare and tall cancel": the weight $\log p$ makes the expected density of the weighted count equal to 1.
 - $\psi$ against $\vartheta$, with the prime powers repairing a bias of about $\sqrt x$.
+- "Chebyshev's budget" (section `cp-chebyshev`, added 2026-11-24): the name, the reading of $\log N =
+  \sum_p v_p(N)\log p$ as a budget that a number's prime factors spend, and the ladder Chebyshev, then Stepanov, then
+  Route A, in which each rung plays a size against divisibility and the later rungs add multiplicity. The mathematics
+  (the binomial window bound, the lower bound, and Chebyshev's 1852 number with its constants) is classical and cited;
+  the ladder is ours. It was added after Logan asked for intuition for a public account, a video interview, that described
+  Route A as Chebyshev's argument run with a far better number. The Lean name `ChebyshevInequalityOnWindows` is a fact about the code, and the page
+  says only that the inequality carries Chebyshev's name, not why it was named so.
+- "What the budget can and cannot see": the claim that a number divisible $m$ times by every prime of a window would
+  cap the window's weight at $1/m$ of its size bound is the elementary inequality $mW \le \log N$, offered as the
+  intuition for why multiplicity matters; that the Chebyshev line stops at the order of magnitude is stated for
+  Chebyshev's numbers, whose window primes divide once.
+
+## Chapters 8 to 10 and 13, the integer and polynomial dictionary (added 2026-11-24)
+
+- The two added rows of the dictionary table in chapter 9 (the budget row, and prime powers as orbits) and the
+  sentence that the two proofs use different rows of it: Route A the budget row through Stepanov, Route M the orbit
+  row as circles of length $\log p$.
+- Chapter 10's reading of `t-st-roots` as Chebyshev's budget through the dictionary, with a root $r$ as the prime
+  $x - r$ of degree 1.
+- Chapter 13's comparison of the circle of length $\log p$ with a Frobenius orbit, and of what Route M borrows from
+  the function-field picture (the shape of a trace formula) and what it does not (Frobenius, and coinciding Euler
+  factor zeros). The source's own position, that its method gives nothing new over function fields, is cited where
+  it appears.
+
+## Chapter 25, the two proofs and function fields (added 2026-11-24)
+
+- The table in `tp-function-fields` that pairs each route with a function-field proof it resembles (Weil's for
+  Route M, Stepanov's for Route A), what it keeps and replaces, and an integer ancestor (the explicit formula read as
+  a trace formula, and Chebyshev's budget). The pairing is ours and the page says so. It corrects a public framing in
+  which only the human proof carries the polynomial analogy: by its source's own account Route M does not run over
+  function fields, and the route that imitates a function-field proof is Route A.
 
 ## Chapter 2, Euler's product
 

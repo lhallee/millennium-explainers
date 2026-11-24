@@ -36,6 +36,14 @@ phone and desktop width in both themes. The reviewing session's first pass (19 i
 the second pass (2026-11-23) rechecked those items on the final text and read chapters 20 and 24 in full. The
 one limit not met with margin is the worst scroll frame at 4x CPU slowdown, recorded in `AGENTS.md`.
 
+Added 2026-11-24 at Logan's request, by the main session and not yet refereed by a second agent: chapter 1's
+section `cp-chebyshev` (Chebyshev's budget: the binomial window bound with proof, the lower bound, and Chebyshev's
+1852 number with his constants, checked against the 1852 paper's citation data and Gantumur's review, every number
+recomputed) and its figure `chebyshev-budget`, the 96th; bridges to it in chapters 10 and 21; two rows of chapter
+9's dictionary; a paragraph in chapter 13 on what Route M borrows from the function-field picture; and a table in
+chapter 25's `tp-function-fields` pairing each route with a function-field proof. The framings are in
+`notes/framing.md`.
+
 | # | File | Chapter | Part | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `01-counting-primes.md` | Counting primes | I | writer W1 | written, refereed, figures built |

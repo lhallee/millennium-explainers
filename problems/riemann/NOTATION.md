@@ -24,6 +24,8 @@ here, use the standard one, and list it in your report so it can be added.
 | $E_\pi(x)$ | the error $\pi(x) - \Li(x)$ |
 | $J(x)$ | Riemann's count $\sum_{k \ge 1} \pi(x^{1/k})/k$, which weights a prime power $p^k$ by $1/k$ |
 | $M$ | Mertens's constant $0.2614\ldots$ in $\sum_{p \le x} 1/p = \log\log x + M + o(1)$ (chapters 1 and 2 only) |
+| $v_p(N)$ | the exponent of the prime $p$ in the positive integer $N$; $v_w$ is its analogue for prime ideals in Part IV |
+| $T(x)$, $\nu(y)$, $A$ in chapter 1 | Chebyshev's number $\lfloor x\rfloor!\,\lfloor x/30\rfloor!/(\lfloor x/2\rfloor!\,\lfloor x/3\rfloor!\,\lfloor x/5\rfloor!)$; the step function with $\log T(x) = \sum_{n\le x}\Lambda(n)\,\nu(x/n)$; and $A = 0.92129\ldots$ with $\log T(x) = Ax + O(\log x)$ |
 | $\phi(q)$ | Euler's totient, the number of residues modulo $q$ coprime to $q$ (the test function of Part III is $\varphi$) |
 
 ## Complex analysis

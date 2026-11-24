@@ -173,6 +173,16 @@ In Route A the note writes several steps as positivity of Weil's functional $W$ 
 
 The two stances are opposite, and each source states its own. Masullo asks whether his method gives a second proof for curves over a finite field and answers no [@masullo, §14.2, pp. 534 to 536]: every Euler factor of a function field vanishes at the same points $2\pi ik/\log q$, so the orbital quotients of different primes overlap, and the only workable topology gives back Weil's explicit formula ([[s-tg-function-fields]]). Over $\QQ$, by contrast, the factors $1-p^{-s}$ of distinct primes share only $s=0$ ([[t-pc-polar]]). The note says its argument "is a descendant of Stepanov's" proof over function fields [@alpoge-note], and Part IV reads its chain of lifts as Stepanov's multiplicity rebuilt over $\ZZ$ ([[ra-descendant]], [[ml-ledger]]). Its toy setting, the identity $qN=M^k+R$, lives over a finite field and is not in the code ([[ra-toy]], [[ra-steps]]). So the first route draws its strength from what a function field lacks, an archimedean place and primes whose logarithms are independent, and the second from imitating what a function field has.
 
+Both routes still sit on the dictionary of [[ff-dictionary]], on different rows of it. The table sets them side by side, with the integer ancestor of each idea; the pairing of each route with a function-field proof and an ancestor is our reading.
+
+| | Route M | Route A |
+| --- | --- | --- |
+| The function-field proof it resembles | Weil's: the zeros as eigenvalues of Frobenius, the closed points as its periodic orbits ([[ff-frobenius]]) | Stepanov's: an auxiliary function that vanishes too often for its degree ([[st-idea]]) |
+| What it keeps | a trace formula with the zeros on one side and the primes as circles of length $\log p$ on the other ([[s-pc-circle]]) | the budget: divisibility at many primes played against a bounded size, with the product formula as "zeros at most poles" ([[ml-product]]) |
+| What it replaces | Frobenius, and the positivity that completes Weil's proof: the topology of the function space locates the zeros instead ([[s-tg-topology]]) | Frobenius and derivatives as the source of multiplicity: a chain of about $\sqrt X$ theta lifts does that work ([[ml-chain]]) |
+| Its ancestor over the integers | the explicit formula read as a trace formula ([[wp-trace]]) | Chebyshev's budget with $\binom{2n}{n}$ ([[cp-chebyshev]]) |
+| Run over a function field | gives back Weil's explicit formula and nothing more ([[s-tg-function-fields]]) | its toy identity $qN = M^k + R$ lives there, and is not in the code ([[ra-toy]]) |
+
 ### How much mathematics, and of what kinds {#tp-size}
 
 Pages of prose and lines of formal code that prove every published input cannot be compared directly, but rough sizes by region show where each proof spends its length. The page ranges are those of the monograph's chapters [@masullo].

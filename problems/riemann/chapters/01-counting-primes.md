@@ -192,7 +192,8 @@ of [[what-rh-says]].
 
 ::: aside
 Gauss and Legendre had both guessed forms of the theorem, and Chebyshev proved around 1850 that $\pi(x)$ stays between
-two constant multiples of $x/\log x$, and that if $\pi(x)/(x/\log x)$ has a limit then the limit is 1. Proving that the
+two constant multiples of $x/\log x$ (section [[cp-chebyshev]] gives his argument), and that if $\pi(x)/(x/\log x)$ has
+a limit then the limit is 1. Proving that the
 limit exists took the complex analysis of Riemann's 1859 paper [@edwards, Ch. 1], and the proofs came in 1896.
 :::
 
@@ -498,6 +499,168 @@ So the two questions are one question, and we will ask it for $\psi$, where it i
 if $\psi(t) \sim t$ then the integral in [[eq-cp-dictionary]] is $O(x/\log^2 x)$, so $J(x) \sim x/\log x$, and $\pi(x) \sim J(x)$ because the prime power terms are $O(\sqrt{x})$. The equivalence of $\pi(x) \sim x/\log x$ and
 $\psi(x) \sim x$ is standard [@apostol, Ch. 4].
 
+## Chebyshev's budget: a number that knows its primes {#cp-chebyshev}
+
+The aside in [[cp-pnt]] said that Chebyshev proved, around 1850, that $\pi(x)$ stays between two constant multiples
+of $x/\log x$. His argument needs nothing beyond unique factorization, and its shape returns at the far end of the
+page: in Stepanov's proof for curves over finite fields (chapter [[stepanov]]) and in the second proof of 2026 (Part IV).
+So we give it here, first in the form textbooks use and then in his own sharper form.
+
+The plan is to find one whole number about which we know two things: roughly how large it is, and which primes divide
+it. Unique factorization ties the two together. Write $v_p(N)$ for the exponent of the prime $p$ in a positive integer
+$N$, so that $N = \prod_p p^{v_p(N)}$. Taking logarithms,
+$$
+\log N = \sum_p v_p(N) \log p .
+$$ {#eq-cp-budget}
+This is [[eq-cp-lam-sum]] with its terms grouped by prime. Read it as a budget. Each prime factor of $N$ costs $\log p$
+every time it divides, and together the factors spend exactly $\log N$, no more and no less. So an upper bound on $N$
+caps the total weight of any set of primes that we know divide it.
+
+The textbook choice of $N$ is the middle binomial coefficient $\binom{2n}{n} = (2n)!/(n!)^2$, a whole number because
+it counts the ways of choosing $n$ objects from $2n$.
+
+:::: theorem {#t-cp-window title="The primes between $n$ and $2n$ weigh less than $n\log 4$" source="apostol"}
+For every integer $n \ge 1$,
+$$
+\vartheta(2n) - \vartheta(n) = \sum_{n < p \le 2n} \log p < n \log 4 .
+$$ {#eq-cp-window}
+::::
+
+:::: proof
+::: steps
+1. By the binomial theorem, $4^n = (1+1)^{2n}$ is the sum of the $2n+1$ positive numbers $\binom{2n}{k}$, and
+   $\binom{2n}{n}$ is one of them.
+$$
+\binom{2n}{n} < 4^n .
+$$
+2. A prime $p$ with $n < p \le 2n$ divides exactly one of the numbers $1, 2, \ldots, 2n$, namely $p$ itself, because
+   $2p > 2n$, and it divides none of $1, \ldots, n$. So it divides $(2n)!$ once and $(n!)^2$ not at all.
+$$
+v_p\bigl(\tbinom{2n}{n}\bigr) = 1 \qquad (n < p \le 2n).
+$$
+3. In [[eq-cp-budget]] for $N = \binom{2n}{n}$, the primes of the window contribute $\log p$ each, and every other
+   term is at least $0$.
+$$
+\sum_{n < p \le 2n} \log p \;\le\; \log \binom{2n}{n} \;<\; n \log 4 .
+$$
+:::
+::::
+
+Test it at $n = 10$. Here $\binom{20}{10} = 184{,}756 = 2^2 \cdot 11 \cdot 13 \cdot 17 \cdot 19$. The window's primes
+11, 13, 17, and 19 weigh $\log(11 \cdot 13 \cdot 17 \cdot 19) = \log 46{,}189 = 10.74$, the factor $2^2$ adds $1.39$,
+and the total $\log 184{,}756 = 12.13$ sits under the ceiling $10 \log 4 = 13.86$. The primes 3, 5, and 7 do not divide
+$\binom{20}{10}$ at all, because each divides $20!$ exactly as often as it divides $(10!)^2$.
+
+:::: figure {#f-cp-budget viz="chebyshev-budget" height="420"}
+The prime factors of a number spend exactly its logarithm, so the primes of the window, each dividing it once, can weigh
+no more than the number's size allows.
+
+```vizspec
+Purpose: show the budget log N = sum_p v_p(N) log p as columns of prime factors against the size of N, for the
+  middle binomial coefficient and for Chebyshev's 1852 number.
+Scene: left, one column at each prime p up to the top of the window (2n, or x), stacked with one block of height
+  log p for each time p divides N; gold for the primes of the window (n, 2n] (or the prime powers of (x/6, x]),
+  muted for the other factors; a pale gold band over the window; a tick under the axis at every prime, so a prime
+  that does not divide N is a tick with no column; a dotted line at log 2n (or log x), above which no column rises.
+  Right, two bars in units of log: "primes", the gold window under the muted rest, and "size", log N in blue, equal
+  by the budget; in the binomial mode a dashed blue ceiling at n log 4. A line across the top gives N's
+  factorization when it fits, and otherwise its number of digits.
+Controls: a select between "The middle binomial coefficient" and "Chebyshev's 1852 number"; slider n from 2 to 100
+  (default 10); slider x from 30 to 600 (default 60). Hovering a column reads p, v_p(N), and v_p(N) log p.
+Motion: the scales follow the slider smoothly; columns and bars redraw at once.
+Reader takeaway: every prime of the window must be paid for out of log N, and log N is known; that is the whole
+  argument.
+Check: n = 10 gives 184,756 = 2^2 * 11 * 13 * 17 * 19, window 10.74, log N 12.13, ceiling 13.86; x = 60 gives
+  psi(60) - psi(10) = 49.70, log T(60) = 52.34, psi(60) = 57.53.
+```
+::::
+
+Windows add up to a bound for every $x$. For $x = 2^k$, split the primes up to $2^k$ among the windows
+$(2^{j-1}, 2^j]$ and apply [[eq-cp-window]] with $n = 2^{j-1}$:
+$$
+\vartheta(2^k) = \sum_{j=1}^{k} \bigl(\vartheta(2^j) - \vartheta(2^{j-1})\bigr) < \sum_{j=1}^{k} 2^{j-1} \log 4 < 2^k \log 4 .
+$$
+For $2^{k-1} \le x < 2^k$ this gives $\vartheta(x) \le \vartheta(2^k) < 2^k \log 4 \le 2x \log 4$, so
+$\vartheta(x) < 2.78\,x$ for every $x \ge 1$. The difference $\psi(x) - \vartheta(x) = \vartheta(x^{1/2}) +
+\vartheta(x^{1/3}) + \cdots$ has at most $\log_2 x$ nonzero terms, each now below $2.78\sqrt{x}$, so $\psi(x)$ is also
+at most a constant times $x$.
+
+The same number gives a bound in the other direction, because none of its prime powers is large. The exponent of $p$
+in $m!$ is $\lfloor m/p \rfloor + \lfloor m/p^2 \rfloor + \cdots$, since each multiple of $p$ up to $m$ gives one factor
+$p$, each multiple of $p^2$ one more, and so on. So
+$$
+v_p\bigl(\tbinom{2n}{n}\bigr) = \sum_{j \ge 1} \Bigl( \Bigl\lfloor \frac{2n}{p^j} \Bigr\rfloor - 2 \Bigl\lfloor \frac{n}{p^j} \Bigr\rfloor \Bigr),
+$$
+and each term is $0$ or $1$, as $\lfloor 2y \rfloor - 2\lfloor y \rfloor$ is for every real $y$, and is $0$ once
+$p^j > 2n$. Hence $p^{v_p} \le 2n$ for every prime $p$, as $2^2 = 4 \le 20$ in the example. In [[eq-cp-budget]] at
+most $\pi(2n)$ primes then contribute at most $\log 2n$ each, while $\binom{2n}{n}$, the largest of the $2n+1$ numbers
+that add up to $4^n$, is at least $4^n/(2n+1)$. Together,
+$$
+\pi(2n) \log 2n \;\ge\; \log \binom{2n}{n} \;\ge\; n \log 4 - \log(2n+1),
+$$
+a constant times $2n/\log 2n$ from below. At $n = 10$ it says $\pi(20) \ge 3.6$, and in fact $\pi(20) = 8$.
+
+### Chebyshev's own number {#cp-chebyshev-1852}
+
+A better number gives better constants. Chebyshev's choice in 1852 was [@chebyshev1852]
+$$
+T(x) = \frac{\lfloor x \rfloor! \, \lfloor x/30 \rfloor!}{\lfloor x/2 \rfloor! \, \lfloor x/3 \rfloor! \, \lfloor x/5 \rfloor!} .
+$$
+Its prime factorization can be read off with $\Lambda$. Summing [[eq-cp-lam-sum]] over the integers up to $y$ counts
+$\Lambda(n)$ once for every multiple of $n$ up to $y$, so
+$$
+\log \lfloor y \rfloor! = \sum_{n \le y} \Lambda(n) \lfloor y/n \rfloor ,
+$$ {#eq-cp-log-factorial}
+and applying this to the five factorials gives
+$$
+\log T(x) = \sum_{n \le x} \Lambda(n) \, \nu(x/n), \qquad \nu(y) = \lfloor y \rfloor - \lfloor y/2 \rfloor - \lfloor y/3 \rfloor - \lfloor y/5 \rfloor + \lfloor y/30 \rfloor .
+$$ {#eq-cp-cheb-T}
+The step function $\nu$ repeats with period 30, because adding 30 to $y$ changes it by $30 - 15 - 10 - 6 + 1 = 0$. It is
+constant between consecutive integers, where all five floors are, and checking the thirty integers $0, 1, \ldots, 29$
+shows that it takes only the values $0$ and $1$, with $\nu(y) = 1$ for $1 \le y < 6$ [@gantumur2025]. Three facts
+follow.
+
+- Every exponent of $T(x)$ is a sum of values of $\nu$, so it is at least $0$, and $T(x)$ is a whole number.
+- Since $\nu \le 1$, $\log T(x) \le \psi(x)$.
+- Since $\nu = 1$ on $[1, 6)$ and $\nu \ge 0$, every prime power in the window $(x/6, x]$ is paid for in full:
+  $\psi(x) - \psi(x/6) \le \log T(x)$.
+
+The size of $T(x)$ comes from comparing $\log m! = \sum_{k \le m} \log k$ with $\int_1^m \log t \, \dd t = m \log m - m + 1$,
+which gives $\log m! = m \log m - m + O(\log m)$. In $\log T(x)$ the terms in $x \log x$ and in $x$ cancel, because
+$1 - \tfrac12 - \tfrac13 - \tfrac15 + \tfrac1{30} = 0$, and what is left is
+$$
+\log T(x) = A x + O(\log x), \qquad A = \frac{\log 2}{2} + \frac{\log 3}{3} + \frac{\log 5}{5} - \frac{\log 30}{30} = 0.92129 .
+$$
+The second fact then gives $\psi(x) \ge Ax - O(\log x)$. The third, applied at $x, x/6, x/36, \ldots$ and added, gives
+$\psi(x) \le \tfrac65 A x + O(\log^2 x)$. So for all large $x$
+$$
+0.921 < \frac{\psi(x)}{x} < 1.106 ,
+$$
+which is Chebyshev's theorem with his constants [@chebyshev1852; @diamond1982, §3]. At $x = 60$ the three quantities
+are $\psi(60) - \psi(10) = 49.70$, $\log T(60) = 52.34$, and $\psi(60) = 57.53$, in the order the facts require.
+
+### What the budget can and cannot see {#cp-chebyshev-limits}
+
+Better numbers keep improving the constants without changing the argument. Sylvester's larger numbers brought them to
+0.957 and 1.044, and Diamond and Erdős showed that numbers of this kind exist with constants as close to 1 as one
+likes, although their proof uses estimates equivalent to the prime number theorem [@gantumur2025]. What the method
+gives is the order of magnitude: $\psi(x)$ is a constant times $x$. It says nothing about the error at the scale
+$\sqrt{x}$, the question of [[cp-question]].
+
+Two features of the budget explain where it stops, and both come back later. First, it is one-sided. Divisibility caps
+how much prime weight a number of known size can carry and says nothing about how little; the lower bound above needed
+a second fact, the cap on each prime power. Chapter [[landau-endgame]] shows that for the hypothesis an upper bound
+alone is enough. Second, in Chebyshev's numbers each prime of the window divides only once. A number that every prime
+of a window divided $m$ times would be charged $m$ times the window's weight in [[eq-cp-budget]], so a bound on its size
+would cap that weight at $1/m$ of the bound. The art is to build such a number while keeping its size from growing $m$
+times as fast. Over a finite field this is exactly how the hypothesis for curves is proved: chapter [[stepanov]] builds
+a polynomial that vanishes to high order at every point being counted and plays its degree against the number of
+points, with degree in place of size and roots in place of prime factors. Over the integers there is no derivative to
+make a number vanish twice, and the second proof of 2026 manufactures the multiplicity from a chain of theta lifts
+(chapter [[multiplicity-from-lifts]]). The inequality its endgame consumes, an upper bound on a smoothed sum over primes
+on windows of scales ([[eq-le-interface]]), carries Chebyshev's name in the formal proof:
+`ChebyshevInequalityOnWindows`.
+
 ## What we carry forward {#cp-carry}
 
 ::: symbols
@@ -509,6 +672,8 @@ $\psi(x) \sim x$ is standard [@apostol, Ch. 4].
 | $\psi(x)$ | $\sum_{n \le x} \Lambda(n)$ | step function of a real $x$ | [[d-cp-psi]] |
 | $\vartheta(x)$ | $\sum_{p \le x} \log p$, primes only | step function of a real $x$ | [[d-cp-psi]] |
 | $J(x)$ | $\pi(x) + \tfrac12\pi(x^{1/2}) + \cdots$, Riemann's count | step function of a real $x$ | [[cp-dictionary]] |
+| $v_p(N)$ | the exponent of the prime $p$ in the positive integer $N$ | nonnegative integer | [[cp-chebyshev]] |
+| $T(x)$ | Chebyshev's number $\lfloor x\rfloor!\,\lfloor x/30\rfloor!/(\lfloor x/2\rfloor!\,\lfloor x/3\rfloor!\,\lfloor x/5\rfloor!)$ | positive integer for each $x \ge 1$; this chapter only | [[cp-chebyshev-1852]] |
 :::
 
 Here is the road from this chapter to the question. Chapter [[euler-product]] builds $\zeta(s)$ from the primes, for real
@@ -528,6 +693,10 @@ You now have the staircase $\pi(x)$, its smooth estimate $\Li(x)$, and the prime
 that their ratio tends to 1. You have a table of how good the estimate is (four leading digits at $10^9$) and the question that
 organizes everything after: how large is $\pi(x) - \Li(x)$, with $\sqrt{x}$ as the natural scale. You have the weights $\Lambda(n)$, the count
 $\psi(x)$ whose expected density is 1, the identity $\sum_{d \mid n} \Lambda(d) = \log n$, and an exact dictionary,
-[[eq-cp-dictionary]], that moves error bounds between $\pi$ and $\psi$.
-Chapter [[euler-product]] uses $\Lambda$ at once. The dictionary is used again in [[what-rh-says]].
+[[eq-cp-dictionary]], that moves error bounds between $\pi$ and $\psi$. You also have Chebyshev's budget
+[[eq-cp-budget]]: a number of known size can be divisible by the primes of a window only as far as its logarithm
+allows. With each prime of the window dividing once, it bounds $\psi(x)$ by a constant times $x$ and reaches no
+further.
+Chapter [[euler-product]] uses $\Lambda$ at once. The dictionary is used again in [[what-rh-says]]. The budget returns
+with degree in place of size in [[stepanov]], and over number fields in [[multiplicity-from-lifts]].
 :::

@@ -3,7 +3,7 @@ id: stepanov
 title: Stepanov's proof
 part: 2
 summary: Follow Stepanov's method in Bombieri's form from the auxiliary function to the Riemann Hypothesis for curves, and name the four ingredients, Frobenius, cheap multiplicity, Riemann and Roch, and the Galois trick, that the integers do not supply directly.
-needs: [function-fields, weil-positivity]
+needs: [counting-primes, function-fields, weil-positivity]
 ---
 
 ::: plain
@@ -27,6 +27,14 @@ If $R \ne 0$ has degree $D$ and $(x - r_i)^m$ divides $R$ for $N$ distinct $r_1,
 ::: proof
 The factors $(x - r_i)^m$ are pairwise coprime, so their product, of degree $mN$, divides $R$.
 :::
+
+This is Chebyshev's budget of [[cp-chebyshev]] read through the dictionary of [[ff-dictionary]], where $\deg f$ plays
+$\log n$ and a monic irreducible polynomial plays a prime. A root $r$ in the field is the prime $x - r$ of degree 1, so
+"$R$ vanishes to order $m$ at $r$" is "$(x - r)^m$ divides $R$", the counterpart of $p^m$ dividing an integer, and
+[[eq-cp-budget]] becomes the statement that the irreducible factors of $R$, counted with multiplicity and weighted by
+their degrees, add up to $\deg R$. Chebyshev's $\binom{2n}{n}$ is divisible by each prime of its window only once.
+Stepanov's whole advance lies in the exponent $m$: an auxiliary function that vanishes to order $m$ at every point it
+counts is charged $m$ times for each one.
 
 On its own this bounds the number of roots of $R$, which is useless if the set we care about is described by a polynomial of large degree. Stepanov's point is to bound a set $S$ by building, for the occasion, an auxiliary $R$ that vanishes on $S$ to high order $m$ while its degree $D$ grows more slowly than $m$ times the true size of $S$. Then $\abs S \le D/m$, and the art is to make $D/m$ close to the truth.
 

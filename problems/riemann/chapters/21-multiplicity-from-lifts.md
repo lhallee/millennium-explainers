@@ -3,7 +3,7 @@ id: multiplicity-from-lifts
 title: "Multiplicity without derivatives: a chain of length about the square root"
 part: 4
 summary: Read the chain of theta lifts in the formal proof as Stepanov's ledger over the integers, with the product formula as the degree budget, periods and interlacing as the way a form becomes a number, the seesaw as an exchange of sums, and the chain length m between the square root of x to the power 1 - eps/8 and twice that.
-needs: [stepanov, definite-forms]
+needs: [counting-primes, stepanov, definite-forms]
 ---
 
 ::: plain
@@ -56,6 +56,14 @@ In the Gaussian integers $\ZZ[i]$, take $x = 3 + 4i$. Since $(2+i)^2 = 4 + 4i + 
 
 Divisibility forces size. Suppose a nonzero integer $x$ with $\abs x \le H = 10^6$ is divisible by $p^2$ for each of $N$ distinct primes $p \ge 11$. Then [[eq-ml-pf-q]] gives $2N\log 11 \le \log 10^6$, so $N \le 13.82/4.80 = 2.88$, and $N \le 2$. Indeed $11^2\cdot 13^2 = 20{,}449$ fits under $10^6$, while $11^2\cdot13^2\cdot17^2 = 5{,}909{,}761$ does not. Multiplicity $m = 2$, points $N$, and budget $D = \log H/\log 11$ obey $mN \le D$, the inequality [[eq-ml-stepanov]].
 :::
+
+Chebyshev's budget of [[cp-chebyshev]] is [[eq-ml-pf-q]] for $x = \binom{2n}{n}$: every prime of the window $(n, 2n]$
+divides $x$ once, and the binomial theorem bounds $\log\abs x$ by $n\log 4$, which bounds the window's weight. That
+argument reaches the order of magnitude of $\psi$ and stops there, because each prime is paid for only once. The
+formal proof keeps the inequality and changes two things, which the rest of this chapter describes: its numbers live in
+a number field and are measured prime ideal by prime ideal, and the multiplicity that Chebyshev's numbers lack comes from
+the chain of theta lifts ([[ml-chain]]). The bound its endgame consumes keeps his name, `ChebyshevInequalityOnWindows`
+([[eq-le-interface]]).
 
 The code's form of the budget allows denominators, because the numbers it measures are algebraic with controlled poles at finitely many primes, and it uses the weights $\varpi_w = \log N(w)/[F:\QQ]$ (the code's `lw`) and the mean over embeddings, and it states the product formula for a totally complex field $F$ as
 $$
