@@ -47,6 +47,21 @@ function stripTags(html) {
   return html.replace(/<[^>]+>/g, '').replace(/&[a-z]+;|&#\d+;/g, ' ');
 }
 
+/* The length of a table cell's text from its Markdown: a formula counts as 4 characters, a link to a section or term
+   as 30 (it shows a title), a citation as 4. */
+function tableTextLength(md) {
+  return md.replace(/\$[^$]*\$/g, 'xxxx').replace(/\[\[[^\]]*\]\]/g, 'x'.repeat(30)).replace(/\[@[^\]]*\]/g, 'xxxx')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[`*_]/g, '').replace(/\s+/g, ' ').trim().length;
+}
+
+/* A column's name as plain text for the stacked layout, from its header's Markdown: formulas lose their TeX commands
+   and braces ($x$ reads x), a parenthesized link to a section is dropped, and code and emphasis marks go. */
+function tableLabel(md) {
+  return md.replace(/\$([^$]*)\$/g, (_, tex) => tex.replace(/\\[a-zA-Z]+/g, '').replace(/[{}^_\\]/g, ''))
+    .replace(/\s*\(\s*\[\[[^\]]*\]\]\s*\)/g, '').replace(/\[\[[^\]]*\]\]/g, '').replace(/\[@[^\]]*\]/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[`*]/g, '').replace(/\s+/g, ' ').trim();
+}
+
 // ---------------------------------------------------------------------------------------------------------------
 // Pass one
 
@@ -288,8 +303,45 @@ export function installRenderer(md, ctx) {
 
   rules.image = () => '';
 
-  rules.table_open = () => '<div class="tablebox"><table>\n';
-  rules.table_close = () => '</table></div>\n';
+  /* Tables. Each one sits in a .tablewrap, a size container, so the styles lay a table out by the width it has. A
+     table with a cell of more than 32 characters of text is a text table (t-prose, with c3, c4, or c5 for three, four,
+     or five or more columns): it gets column minimums, and where it does not fit its width it is drawn as stacked
+     rows, each cell under its column's name, which its body cells carry as data-label. A text table of four or more
+     columns with a cell of more than 180 characters (t-long) is drawn as records at every width. A table whose first
+     column never runs past 24 characters keeps that column on one line (t-key). Lengths count a formula as 4
+     characters and a link to a section as 30. Until 2026-11-23 every first column stayed on one line and columns
+     sized to their content, so a long first cell pushed a table far past the column and squeezed its other cells
+     into 20-line strips. */
+  rules.table_open = (tokens, idx) => {
+    let end = idx;
+    while (tokens[end].type !== 'table_close') end++;
+    const heads = [], cells = [];
+    let ncol = 0, longest = 0, firstMax = 0, col = 0;
+    for (let j = idx; j < end; j++) {
+      const t = tokens[j];
+      if (t.type === 'tr_open') col = 0;
+      else if (t.type === 'th_open' || t.type === 'td_open') {
+        const raw = tokens[j + 1].content;
+        if (t.type === 'th_open') heads[col] = tableLabel(raw);
+        else {
+          const n = tableTextLength(raw);
+          longest = Math.max(longest, n);
+          if (col === 0) firstMax = Math.max(firstMax, n);
+          cells.push([t, col]);
+        }
+        col++;
+        ncol = Math.max(ncol, col);
+      }
+    }
+    const prose = longest > 32;
+    if (prose) for (const [t, c] of cells) if (heads[c]) t.attrSet('data-label', heads[c]);
+    const cls = ['tablebox'];
+    if (prose) cls.push('t-prose', `c${Math.min(5, ncol)}`);
+    if (prose && ncol >= 4 && longest > 180) cls.push('t-long');
+    if (firstMax <= 24) cls.push('t-key');
+    return `<div class="tablewrap"><div class="${cls.join(' ')}"><table>\n`;
+  };
+  rules.table_close = () => '</table></div></div>\n';
 
   rules.paragraph_open = (tokens, idx, opts, env, self) => {
     env.stats.paras++;

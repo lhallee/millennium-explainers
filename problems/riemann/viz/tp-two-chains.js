@@ -134,10 +134,11 @@ Kit.register('tp-two-chains', {
         fig.line(x0, a.y, x1, b.y, { color: 'red', width: 1.6, dash: [2, 4], alpha: al });
         fig.circle(x0, a.y, 2.5, { fill: 'red', alpha: al }); fig.circle(x1, b.y, 2.5, { fill: 'red', alpha: al });
         var mx = (x0 + x1) / 2, my = (a.y + b.y) / 2;
-        if (wide) {
-          var tw = fig.measure(c[2], 12.5, 600) + 12;
-          fig.rect(mx - tw / 2, my - 10, tw, 20, { fill: 'stage', alpha: 0.92 * al });
-          fig.text(c[2], mx, my + 0.5, { color: 'red', size: 12.5, weight: 600, align: 'center', baseline: 'middle', alpha: al });
+        if (wide) {                                      // wrapped to the gap between the columns, at most two lines
+          var gapW = (L.xA - L.cw / 2) - (L.xM + L.cw / 2) - 16, ls = wrap(c[2], gapW, 12, 600).slice(0, 2);
+          var tw = Math.max.apply(null, ls.map(function (s) { return fig.measure(s, 12, 600); })) + 12, th = 6 + 15 * ls.length;
+          fig.rect(mx - tw / 2, my - th / 2, tw, th, { fill: 'stage', alpha: 0.92 * al });
+          ls.forEach(function (s, i) { fig.text(s, mx, my + 0.5 + 15 * (i - (ls.length - 1) / 2), { color: 'red', size: 12, weight: 600, align: 'center', baseline: 'middle', alpha: al }); });
         } else {
           fig.circle(mx, my, 7, { fill: 'stage', ring: 'red', ringWidth: 1.4 });
           fig.text(String(k + 1), mx, my + 0.5, { color: 'red', size: 10.5, weight: 700, align: 'center', baseline: 'middle', alpha: al });
@@ -152,14 +153,19 @@ Kit.register('tp-two-chains', {
       });
       var tagOf = function (n) { return wide ? String(n.i + 1) : n.id; }, lx = function (n) { return G[n.id].x - G[n.id].w / 2 + (wide ? 10 : 6); };
       shown.forEach(function (n) { if (n.route) fig.text(tagOf(n), lx(n), G[n.id].y + 0.5, { color: 'muted', size: fs, weight: 700, baseline: 'middle', alpha: n.al }); });
+      var chOf = function (n) { return 'ch. ' + String(n.ch).replace(' to ', '–'); };
       shown.forEach(function (n) {
         var g = G[n.id];
-        if (n.route) fig.text(wide || !n.short ? n.name : n.short, lx(n) + fig.measure(tagOf(n), fs, 700) + (wide ? 8 : 5), g.y + 0.5, { color: 'fg', size: fs, weight: 600, baseline: 'middle', alpha: n.al });
+        if (n.route) {                                   // the short name where the full one would run into the chapter
+          var nx = lx(n) + fig.measure(tagOf(n), fs, 700) + (wide ? 8 : 5), nm = wide || !n.short ? n.name : n.short;
+          if (wide && n.short && nx + fig.measure(n.name, fs, 600) > g.x + g.w / 2 - 18 - fig.measure(chOf(n), 11, 500)) nm = n.short;
+          fig.text(nm, nx, g.y + 0.5, { color: 'fg', size: fs, weight: 600, baseline: 'middle', alpha: n.al });
+        }
         else fig.text(!wide || fig.measure(n.name, fs, 600) > g.w - 20 ? n.short : n.name, g.x, g.y + 0.5, { color: 'fg', size: fs, weight: 600, align: 'center', baseline: 'middle', alpha: n.al });
       });
       if (wide) shown.forEach(function (n) {
         var g = G[n.id];
-        if (n.route) fig.text('ch. ' + String(n.ch).replace(' to ', '–'), g.x + g.w / 2 - 10, g.y + 0.5, { color: 'muted', size: 11, align: 'right', baseline: 'middle', alpha: n.al });
+        if (n.route) fig.text(chOf(n), g.x + g.w / 2 - 10, g.y + 0.5, { color: 'muted', size: 11, align: 'right', baseline: 'middle', alpha: n.al });
       });
       if (wide) [['Route M', G.M1], ['Route A', G.A1]].forEach(function (h) {
         fig.text(h[0], h[1].x, h[1].y - h[1].h / 2 - 12, { color: 'muted', size: 12.5, weight: 700, align: 'center', baseline: 'middle', alpha: vis(byId.M1) });

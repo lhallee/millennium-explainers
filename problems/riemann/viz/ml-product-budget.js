@@ -82,7 +82,9 @@ Kit.register('ml-product-budget', {
     fig.onReset = function () { setX(3, 4); };
 
     var TOP = 28;
-    var side = function (w, h) { return w < 560 ? 0.42 * w : Math.min(h - TOP, 0.5 * w); };
+    // the bars on the right need about 412 px on a wide stage: their axis, the prime labels, two bars and the gap
+    // between them, and the log |sigma(x)| labels beside the second bar
+    var side = function (w, h) { return w < 560 ? 0.42 * w : Math.min(h - TOP, 0.5 * w, w - 412); };
     var L = fig.plane({ x: [-R0, R0], y: [-R0, R0], equal: true, pad: { t: 6, r: 8, b: 20, l: 30 },
       box: function (w, h) { return [0, TOP, side(w, h), h]; } });
     var B = fig.plane({ x: [0, 1], y: [0, 4], pad: { t: 26, r: 6, b: 24, l: 32 },
