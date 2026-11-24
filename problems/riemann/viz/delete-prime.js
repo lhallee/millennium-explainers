@@ -29,7 +29,10 @@ Kit.register('delete-prime', {
       if (sel.value !== lastP) { lastP = sel.value; if (del.value) { drop.set(0); drop.to(1, 300, 'inOutQuad'); } }
       if (del.value !== lastDel) { lastDel = del.value; drop.to(del.value ? 1 : 0, 300, 'inOutQuad'); }
       var d = drop.value, gap = fgap.to(2 * PI / Math.log(p)).value;
-      L.view.y1 = narrow ? 1.6 : 1.14; L.update();
+      // the kit's panel sets four rows in two columns on a plot under 480 px wide, wider than this plot, so there it
+      // shows the two rows a phone shows, with room above the curve
+      var small = split(fig.w) - 52 < 480;
+      L.view.y1 = small ? 1.6 : 1.14; L.update();
 
       // Left: g and its lattice sticks; the multiples of p turn red and fall to the axis.
       L.grid({ xStep: 0.5 });
@@ -49,7 +52,7 @@ Kit.register('delete-prime', {
         }
       }
       var Th = theta(t), Thp = theta(p * t), Dp = thetaPrime(t, p);
-      fig.panel(narrow ? [[{ tex: 'diff' }, fmt(Th - Thp, 6)], [{ tex: 'DpS' }, fmt(Dp, 6), 'gold']]
+      fig.panel(small ? [[{ tex: 'diff' }, fmt(Th - Thp, 6)], [{ tex: 'DpS' }, fmt(Dp, 6), 'gold']]
         : [[{ tex: 'Th' }, fmt(Th, 6)], [{ tex: 'Thp' }, fmt(Thp, 6), 'red'], [{ tex: 'diff' }, fmt(Th - Thp, 6)], [{ tex: 'Dp' }, fmt(Dp, 6), 'gold']],
         { plane: L, at: 'ne', id: 'sums' });
 

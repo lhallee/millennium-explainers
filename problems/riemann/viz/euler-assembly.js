@@ -83,7 +83,8 @@ Kit.register('euler-assembly', {
       var chipBlock = Math.ceil(NP / perRow) * (chipH + 4), barBlock = narrow ? 54 : 96, m = 8;
       var gh = h - m - barBlock - chipBlock - 2 * m;
       lay = { w: w, h: h, narrow: narrow, cols: cols, rows: NMAX / cols, perRow: perRow, chipH: chipH,
-        grid: [m, m, w - m, m + gh], bar: [m, m + gh + m, narrow ? w - m : 0.64 * w, m + gh + m + barBlock],
+        // the readout beside the bar is about 280 px wide (its widest row, "1.00000 (p = 113)"), 28 px from the bar
+        grid: [m, m, w - m, m + gh], bar: [m, m + gh + m, narrow ? w - m : Math.min(0.64 * w, w - 316), m + gh + m + barBlock],
         chips: [m, h - chipBlock - 2, w - m, h - 2] };
       return lay;
     }

@@ -33,11 +33,17 @@ With this size the two worlds line up entry by entry, and $\deg f$, the logarith
 | prime $p$ | monic irreducible polynomial $P$ |
 | unique factorization | unique factorization |
 | $\log n$ | $\deg f$ |
+| Chebyshev's budget $\log n = \sum_p v_p(n)\log p$ ([[eq-cp-budget]]) | $\deg f = \sum_P v_P(f)\deg P$: irreducible factors weighted by degree |
+| prime power $p^k$ as a periodic orbit of length $\log p^k$ ([[wp-trace]]) | prime of degree $d$ as a Frobenius orbit of length $d$ ([[ff-refresher]]) |
 | $\zeta(s) = \sum_{n} n^{-s} = \prod_p (1-p^{-s})^{-1}$ | $\zeta_{\FF_q[T]}(s) = \sum_{f} \abs{f}^{-s} = \prod_P (1-\abs{P}^{-s})^{-1}$ |
 | $\psi(x) = x - \sum_\rho x^\rho/\rho - \cdots$ | $\sum_{d \mid n} d\, I_d = q^n$ exactly |
 | $\pi(x) \approx \Li(x)$ | $I_n \approx q^n/n$ |
 
-Here $I_n$ is the number of monic irreducible polynomials of degree $n$, the counting function this chapter is about. The zeta function in the table is a one-line computation. There are $q^n$ monic polynomials of degree $n$, since the $n$ lower coefficients are free, and each has size $q^n$, so for $\Re s > 1$
+Here $v_P(f)$ is the exponent of $P$ in the factorization of $f$, and $I_n$ is the number of monic irreducible
+polynomials of degree $n$, the counting function this chapter is about. The two proofs of 2026 use different rows of
+this table. The second descends from Stepanov's proof, which turns the budget row against a set of points (chapter
+[[stepanov]]); the first builds the orbit row over the integers, as circles of length $\log p$ (chapter
+[[primes-as-circles]]). The zeta function in the table is a one-line computation. There are $q^n$ monic polynomials of degree $n$, since the $n$ lower coefficients are free, and each has size $q^n$, so for $\Re s > 1$
 $$
 \zeta_{\FF_q[T]}(s) = \sum_{n \ge 0} q^n \cdot q^{-ns} = \frac{1}{1 - q^{1-s}},
 $$ {#eq-ff-zeta-poly}

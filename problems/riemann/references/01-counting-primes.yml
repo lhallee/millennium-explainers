@@ -45,3 +45,24 @@ mertens1874:
   title: Ein Beitrag zur analytischen Zahlentheorie
   year: 1874
   where: Journal für die reine und angewandte Mathematik 78, pp. 46-62
+
+chebyshev1852:
+  authors: P. L. Chebyshev (Tchebichef)
+  title: Mémoire sur les nombres premiers
+  year: 1852
+  where: Journal de Mathématiques Pures et Appliquées 17, pp. 366-390
+  url: https://eudml.org/doc/234762
+
+diamond1982:
+  authors: H. G. Diamond
+  title: Elementary methods in the study of the distribution of prime numbers
+  year: 1982
+  where: Bulletin of the American Mathematical Society (New Series) 7, pp. 553-589
+  url: https://doi.org/10.1090/S0273-0979-1982-15057-1
+
+gantumur2025:
+  authors: T. Gantumur
+  title: An expository review of the Chebyshev-Sylvester method in prime number theory
+  year: 2025
+  where: arXiv:2512.02466
+  url: https://arxiv.org/abs/2512.02466

@@ -109,7 +109,10 @@ Kit.register('zeta-arrows', {
         fig.circle(ZP.X(zeta[0] + offR), ZP.Y(zeta[1] + offI), 5, { fill: false, ring: 'red', ringWidth: 1.5 });
       });
       ZP.point(zeta[0], zeta[1], { color: 'blue', r: 5.5 });
-      ZP.label('zeta', zeta[0], zeta[1], { anchor: 'sw', color: 'blue', dx: 6, dy: -6, size: 14 });
+      // zeta(s) often sits near the real axis, so its label gets a stage-colored backing that hides the tick labels
+      var zs = fig.labelSize('zeta', 14), zx = ZP.X(zeta[0]) + 6, zy = ZP.Y(zeta[1]) - 6;
+      fig.rect(zx - 2, zy - zs.h - 1, zs.w + 4, zs.h + 2, { fill: 'stage', alpha: 0.85 });
+      fig.label('zeta', zx, zy, { anchor: 'sw', color: 'blue', size: 14 });
 
       var regime = sr > 1 ? ['converges', 'gold'] : sr === 1 ? ['circles ζ(s)', 'red'] : ['spirals away', 'red'];
       var narrow = zb.w < 400, sig = narrow ? 3 : 5;

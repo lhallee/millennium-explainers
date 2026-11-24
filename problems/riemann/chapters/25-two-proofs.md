@@ -173,6 +173,16 @@ In Route A the note writes several steps as positivity of Weil's functional $W$ 
 
 The two stances are opposite, and each source states its own. Masullo asks whether his method gives a second proof for curves over a finite field and answers no [@masullo, §14.2, pp. 534 to 536]: every Euler factor of a function field vanishes at the same points $2\pi ik/\log q$, so the orbital quotients of different primes overlap, and the only workable topology gives back Weil's explicit formula ([[s-tg-function-fields]]). Over $\QQ$, by contrast, the factors $1-p^{-s}$ of distinct primes share only $s=0$ ([[t-pc-polar]]). The note says its argument "is a descendant of Stepanov's" proof over function fields [@alpoge-note], and Part IV reads its chain of lifts as Stepanov's multiplicity rebuilt over $\ZZ$ ([[ra-descendant]], [[ml-ledger]]). Its toy setting, the identity $qN=M^k+R$, lives over a finite field and is not in the code ([[ra-toy]], [[ra-steps]]). So the first route draws its strength from what a function field lacks, an archimedean place and primes whose logarithms are independent, and the second from imitating what a function field has.
 
+Both routes still sit on the dictionary of [[ff-dictionary]], on different rows of it. The table sets them side by side, with the integer ancestor of each idea; the pairing of each route with a function-field proof and an ancestor is our reading.
+
+| | Route M | Route A |
+| --- | --- | --- |
+| The function-field proof it resembles | Weil's: the zeros as eigenvalues of Frobenius, the closed points as its periodic orbits ([[ff-frobenius]]) | Stepanov's: an auxiliary function that vanishes too often for its degree ([[st-idea]]) |
+| What it keeps | a trace formula with the zeros on one side and the primes as circles of length $\log p$ on the other ([[s-pc-circle]]) | the budget: divisibility at many primes played against a bounded size, with the product formula as "zeros at most poles" ([[ml-product]]) |
+| What it replaces | Frobenius, and the positivity that completes Weil's proof: the topology of the function space locates the zeros instead ([[s-tg-topology]]) | Frobenius and derivatives as the source of multiplicity: a chain of about $\sqrt X$ theta lifts does that work ([[ml-chain]]) |
+| Its ancestor over the integers | the explicit formula read as a trace formula ([[wp-trace]]) | Chebyshev's budget with $\binom{2n}{n}$ ([[cp-chebyshev]]) |
+| Run over a function field | gives back Weil's explicit formula and nothing more ([[s-tg-function-fields]]) | its toy identity $qN = M^k + R$ lives there, and is not in the code ([[ra-toy]]) |
+
 ### How much mathematics, and of what kinds {#tp-size}
 
 Pages of prose and lines of formal code that prove every published input cannot be compared directly, but rough sizes by region show where each proof spends its length. The page ranges are those of the monograph's chapters [@masullo].
@@ -239,6 +249,39 @@ Tate's thesis is the one published theory that both routes stand on. Route M is 
 ### Where the routes do not meet {#tp-apart}
 
 Most of each proof has no counterpart in the other, as far as this page shows. Route M uses no automorphic form beyond functions on the idele class group, no Galois representation, no Galois cohomology, no auxiliary function, and no count of multiplicity in Stepanov's sense. Route A uses no topology on a function space, no strip, no trace of an operator, no orbital basis, and no $S$-local computation. Even the word multiplicity means different things: in the note it is the order of vanishing of an auxiliary object, which Route A replaces by divisibility ([[ra-multiplicity]]), while in the monograph it is the multiplicity $m_\rho$ of a zero and the order of the poles of Euler factors ([[t-pc-polar]]). The two endgames share the reflection and the pole of [[tp-share-poles]], and nothing else. We know of no step of either proof that can be moved into the other.
+
+:::: figure {#f-tp-shapes viz="tp-shapes" height="780"}
+Each proof narrows to one statement through which all of its construction reaches the theorem, an identity in the first and an inequality in the second, and the two touch only at classical results that both use and at the theorem itself.
+
+```vizspec
+Purpose: show the two proofs as one graph of uses, so that the shape of each route, its waist, and the places where
+  the two meet can be seen and checked.
+Scene: one sheet with rows from the top. The theorem both prove (violet) at the top center; Route M (blue) on the
+  left, Route A (gold) on the right; the classical results both use (red: Poisson summation, Tate's thesis, the
+  functional equation, zeros as poles of -L'/L) in a middle column; results that one route takes from the
+  literature in gray with dashed outlines (Connes's local trace and the nonvanishing of zeta on the line Re s = 1
+  for Route M; Siegel and Weil,
+  local Langlands, and Ferrero and Washington for Route A). A link is a curve from a result up to a result whose
+  proof uses it; a link implied through another drawn path is left out. Long links climb in vertical lanes beside
+  the middle column. Each route's links among its own results are also drawn as one translucent band in the route's
+  color, so that the route reads as a shape. Route M has 10 results: divisor sequence, eigenvalues, strip quotient,
+  spectral trace, proto-trace, primes as circles, sieve, S-local remnant, Trace Formula, endgame; and a node "and
+  every Hecke L" above its endgame. Route A has 10: Galois input (Row0b), cohomological window, hosts on windows,
+  published inputs, chain of theta lifts, from count to bound, inequality on windows, windowed Landau, contract,
+  five theorems. Node and link data, each with its source, are in notes/proof-shapes.md.
+Waists: a ring around the Trace Formula and around the inequality on windows. The module checks at start that every
+  own result of the route below the ring reaches the theorem only through it (8 for Route M, 6 for Route A).
+Controls: toggles "Route M" and "Route A"; toggle "Separate the proofs", which fades the shared results and the
+  theorem, moves the two routes apart, and reports the number of pieces that remain (2); hover or tap a result to
+  light what it rests on and what rests on it and to read its statement, source, and chapter; a click pins it, and
+  a button jumps to it.
+Layout: below 700 px the results are dots and only the shared results, the waists, and the theorem are named; a
+  tapped result opens in a box away from it.
+Motion: only the separation (520 ms; at once under reduced motion).
+Reader takeaway: two funnels side by side, each pinched at one statement, joined only at the classical base, the
+  pole of the logarithmic derivative, the reflection, and the theorem.
+```
+::::
 
 ## What this page compressed, and what it could not {#tp-ledger}
 

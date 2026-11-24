@@ -213,14 +213,78 @@ pre { --box-bg: var(--tint); }
 li .eq { margin-block: 4px; }
 .math-error { color: var(--c-red); background: var(--c-red-soft); }
 
-/* Tables hug their content at the left. */
+/* Tables hug their content at the left. The build marks each one (build/lib/render.mjs, "Tables"). A first column of
+   short keys stays on one line (t-key). A text table (t-prose) keeps every column at least 7.5rem wide and wraps its
+   headers; where its wrapper, a size container, is narrower than its columns need (c3 below 560px, c4 below 680px,
+   c5 below 760px), it is drawn as stacked rows, each cell under its column's name. A table of four or more columns
+   with a cell of over 180 characters (t-long) is drawn as records at every width: each row a block, with the column
+   names in a left gutter, or above each cell below 560px. */
+.tablewrap { container-type: inline-size; min-width: 0; }
 .tablebox { overflow-x: auto; width: fit-content; max-width: 100%; border: 1px solid var(--line); border-radius: 6px; }
 table { border-collapse: collapse; font-size: 0.86rem; font-variant-numeric: tabular-nums; }
 th, td { text-align: left; padding: 7px 1.6rem 7px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-size: 0.68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
-td:first-child { white-space: nowrap; }
+.t-key td:first-child { white-space: nowrap; }
 td .katex { font-size: 1.05em; }
+.t-prose th { white-space: normal; }
+.t-prose th, .t-prose td { padding-right: 1rem; }
+.t-prose td { min-width: 7.5rem; }
+.t-prose.t-key td:first-child { min-width: 0; }
+/* A cell's column name, shown only by the record and stacked layouts. Every t-long table is also a t-prose table. */
+.t-prose td::before { content: attr(data-label); display: none; font-size: 0.66rem; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--muted); font-weight: 600; }
+/* Records: each row a block, its first cell a bold heading, the other column names in a 10.5rem left gutter. */
+.t-long { width: 100%; }
+.t-long :is(table, tbody, tr, td) { display: block; }
+.t-long thead { display: none; }
+.t-long tr { padding: 10px 14px 12px; border-bottom: 1px solid var(--line); }
+.t-long tr:last-child { border-bottom: 0; }
+.t-long td { border: 0; padding: 0 0 0 10.5rem; position: relative; min-width: 0; white-space: normal; }
+.t-long td + td { margin-top: 7px; }
+.t-long td::before { display: block; position: absolute; left: 0; top: 0.2rem; width: 9.5rem; }
+.t-long td:first-child { padding-left: 0; font-weight: 600; }
+.t-long td:first-child::before { position: static; display: inline; margin-right: 0.6em; }
+/* Stacked rows: the same blocks with each column name above its cell. The three queries differ only in their class
+   and width; a container query cannot take its width from the table, so the rules are written out for each. */
+@container (max-width: 560px) {
+  th { white-space: normal; }
+  th, td { padding: 6px 0.8rem 6px 9px; }
+  :is(.t-prose.c3, .t-long) { width: 100%; }
+  :is(.t-prose.c3, .t-long) :is(table, tbody, tr, td) { display: block; }
+  :is(.t-prose.c3, .t-long) thead { display: none; }
+  :is(.t-prose.c3, .t-long) tr { padding: 9px 12px 11px; border-bottom: 1px solid var(--line); }
+  :is(.t-prose.c3, .t-long) tr:last-child { border-bottom: 0; }
+  :is(.t-prose.c3, .t-long) td { border: 0; padding: 0; min-width: 0; white-space: normal; }
+  :is(.t-prose.c3, .t-long) td + td { margin-top: 6px; }
+  :is(.t-prose.c3, .t-long) td::before { display: block; position: static; width: auto; }
+  :is(.t-prose.c3, .t-long) td:first-child { font-weight: 600; }
+  :is(.t-prose.c3, .t-long) td:first-child::before { display: inline; margin-right: 0.6em; }
+}
+@container (max-width: 680px) {
+  .t-prose.c4 { width: 100%; }
+  .t-prose.c4 :is(table, tbody, tr, td) { display: block; }
+  .t-prose.c4 thead { display: none; }
+  .t-prose.c4 tr { padding: 9px 12px 11px; border-bottom: 1px solid var(--line); }
+  .t-prose.c4 tr:last-child { border-bottom: 0; }
+  .t-prose.c4 td { border: 0; padding: 0; min-width: 0; white-space: normal; }
+  .t-prose.c4 td + td { margin-top: 6px; }
+  .t-prose.c4 td::before { display: block; position: static; width: auto; }
+  .t-prose.c4 td:first-child { font-weight: 600; }
+  .t-prose.c4 td:first-child::before { display: inline; margin-right: 0.6em; }
+}
+@container (max-width: 760px) {
+  .t-prose.c5 { width: 100%; }
+  .t-prose.c5 :is(table, tbody, tr, td) { display: block; }
+  .t-prose.c5 thead { display: none; }
+  .t-prose.c5 tr { padding: 9px 12px 11px; border-bottom: 1px solid var(--line); }
+  .t-prose.c5 tr:last-child { border-bottom: 0; }
+  .t-prose.c5 td { border: 0; padding: 0; min-width: 0; white-space: normal; }
+  .t-prose.c5 td + td { margin-top: 6px; }
+  .t-prose.c5 td::before { display: block; position: static; width: auto; }
+  .t-prose.c5 td:first-child { font-weight: 600; }
+  .t-prose.c5 td:first-child::before { display: inline; margin-right: 0.6em; }
+}
 
 /* Theorem-like blocks, numbered chapter.counter. */
 .thm { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--a); border-radius: 6px; padding: 12px 16px 14px;

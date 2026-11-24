@@ -46,6 +46,8 @@ so the circle is the quotient "entire functions modulo multiples of $1-\lambda^{
 
 The Mellin identity is the substitution $t\mapsto t/\lambda$: $\int_0^\infty\psi(\lambda t)t^s\,\dd t/t=\lambda^{-s}M\psi(s)$. The source remarks that $1-\lambda^{-s}$ "is reminiscent of a reciprocal Euler factor" [@masullo, p. 41], and with $\lambda=p$ it is one: $\prod_p(1-p^{-s})^{-1}=\zeta(s)$.
 
+The circle has a counterpart in the polynomial world of chapter [[function-fields]], and the comparison says what this route borrows from it and what it does not. There a closed point of degree $d$ is a periodic orbit of Frobenius of length $d$ ([[ff-frobenius]]), $d$ is what the dictionary of [[ff-dictionary]] sets against $\log p$, and the reciprocal Euler factor $1-q^{-ds}$ of a curve over $\FF_q$ vanishes at $s=2\pi im/(d\log q)$ just as $1-p^{-s}$ vanishes at $2\pi im/\log p$. Chapter [[weil-positivity]] already read the explicit formula with each prime power $p^k$ as a periodic orbit of length $\log p^k$ ([[wp-trace]]). The circle of length $\log p$ is that orbit made into a space of functions, and the trace formula this route builds on it has the shape of the trace formula over a curve. What the route does not borrow is the rest of the function-field proof: there is no Frobenius doing the circling, and section [[s-pc-independence]] shows that the integers differ from a curve exactly where the route needs them to. Circles of lengths $\log p$ and $\log p'$ share only the constant wave, while all the orbits of a curve over $\FF_q$ have lengths that are multiples of one length, so that all their Euler factors vanish together at every $2\pi im/\log q$.
+
 The points $s=2\pi im/\log\lambda$ deserve a name, because they index everything that follows.
 
 ::: symbols
