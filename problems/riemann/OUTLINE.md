@@ -44,6 +44,10 @@ recomputed) and its figure `chebyshev-budget`, the 96th; bridges to it in chapte
 chapter 25's `tp-function-fields` pairing each route with a function-field proof. The framings are in
 `notes/framing.md`.
 
+Also added 2026-11-24 at Logan's request, by a side session and not yet refereed by a second agent: chapter 25's
+figure `tp-shapes`, the 97th, which draws both proofs as one graph of uses. Its nodes and links, each with a
+source, are in `notes/proof-shapes.md`, and its framings are in `notes/framing.md`.
+
 | # | File | Chapter | Part | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `01-counting-primes.md` | Counting primes | I | writer W1 | written, refereed, figures built |
