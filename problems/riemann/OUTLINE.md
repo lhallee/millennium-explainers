@@ -9,6 +9,7 @@ The main session owns this file. It fixes the curriculum, who writes what, and w
 | note | L. Alpoge, untitled four-page remark announcing a proof of RH and GRH with Claude | `sources/riemann/remark.pdf`, text in `remark-pages/`; https://alpo.ge/remark.pdf | 2026-11-20 |
 | lean | The Lean 4 formalization, 14 archive parts, 175,187 files | https://alpo.ge/lean.tar.gz.part01 to part14; `sources/riemann/lean/lean/` (Lean 4.33.1, Mathlib rev `0df444a360ea`); joined archive 239,275,554 bytes, SHA-256 `9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc` | 2026-11-20 and 2026-11-21 |
 | masullo | A. M. Masullo, "The Music of the Primes", 940-page draft proving GRH for all number fields and unitary Hecke characters | `sources/riemann/masullo.pdf`, text in `masullo-pages/pNNNN.txt` (PDF page numbers); announced at https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/ | 2026-11-20 |
+| grh-lean | A shorter rewrite of the Lean proof by colleagues at Anthropic with Claude, two editions: `grh` (805 files, about 300,000 lines of code) and `grh-compact` (796 files, about 76,000) | https://github.com/lsernau/grh-lean, commit `72fead1` of 2026-11-25; `sources/riemann/grh-lean/` (shallow clone; Lean 4.35.0, Mathlib `56a00585`); digest in `notes/grh-lean-digest.md` | 2026-11-26 |
 
 `sources/` is ignored by git. The text files are a machine extraction: formulas lose their layout, so read the
 PDF page itself (the Read tool takes a `pages` range) whenever a formula matters.
@@ -41,12 +42,28 @@ section `cp-chebyshev` (Chebyshev's budget: the binomial window bound with proof
 1852 number with his constants, checked against the 1852 paper's citation data and Gantumur's review, every number
 recomputed) and its figure `chebyshev-budget`, the 96th; bridges to it in chapters 10 and 21; two rows of chapter
 9's dictionary; a paragraph in chapter 13 on what Route M borrows from the function-field picture; and a table in
-chapter 25's `tp-function-fields` pairing each route with a function-field proof. The framings are in
-`notes/framing.md`.
+the two-proofs chapter's `tp-function-fields` (then chapter 25, now 26) pairing each route with a function-field
+proof. The framings are in `notes/framing.md`.
 
-Also added 2026-11-24 at Logan's request, by a side session and not yet refereed by a second agent: chapter 25's
-figure `tp-shapes`, the 97th, which draws both proofs as one graph of uses. Its nodes and links, each with a
-source, are in `notes/proof-shapes.md`, and its framings are in `notes/framing.md`.
+Also added 2026-11-24 at Logan's request, by a side session and not yet refereed by a second agent: the two-proofs
+chapter's figure `tp-shapes`, the 97th, which draws both proofs as one graph of uses. Its nodes and links, each with
+a source, are in `notes/proof-shapes.md`, and its framings are in `notes/framing.md`.
+
+Added 2026-11-26 at Logan's request, by the main session and not yet refereed by a second agent: chapter 25,
+`25-route-a-compressed.md` (id `route-a-compressed`), on the shorter rewrite of the Lean proof in `grh-lean`, and
+its figure `covolume-squeeze`, the 98th. It states the rewrite's main inequality and derives the theorem from it,
+proves the two lattice facts in their simplest form, explains the size and divisibility ledger and the exact
+cancellation of the L-value, and sets the rewrite's entries beside Stepanov's ledger. The two-proofs chapter is now
+chapter 26; its file keeps the name `25-two-proofs.md`, because renaming it would delete the old path. Short
+pointers to the new chapter were added in chapters 1, 18, 19, 21, 24, and 26. The facts read from the rewrite are in
+`notes/grh-lean-digest.md`, and the framings are in `notes/framing.md`.
+
+Also fixed 2026-11-26, in the figure kit (`shared/viz/kit.js`, `start` and `FP.restore`): at 4x CPU slowdown the
+browser can deliver two visibility entries for one figure in a single batch, "on screen" and then "far away". The kit
+acted on each entry in turn, so it released the figure and then gave the canvas back on the stale entry, and the
+check found a figure 26 screens away still holding its canvas. The kit now acts only on the last entry for each
+figure, and it never restores a figure that is more than 7 screens away. A test that hands the kit's callbacks
+these batches directly fails on the old kit and passes on the new one.
 
 | # | File | Chapter | Part | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -74,7 +91,8 @@ source, are in `notes/proof-shapes.md`, and its framings are in `notes/framing.m
 | 22 | `22-integrality-and-galois.md` | Paying for the chain: integrality, Galois representations, and the count that is bounded | IV | writer A5 | written, refereed, figures built |
 | 23 | `23-cohomology-window.md` | The arithmetic residue: a window in Galois cohomology | IV | writer A6 | written, refereed, figures built |
 | 24 | `24-inputs-and-assembly.md` | What the proof stands on | IV | writer A7 | written, refereed, figures built |
-| 25 | `25-two-proofs.md` | Two proofs, one theorem | V | writer A8 | written, refereed, figures built |
+| 25 | `25-route-a-compressed.md` | The second proof, shortened: one covolume squeezed from both sides | IV | main session, 2026-11-26 | written, figure built, not refereed |
+| 26 | `25-two-proofs.md` | Two proofs, one theorem | V | writer A8 | written, refereed, figures built |
 ### What each fixed chapter must contain
 
 1. **Counting primes.** The primes, $\pi(x)$ as a staircase, Gauss's density guess $1/\log x$, $\mathrm{Li}(x)$,

@@ -1,0 +1,9 @@
+- term: Gram determinant
+  pattern: "Gram determinants?"
+  definition: The determinant of the matrix of inner products of a family of vectors. It is zero exactly when the vectors are dependent, and its square root is the volume of the box they span.
+  anchor: d-rc-gram
+
+- term: covolume
+  pattern: "covolumes?"
+  definition: For a family of lifted forms in the rewrite of the second proof, a bound for the logarithm of their Gram determinant at every conjugate. Short vectors make it small, and integrality keeps it large.
+  anchor: d-rc-gram

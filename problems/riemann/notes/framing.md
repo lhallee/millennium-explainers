@@ -15,7 +15,10 @@ the writers' reports.
   (the binomial window bound, the lower bound, and Chebyshev's 1852 number with its constants) is classical and cited;
   the ladder is ours. It was added after Logan asked for intuition for a public account, a video interview, that described
   Route A as Chebyshev's argument run with a far better number. The Lean name `ChebyshevInequalityOnWindows` is a fact about the code, and the page
-  says only that the inequality carries Chebyshev's name, not why it was named so.
+  says only that the inequality carries Chebyshev's name, not why it was named so. Update of 2026-11-26: the shorter
+  rewrite `grh-lean` names the same lineage in its own comments ("Chebyshev-order bounds, conditional CM heights,
+  curves over F_q" as "earlier bounds for sums over primes by size against divisibility"), so the ladder is no
+  longer only our reading; chapter 1 and chapter 25 quote the rewrite for it.
 - "What the budget can and cannot see": the claim that a number divisible $m$ times by every prime of a window would
   cap the window's weight at $1/m$ of its size bound is the elementary inequality $mW \le \log N$, offered as the
   intuition for why multiplicity matters; that the Chebyshev line stops at the order of magnitude is stated for
@@ -33,7 +36,7 @@ the writers' reports.
   factor zeros). The source's own position, that its method gives nothing new over function fields, is cited where
   it appears.
 
-## Chapter 25, the two proofs and function fields (added 2026-11-24)
+## Chapter 26 (two proofs; chapter 25 until 2026-11-26), the two proofs and function fields (added 2026-11-24)
 
 - The table in `tp-function-fields` that pairs each route with a function-field proof it resembles (Weil's for
   Route M, Stepanov's for Route A), what it keeps and replaces, and an integer ancestor (the explicit formula read as
@@ -162,7 +165,7 @@ Part IV marks each of these in place as "our reading". The code and the note do 
 - Chapter 24: how Stepanov's ingredients map onto the published theorems; the two routes touching at Tate's
   thesis.
 
-## Chapter 25, the shapes figure
+## Chapter 26 (two proofs; chapter 25 until 2026-11-26), the shapes figure
 
 Figure `f-tp-shapes` (`viz/tp-shapes.js`); its nodes and links, each with a source, are in `proof-shapes.md`.
 Neither source draws its proof as a graph. Everything below is ours.
@@ -184,3 +187,33 @@ Neither source draws its proof as a graph. Everything below is ours.
   "Chain of theta lifts", "Published inputs", "From count to bound", "Galois input (Row0b)", "Five theorems",
   "Contract", "Endgame", and the phone labels "The theorem", "Reflection", "Poles", and "Inequality".
 - Left and right, the rows, and the colors are drawing choices. A row is not a depth in any formal sense.
+
+## Chapter 25, the shorter rewrite (added 2026-11-26)
+
+Chapter `route-a-compressed` reads the rewrite `grh-lean` (digest: `grh-lean-digest.md`). What the rewrite's
+comments say is quoted and attributed to them; the items below are ours.
+
+- The chapter title's "one covolume squeezed from both sides" and the section name "Chebyshev's budget for a
+  lattice". The rewrite says "One covolume, corrected by an index, is bounded from both sides"; the link to the
+  budget of chapter 1 is ours.
+- The two-dimensional toy (lemma `t-rc-hadamard`, figure `f-rc-lattice`): integral vectors divisible by $c$ with
+  $c^{2n} \le \det G \le \prod\lvert v_i\rvert^2$, offered as the simplest case of the rewrite's upper bound (Hadamard)
+  and lower bound (the product formula). The dictionary from the toy to the rewrite (lengths at every conjugate,
+  integrality at every $\iota$, the common divisor as the normalization $c_B$) is ours; each entry names its
+  declaration.
+- Reading $s_\infty(j) = \log j! + j\log(p_0p_1/\Omega)$ as the logarithm of Cauchy's estimate at radius
+  $\Omega/(p_0p_1)$. The rewrite calls it the size of a derivative of order $j$ and does not mention Cauchy.
+- Reading the Frobenius congruence $\theta(\pi_pz) \equiv \theta(z)^{q_p}$ as the integer counterpart of Stepanov's
+  $h(\operatorname{Frob}P) = h(P)^q$, and the pairing of all rows of the table in `rc-ledger` with the rewrite's
+  declarations.
+- The explanation of why the exact cancellation matters, set against Chebyshev's 1852 constants: the period of a CM
+  curve and the expected count of non-split prime powers carry the same constant $L'/L(1,\chi_{\mathsf d})$. The
+  cancellation itself is the rewrite's (`jetSize_sub_mainPrimeSum_le`, "The constant `c₁` cancels").
+- "The exponent one half is one over the length of the chain" restates the rewrite's "the saving x^(-1/2) is 1/m"
+  (compact `src/New/Main.lean`) and "the exponent comes from log⁶ b / m" (readable `GUIDE.md`); only the wording is
+  ours. That the rewrite settles the open question of chapter 21 (the note's $X$ as $x$ or $a_T$) rests on its own
+  names for $x$ ("the length of the prime sum") and $a$ ("the order of the derivative"), and applies to the rewrite's
+  notation, not to the original tree.
+- The chapter repeats the rewrite's reported machine checks as reports. The repository's README also says that the
+  proof "has passed machine checks only" and that no mathematician has read it through; the page does not repeat
+  that line, under Logan's decision of 2026-11-20 to present the proof as correct, and names the source and its date.

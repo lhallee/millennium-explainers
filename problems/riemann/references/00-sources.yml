@@ -20,3 +20,10 @@ alpoge-lean:
   year: 2026
   where: 175,187 Lean files in 14 archive parts linked from the remark, Lean 4.33.1, read 2026-11-20 and 2026-11-21
   url: https://alpo.ge/lean.tar.gz.part01
+
+grh-lean:
+  authors: lsernau and colleagues at Anthropic, with Claude
+  title: "GRH for Dirichlet L-functions, in Lean 4: a shorter rewriting of Alpöge's Lean proof"
+  year: 2026
+  where: "Repository lsernau/grh-lean, commit 72fead1 of 2026-11-25, readable edition grh and compact edition grh-compact, Lean 4.35.0, read 2026-11-26"
+  url: https://github.com/lsernau/grh-lean

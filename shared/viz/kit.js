@@ -647,7 +647,7 @@
     farCheck.length = 0;
     for (var i = 0; i < figs.length; i++) {
       var f = figs[i];
-      if (!f.ready || !f.visible) continue;
+      if (!f.ready || !f.visible || f.released) continue;
       if (f.needsFrame()) {
         f.frame(now);
         if (f.needsFrame()) more = true; else f.lastNow = 0;
@@ -784,8 +784,10 @@
   };
   FP.restore = function () {
     if (!this.released) return;
+    var r = this.el.getBoundingClientRect(), H = global.innerHeight;
+    // An on-screen entry can still arrive after the figure has left (start, onScreen); far away it stays released.
+    if (r.bottom < -7 * H || r.top > 8 * H) return;
     this.released = false;
-    var r = this.el.getBoundingClientRect();
     this.resize(r.width, r.height);
     if (this.onRestore) this.onRestore();
   };
@@ -2605,17 +2607,24 @@
       }
       schedule();
     });
+    /* Entries come in time order, and one batch can hold two for the same figure when the browser is slow to deliver
+       them, as after a jump onto the figure and away again: only the last says where the figure is now. Acting on
+       each in turn gave a canvas back to a figure 26 screens away, just after the far observer had released it, and
+       nothing released it again (the check's scroll stops at 4x CPU slowdown, 2026-11-26). */
     var onScreen = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) {
-        var f = byEl.get(entries[i].target);
-        f.visible = entries[i].isIntersecting;
+      var i, f;
+      for (i = 0; i < entries.length; i++) byEl.get(entries[i].target).visible = entries[i].isIntersecting;
+      for (i = 0; i < entries.length; i++) {
+        f = byEl.get(entries[i].target);
         if (f.visible) f.restore();
         f.lastNow = 0;
       }
       schedule();
     });
     var far = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) if (!entries[i].isIntersecting) byEl.get(entries[i].target).release();
+      var near = new Map();
+      for (var i = 0; i < entries.length; i++) near.set(entries[i].target, entries[i].isIntersecting);
+      near.forEach(function (isNear, el) { if (!isNear) byEl.get(el).release(); });
     }, { rootMargin: '700% 0px' });
     var post = global.scheduler && global.scheduler.postTask ? function (fn) { global.scheduler.postTask(fn, { priority: 'user-visible' }); } : function (fn) { setTimeout(fn, 0); };
     function fail(f, err) {
