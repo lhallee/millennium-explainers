@@ -140,10 +140,10 @@ uses exactly these. Where a symbol differs from the source, the "source" column 
 The symbol $\gamma$ stays the imaginary part of a zero, $T$ stays a height in the critical strip, and $N$ is
 never a multiplicity.
 
-## Route two: Stepanov's method over the integers (chapters 18 to 25)
+## Route two: Stepanov's method over the integers (chapters 18 to 26)
 
 The Lean code uses short names that clash with the page's symbols (it writes $\psi$ for a character, `k` for a
-rank, `T` for a prime, and `e` for a tower level). The page fixes the following, and chapters 18 to 25 use exactly
+rank, `T` for a prime, and `e` for a tower level). The page fixes the following, and chapters 18 to 26 use exactly
 these. A letter that a chapter uses only inside one section or example is declared local there and is not listed.
 The scale dictionary, with every size at scale $x$, is the table [[ml-scales]] of chapter 21.
 
@@ -224,6 +224,31 @@ The scale dictionary, with every size at scale $x$, is the table [[ml-scales]] o
 | $L_j$, $e_0$, $t_j$, $\mathcal B_\chi$ | layers of a cyclotomic tower, $\mu_{\ell^{e_0}} \subset L_0$, the $\ell$-adic valuation of $h(L_j)$, the special odd primes of $\chi$ | |
 | $J$, $X_\ast$, $R$ | the window exponent, the threshold of `VWin`, the number of exceptional twists | `J`, `X0`, `R` |
 | $s_i$, $D$, $B$, $\eta$, $C_K$ | zeros of the Iwasawa bound, its precision, the ratio of a spoiled interval, a small exponent, the constant of `LemmaK` | |
+
+### The shorter rewrite (chapter 25)
+
+The rewrite's own letters clash with the page's (`k`, `r`, `n`, `M`, `N`, `f`, and `δ` mean other things in Part
+IV), so chapter 25 uses the page's letters where the role is the same and the following for the rest.
+
+| Symbol | Meaning | In the code |
+| --- | --- | --- |
+| $q_0$ | the modulus, a multiple of $18480$ | `P.q₀` |
+| $\mathsf d$, $K$, $\chi_{\mathsf d}$ | the prime $\equiv q_0/2 - 1$, the field $\QQ(\sqrt{-\mathsf d})$, its character $(\cdot/\mathsf d)$ | `P.d`, `chiK` |
+| $\Lambda_{\mathsf d}(n)$ | $\Lambda(n)(1-\chi_{\mathsf d}(n))$ | `lambdaKResidueClass d 1` |
+| $R_q(x)$, $c_q$ | the remainder of the weighted count in the class $1 \bmod q$, and its constant | `primeRemainder`, `logDerivMean` |
+| $x_1$ | the second cut-off, $x^{10^6} \le x_1$ | `D.x₁` |
+| $m$ | the number of lifts, the least power of $2$ at least $\sqrt x$ (the same role as in chapter 21) | `D.m` |
+| $N_0$ | the rank of the source space $X_0$ (as in chapter 21) | `D.k` |
+| $n_E$, $\tau$, $\kappa_\tau$, $\bar\kappa$ | number of complex places of $E$, a place, its weight, the geometric mean of the weights | `D.f`, `D.weight` |
+| $s_\infty(j)$, $s_{\mathrm{fin}}(y,\tau)$, $s_{\mathrm{main}}$ | size of a derivative of order $j$, guaranteed divisibility, its expected value | `jetSize`, `primeSum`, `mainPrimeSum` |
+| $h_{\mathrm{dir}}$, $h_{\mathrm{main}}$, $\mathrm{rem}$ | direction amount, main amount, total remainder | `directionAmount`, `mainAmount`, `totalRemainder` |
+| $\Omega$, $\mathrm{rd}_E$, $p_0p_1$ | the period, the root discriminant of $E$, the product of two auxiliary primes | `P.bigOmega`, `D.rootDisc`, `D.M` |
+| $\mathsf N$ | the prime level of the target forms | `D.N` |
+| $D_T$, $n_F$, $\mathcal V$, $\mathcal I$ | dimension of the target, size of a family, its covolume and index bounds | `targetDim` |
+| $\mathcal E$, $\mathcal J$ | the unit of error $n_Ea(\log b)^4$ and the index per dimension | `errorUnit` |
+| $\iota$ | an isomorphism $\CC\to\overline\QQ_\ell$, the place at which integrality is tested | `PrimePadicIso` |
+| $G$ | a Gram matrix | `formGram` |
+| $\pi_p$, $q_p$ | $p$ or $\sqrt{-\mathsf d}$, and $p^2$ or $\mathsf d$ | `piPrime`, `primeNorm` |
 
 The letter $X$ without a subscript is a real number as in Part I, and $X_j$ with a subscript is a Hermitian
 space. $T$ stays a height in the critical strip. The calligraphic $\mathcal G$ is a genus in chapter 20 and a Galois

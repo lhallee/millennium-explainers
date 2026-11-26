@@ -659,7 +659,9 @@ points, with degree in place of size and roots in place of prime factors. Over t
 make a number vanish twice, and the second proof of 2026 manufactures the multiplicity from a chain of theta lifts
 (chapter [[multiplicity-from-lifts]]). The inequality its endgame consumes, an upper bound on a smoothed sum over primes
 on windows of scales ([[eq-le-interface]]), carries Chebyshev's name in the formal proof:
-`ChebyshevInequalityOnWindows`.
+`ChebyshevInequalityOnWindows`. A shorter rewrite of that proof says the same in its comments, listing
+"Chebyshev-order bounds" first among the "earlier bounds for sums over primes by size against divisibility", and
+chapter [[route-a-compressed]] reads its main inequality as this budget for a lattice.
 
 ## What we carry forward {#cp-carry}
 

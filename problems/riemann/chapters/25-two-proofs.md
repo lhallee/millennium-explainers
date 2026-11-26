@@ -3,7 +3,7 @@ id: two-proofs
 title: Two proofs, one theorem
 part: 5
 summary: After this chapter you can say exactly what each of the two proofs of 2026 establishes, set them side by side step by step with a pointer to where the page showed each step, name the few places where they touch, say how far this page unfolded each, list the open ends their sources name, and answer the question of chapter 1 with numbers.
-needs: [trace-to-grh, inputs-and-assembly]
+needs: [trace-to-grh, inputs-and-assembly, route-a-compressed]
 ---
 
 ::: plain
@@ -41,7 +41,7 @@ This section is our comparison. The table gives it in one view, and the subsecti
 | What plays Weil's explicit formula | The geometric side of the Trace Formula ([[s-tf-weil]]) | The explicit formula of the smoothed sum ([[t-rh-smooth]], [[t-le-poles]]) |
 | Positivity | Not used, and not usable, by the introduction; one subsection that the author flags for correction says otherwise ([[tp-positivity]]) | In the note's words; in the code, an upper bound ([[ra-steps]]) |
 | Function fields | The method does not apply ([[s-tg-function-fields]]) | Descends from Stepanov ([[ra-descendant]]) |
-| Size | 940 pages | 175,187 files ([[s-ia-shape]]) |
+| Size | 940 pages | 175,187 files ([[s-ia-shape]]), rewritten in 796 ([[rc-source]]) |
 | Form | A draft with a stub for its last chapter ([[tp-form]]) | A formal proof read through its statements ([[s-ia-coverage]]) |
 
 :::: figure {#f-tp-chains viz="tp-two-chains" height="600"}
@@ -180,7 +180,7 @@ Both routes still sit on the dictionary of [[ff-dictionary]], on different rows 
 | The function-field proof it resembles | Weil's: the zeros as eigenvalues of Frobenius, the closed points as its periodic orbits ([[ff-frobenius]]) | Stepanov's: an auxiliary function that vanishes too often for its degree ([[st-idea]]) |
 | What it keeps | a trace formula with the zeros on one side and the primes as circles of length $\log p$ on the other ([[s-pc-circle]]) | the budget: divisibility at many primes played against a bounded size, with the product formula as "zeros at most poles" ([[ml-product]]) |
 | What it replaces | Frobenius, and the positivity that completes Weil's proof: the topology of the function space locates the zeros instead ([[s-tg-topology]]) | Frobenius and derivatives as the source of multiplicity: a chain of about $\sqrt X$ theta lifts does that work ([[ml-chain]]) |
-| Its ancestor over the integers | the explicit formula read as a trace formula ([[wp-trace]]) | Chebyshev's budget with $\binom{2n}{n}$ ([[cp-chebyshev]]) |
+| Its ancestor over the integers | the explicit formula read as a trace formula ([[wp-trace]]) | Chebyshev's budget with $\binom{2n}{n}$ ([[cp-chebyshev]]), a lineage the rewrite's own comments name ([[rc-ledger]]) |
 | Run over a function field | gives back Weil's explicit formula and nothing more ([[s-tg-function-fields]]) | its toy identity $qN = M^k + R$ lives there, and is not in the code ([[ra-toy]]) |
 
 ### How much mathematics, and of what kinds {#tp-size}
@@ -438,6 +438,6 @@ Chapter [[counting-primes]] asked how large the error in counting primes can be,
 - Route M forces the hypothesis by comparing two identities whose zero sides differ, Route A by an upper bound on windows and a windowed Landau theorem ([[tp-forced]]). The one half comes from measure matching in one and from the square-root size of the bound and the chain in the other ([[tp-half]]).
 - Route M cannot use Weil's positivity; Route A's code proves an upper bound where its note speaks of positivity ([[tp-positivity]]). Route M does not reach function fields; Route A descends from Stepanov ([[tp-function-fields]]).
 - The routes share the explicit formula, the functional equation, two different kinds of theta function, test functions on one side of 1, zeros seen as poles, and Tate's thesis, and nothing more on this page ([[tp-share]]).
-- The page proved Route M over $\QQ$ almost link by link, proved Route A's analytic end, stated its automorphic middle, and left the step from the chain to the count unopened ([[tp-ledger]]). The sources' own open ends are listed in [[tp-open]].
+- The page proved Route M over $\QQ$ almost link by link, proved Route A's analytic end, stated its automorphic middle, and left the step from the chain to the count unopened in the original tree ([[tp-ledger]]); a shorter rewrite states that step as one inequality ([[t-rc-main]]). The sources' own open ends are listed in [[tp-open]].
 - The error in counting primes is at most a constant times $\sqrt x\log x$, and the exponent one half is exact ([[tp-answer]]).
 :::
